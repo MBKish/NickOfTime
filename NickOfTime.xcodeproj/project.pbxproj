@@ -18,6 +18,11 @@
 		04E5727A17BAC60800AD4441 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5727917BAC60800AD4441 /* Default-568h@2x.png */; };
 		04E5727D17BAC60800AD4441 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E5727B17BAC60800AD4441 /* MainStoryboard.storyboard */; };
 		04E5728017BAC60800AD4441 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5727F17BAC60800AD4441 /* ViewController.m */; };
+		B8747CE017BDCDE9007DE7BF /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8747CDF17BDCDE9007DE7BF /* SwipeViewController.m */; };
+		B8747CE317BDCDF6007DE7BF /* FindTheObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8747CE217BDCDF6007DE7BF /* FindTheObjectViewController.m */; };
+		B8747CE617BDCE01007DE7BF /* PressButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8747CE517BDCE01007DE7BF /* PressButtonViewController.m */; };
+		B8747CEA17BDCEF1007DE7BF /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8747CE917BDCEF1007DE7BF /* ContainerViewController.m */; };
+		B8747CED17BDD5AF007DE7BF /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = B8747CEC17BDD5AF007DE7BF /* EmptySegue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +42,16 @@
 		04E5727C17BAC60800AD4441 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		04E5727E17BAC60800AD4441 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		04E5727F17BAC60800AD4441 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B8747CDE17BDCDE9007DE7BF /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
+		B8747CDF17BDCDE9007DE7BF /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
+		B8747CE117BDCDF6007DE7BF /* FindTheObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindTheObjectViewController.h; sourceTree = "<group>"; };
+		B8747CE217BDCDF6007DE7BF /* FindTheObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindTheObjectViewController.m; sourceTree = "<group>"; };
+		B8747CE417BDCE01007DE7BF /* PressButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PressButtonViewController.h; sourceTree = "<group>"; };
+		B8747CE517BDCE01007DE7BF /* PressButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PressButtonViewController.m; sourceTree = "<group>"; };
+		B8747CE817BDCEF1007DE7BF /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		B8747CE917BDCEF1007DE7BF /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		B8747CEB17BDD5AF007DE7BF /* EmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmptySegue.h; path = ../EmptySegue.h; sourceTree = "<group>"; };
+		B8747CEC17BDD5AF007DE7BF /* EmptySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmptySegue.m; path = ../EmptySegue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +98,12 @@
 		04E5726917BAC60800AD4441 /* NickOfTime */ = {
 			isa = PBXGroup;
 			children = (
+				B8747CE717BDCE07007DE7BF /* ViewControllers */,
 				04E5727217BAC60800AD4441 /* AppDelegate.h */,
 				04E5727317BAC60800AD4441 /* AppDelegate.m */,
+				B8747CEB17BDD5AF007DE7BF /* EmptySegue.h */,
+				B8747CEC17BDD5AF007DE7BF /* EmptySegue.m */,
 				04E5727B17BAC60800AD4441 /* MainStoryboard.storyboard */,
-				04E5727E17BAC60800AD4441 /* ViewController.h */,
-				04E5727F17BAC60800AD4441 /* ViewController.m */,
 				04E5726A17BAC60800AD4441 /* Supporting Files */,
 			);
 			path = NickOfTime;
@@ -105,6 +121,23 @@
 				04E5727917BAC60800AD4441 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B8747CE717BDCE07007DE7BF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B8747CDE17BDCDE9007DE7BF /* SwipeViewController.h */,
+				B8747CDF17BDCDE9007DE7BF /* SwipeViewController.m */,
+				B8747CE117BDCDF6007DE7BF /* FindTheObjectViewController.h */,
+				B8747CE217BDCDF6007DE7BF /* FindTheObjectViewController.m */,
+				B8747CE417BDCE01007DE7BF /* PressButtonViewController.h */,
+				B8747CE517BDCE01007DE7BF /* PressButtonViewController.m */,
+				04E5727E17BAC60800AD4441 /* ViewController.h */,
+				04E5727F17BAC60800AD4441 /* ViewController.m */,
+				B8747CE817BDCEF1007DE7BF /* ContainerViewController.h */,
+				B8747CE917BDCEF1007DE7BF /* ContainerViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +209,11 @@
 				04E5727017BAC60800AD4441 /* main.m in Sources */,
 				04E5727417BAC60800AD4441 /* AppDelegate.m in Sources */,
 				04E5728017BAC60800AD4441 /* ViewController.m in Sources */,
+				B8747CE017BDCDE9007DE7BF /* SwipeViewController.m in Sources */,
+				B8747CE317BDCDF6007DE7BF /* FindTheObjectViewController.m in Sources */,
+				B8747CE617BDCE01007DE7BF /* PressButtonViewController.m in Sources */,
+				B8747CEA17BDCEF1007DE7BF /* ContainerViewController.m in Sources */,
+				B8747CED17BDD5AF007DE7BF /* EmptySegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +336,7 @@
 				04E5728517BAC60800AD4441 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

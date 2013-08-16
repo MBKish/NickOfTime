@@ -8,8 +8,12 @@
 // TEST LINE!
 
 #import "ViewController.h"
+#import "ContainerViewController.h"
 
 @interface ViewController ()
+
+@property (nonatomic, weak) ContainerViewController *containerViewController;
+- (IBAction)swap:(id)sender;
 
 @end
 
@@ -27,4 +31,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"embedContainer"]) {
+        self.containerViewController = segue.destinationViewController;
+    }
+}
+
+- (IBAction)swap:(id)sender {
+    [self.containerViewController swapViewControllers2];
+}
 @end
