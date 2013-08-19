@@ -10,12 +10,19 @@
 
 
 @interface SwipeViewController (){
+    NSArray *levelOneCommands;
+    NSArray *levelTwoCommands;
     NSArray *allCommands;
-    int index;
     NSMutableArray *checkArray;
     NSMutableArray *commandArray;
+    int index;
+    int level;
     __weak IBOutlet UILabel *commandLabel;
+    __weak IBOutlet UIButton *levelButton;
+    
 }
+- (IBAction)swapLevel:(id)sender;
+
 @end
 
 @implementation SwipeViewController
@@ -32,12 +39,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [super viewDidLoad];
+    level = 1;
     [self addSwipeGestures];
     checkArray = [[NSMutableArray alloc] init];;
     commandArray = [[NSMutableArray alloc] init];
+    levelOneCommands = [NSArray arrayWithObjects:@"Swipe up", @"Swipe down",@"Swipe left", @"Swipe right", nil];
+    
+    levelTwoCommands = [NSArray arrayWithObjects:@"Swipe up",@"Swipe down",@"Swipe left",@"Swipe right",@"Swipe left then up", @"Swipe left then down",@"Swipe left then left",@"Swipe left then right",@"Swipe up then up", @"Swipe up then down",@"Swipe up then left",@"Swipe up then right",@"Swipe down then up", @"Swipe down then down",@"Swipe down then left",@"Swipe down then right",@"Swipe right then up", @"Swipe right then down",@"Swipe right then left",@"Swipe right then right", nil];
+    
     allCommands = [NSArray arrayWithObjects:@"Swipe up",@"Swipe down",@"Swipe left",@"Swipe right",@"Swipe left then up", @"Swipe left then down",@"Swipe left then left",@"Swipe left then right",@"Swipe up then up", @"Swipe up then down",@"Swipe up then left",@"Swipe up then right",@"Swipe down then up", @"Swipe down then down",@"Swipe down then left",@"Swipe down then right",@"Swipe right then up", @"Swipe right then down",@"Swipe right then left",@"Swipe right then right", @"Swipe anywhere but up", @"Swipe anywhere but down",@"Swipe anywhere but left",@"Swipe anywhere but right", nil];
+    
     [self pickAndDisplayCommand];
+    
     NSLog(@"%@,%@",checkArray, commandArray);
 }
 
@@ -276,4 +289,6 @@
 }
 
 
+- (IBAction)swapLevel:(id)sender {
+}
 @end
