@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -34,16 +34,23 @@
                                     <action selector="swap:" destination="2" eventType="touchUpInside" id="SEa-Va-FRG"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="FAJ-9J-GdF"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9Ds-FS-zC3" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="4Qy-oc-Pci"/>
                             <constraint firstItem="7nC-DY-Ln0" firstAttribute="top" secondItem="3" secondAttribute="top" constant="80" type="user" id="75v-op-Zyr"/>
+                            <constraint firstAttribute="trailing" secondItem="FAJ-9J-GdF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="K1c-yv-RFn"/>
                             <constraint firstItem="7nC-DY-Ln0" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="MW4-l4-Ins"/>
                             <constraint firstItem="7nC-DY-Ln0" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Ttg-gd-B2i"/>
+                            <constraint firstAttribute="bottom" secondItem="FAJ-9J-GdF" secondAttribute="bottom" constant="42" id="dt3-uI-2xf"/>
+                            <constraint firstItem="FAJ-9J-GdF" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ild-gC-jST"/>
                             <constraint firstItem="9Ds-FS-zC3" firstAttribute="centerX" secondItem="7nC-DY-Ln0" secondAttribute="centerX" type="default" id="ydf-mc-zVP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="slider" destination="FAJ-9J-GdF" id="8wT-at-x4o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,6 +237,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="swap:"/>
+                <relationship kind="outlet" name="progressView" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
             </relationships>
         </class>
     </classes>
