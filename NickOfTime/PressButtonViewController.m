@@ -40,7 +40,7 @@
     blue = [UIColor blueColor];
     yellow = [UIColor yellowColor];
     colorArray = @[red,blue,yellow];
-    colorLabelArray = @[@"redColor", @"blueColor", @"yellowColor"];
+    colorLabelArray = @[@"red", @"blue", @"yellow"];
     playDictionary = [[NSMutableDictionary alloc] initWithObjects:colorArray forKeys:colorLabelArray];
     //viewArray = @[@(0), @(1), @(2)];
     

@@ -142,10 +142,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-vm-3bi">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="216" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-vm-3bi">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="QBy-5d-vWg"/>
-                                    <constraint firstAttribute="width" constant="42" id="efb-sb-0m6"/>
+                                    <constraint firstAttribute="width" constant="216" id="NKM-ti-G0a"/>
+                                    <constraint firstAttribute="height" constant="55" id="gl6-V9-Sej"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -191,20 +191,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eC7-vm-3bi" firstAttribute="top" secondItem="baM-7Y-tWd" secondAttribute="top" constant="45" id="0N8-dL-fF9"/>
                             <constraint firstAttribute="centerY" secondItem="9sg-NX-PST" secondAttribute="centerY" type="user" id="9AJ-gY-dqi"/>
                             <constraint firstItem="9sg-NX-PST" firstAttribute="baseline" secondItem="EeI-z7-UA9" secondAttribute="baseline" type="default" id="9dI-2F-geC"/>
                             <constraint firstAttribute="centerY" secondItem="EeI-z7-UA9" secondAttribute="centerY" type="user" id="BQB-JW-8fN"/>
                             <constraint firstAttribute="centerY" secondItem="XIX-d6-ngb" secondAttribute="centerY" type="user" id="C7X-nw-4eB"/>
                             <constraint firstAttribute="centerX" secondItem="9sg-NX-PST" secondAttribute="centerX" type="user" id="Eu0-90-xke"/>
+                            <constraint firstAttribute="centerX" secondItem="eC7-vm-3bi" secondAttribute="centerX" type="user" id="I0w-uq-gEs"/>
                             <constraint firstAttribute="trailing" secondItem="bT7-ky-Ywa" secondAttribute="trailing" constant="220" id="IJs-or-OYl"/>
-                            <constraint firstItem="9sg-NX-PST" firstAttribute="top" secondItem="xaO-ac-gao" secondAttribute="top" type="default" id="LAM-qe-qTs"/>
-                            <constraint firstItem="9sg-NX-PST" firstAttribute="top" secondItem="bT7-ky-Ywa" secondAttribute="top" type="default" id="NUg-bx-AEZ"/>
                             <constraint firstItem="bT7-ky-Ywa" firstAttribute="leading" secondItem="baM-7Y-tWd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SDk-x8-V1P"/>
                             <constraint firstAttribute="centerY" secondItem="9sg-NX-PST" secondAttribute="centerY" type="user" id="TXb-lf-gSi"/>
-                            <constraint firstItem="eC7-vm-3bi" firstAttribute="centerX" secondItem="XIX-d6-ngb" secondAttribute="centerX" type="default" id="Toj-xQ-Z59"/>
+                            <constraint firstItem="eC7-vm-3bi" firstAttribute="top" secondItem="baM-7Y-tWd" secondAttribute="top" constant="7" id="Vsi-5C-5hk"/>
                             <constraint firstAttribute="centerX" secondItem="EeI-z7-UA9" secondAttribute="centerX" type="user" id="YPx-Qc-8xV"/>
-                            <constraint firstItem="O1K-5I-5rP" firstAttribute="centerX" secondItem="XIX-d6-ngb" secondAttribute="centerX" type="default" id="dap-VK-X5b"/>
+                            <constraint firstItem="O1K-5I-5rP" firstAttribute="centerX" secondItem="9sg-NX-PST" secondAttribute="centerX" type="default" id="bjk-kX-p5c"/>
                             <constraint firstItem="XIX-d6-ngb" firstAttribute="bottom" secondItem="bT7-ky-Ywa" secondAttribute="bottom" type="default" id="g8A-79-Twt"/>
                             <constraint firstItem="xaO-ac-gao" firstAttribute="leading" secondItem="baM-7Y-tWd" secondAttribute="leading" constant="220" id="gtA-lh-WWF"/>
                             <constraint firstAttribute="bottom" secondItem="O1K-5I-5rP" secondAttribute="bottom" constant="27" id="hLJ-7A-TqQ"/>
@@ -212,10 +210,12 @@
                             <constraint firstItem="xaO-ac-gao" firstAttribute="top" secondItem="XIX-d6-ngb" secondAttribute="top" type="default" id="oqi-R4-XKp"/>
                             <constraint firstAttribute="centerX" secondItem="XIX-d6-ngb" secondAttribute="centerX" type="user" id="pJl-VC-4rP"/>
                             <constraint firstItem="XIX-d6-ngb" firstAttribute="leading" secondItem="baM-7Y-tWd" secondAttribute="leading" constant="120" id="sUF-eM-yau"/>
+                            <constraint firstItem="XIX-d6-ngb" firstAttribute="top" secondItem="bT7-ky-Ywa" secondAttribute="top" type="default" id="uKJ-dI-W77"/>
                             <constraint firstItem="EeI-z7-UA9" firstAttribute="leading" secondItem="baM-7Y-tWd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="vl2-pO-gpN"/>
                             <constraint firstItem="xaO-ac-gao" firstAttribute="bottom" secondItem="XIX-d6-ngb" secondAttribute="bottom" type="default" id="xut-20-3Jb"/>
                             <constraint firstAttribute="trailing" secondItem="xaO-ac-gao" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="yPJ-qc-f2j"/>
                             <constraint firstAttribute="centerY" secondItem="EeI-z7-UA9" secondAttribute="centerY" type="user" id="ygG-R9-DXZ"/>
+                            <constraint firstItem="EeI-z7-UA9" firstAttribute="top" secondItem="XIX-d6-ngb" secondAttribute="top" type="default" id="zjl-er-CC7"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
