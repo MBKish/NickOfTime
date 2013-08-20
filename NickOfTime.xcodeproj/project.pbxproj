@@ -63,6 +63,7 @@
 		B8C5CF4617C3B90B00D9A66E /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C5CF3C17C3B90B00D9A66E /* Lato-Light.ttf */; };
 		B8C5CF4717C3B90B00D9A66E /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C5CF3D17C3B90B00D9A66E /* Lato-LightItalic.ttf */; };
 		B8C5CF4817C3B90B00D9A66E /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C5CF3E17C3B90B00D9A66E /* Lato-Regular.ttf */; };
+		B8C5CF4B17C3FB8100D9A66E /* CompletedGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C5CF4A17C3FB8100D9A66E /* CompletedGameView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,6 +155,9 @@
 		B8C5CF3C17C3B90B00D9A66E /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		B8C5CF3D17C3B90B00D9A66E /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
 		B8C5CF3E17C3B90B00D9A66E /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		B8C5CF4917C3FB8100D9A66E /* CompletedGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedGameView.h; sourceTree = "<group>"; };
+		B8C5CF4A17C3FB8100D9A66E /* CompletedGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedGameView.m; sourceTree = "<group>"; };
+		B8C5CF4C17C3FE8800D9A66E /* WinDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WinDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +232,8 @@
 				0494BCCA17BE9A2E000947C0 /* ShapeView.h */,
 				0494BCCB17BE9A2E000947C0 /* ShapeView.m */,
 				0494BCCD17BE9A9A000947C0 /* PickedDelegate.h */,
+				B8C5CF4917C3FB8100D9A66E /* CompletedGameView.h */,
+				B8C5CF4A17C3FB8100D9A66E /* CompletedGameView.m */,
 				0494BCB717BE9719000947C0 /* Pictures */,
 				04E5726A17BAC60800AD4441 /* Supporting Files */,
 			);
@@ -260,6 +266,7 @@
 				B8747CE517BDCE01007DE7BF /* PressButtonViewController.m */,
 				04E5727E17BAC60800AD4441 /* ViewController.h */,
 				04E5727F17BAC60800AD4441 /* ViewController.m */,
+				B8C5CF4C17C3FE8800D9A66E /* WinDelegate.h */,
 				B8747CE817BDCEF1007DE7BF /* ContainerViewController.h */,
 				B8747CE917BDCEF1007DE7BF /* ContainerViewController.m */,
 				B8C5CF3117C3B4AF00D9A66E /* StartViewController.h */,
@@ -458,6 +465,7 @@
 				B8C5CF2D17C2A0EE00D9A66E /* UITableViewCell+FlatUI.m in Sources */,
 				B8C5CF2E17C2A0EE00D9A66E /* UIToolbar+FlatUI.m in Sources */,
 				B8C5CF3317C3B4AF00D9A66E /* StartViewController.m in Sources */,
+				B8C5CF4B17C3FB8100D9A66E /* CompletedGameView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

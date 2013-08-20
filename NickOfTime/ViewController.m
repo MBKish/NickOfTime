@@ -12,12 +12,15 @@
 #import "UIProgressView+FlatUI.h"
 #import "UIColor+FlatUI.h"
 #import "UISlider+FlatUI.h"
+#import "CompletedGameView.h"
+
 @interface ViewController (){
     
    // __weak IBOutlet UIProgressView *progressView;
     __weak IBOutlet UISlider *slider;
     float seconds;
     NSTimer *myTimer;
+    int completedGames;
 }
 
 @property (nonatomic, weak) ContainerViewController *containerViewController;
@@ -30,7 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   // [progressView configureFlatProgressViewWithTrackColor:[UIColor alizarinColor] progressColor:[UIColor cloudsColor]];
+    completedGames = 0;
+    
     [slider configureFlatSliderWithTrackColor:[UIColor cloudsColor] progressColor:[UIColor alizarinColor] thumbColor:[UIColor alizarinColor]];
     seconds = 12;
     slider.maximumValue = seconds;
@@ -46,6 +50,7 @@
                          [slider setValue:0];
                      }
                      completion:NULL];
+    [self gameCompleted];
     
 }
 
@@ -76,4 +81,16 @@
         seconds = seconds - 1;
     }
 }
+
+-(void)gameCompleted{
+    UIColor *unlitColor;
+    
+    for (UIView *game in self.view.subviews)
+        if (game.tag == completedGames) {
+            unlitColor = game.backgroundColor;
+            game.backgroundColor = [UIColor alizarinColor];
+        }
+    
+}
+
 @end

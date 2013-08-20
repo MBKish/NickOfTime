@@ -108,35 +108,35 @@
                                     <constraint firstAttribute="width" constant="254" id="9ew-EV-aIY"/>
                                 </constraints>
                             </slider>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dP9-r7-yaQ">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dP9-r7-yaQ" customClass="CompletedGameView">
                                 <color key="backgroundColor" red="0.86094945790816324" green="0.86094945790816324" blue="0.86094945790816324" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" type="user" id="QHU-vu-nnp"/>
                                     <constraint firstAttribute="width" constant="30" type="user" id="vHd-Y0-oVC"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSl-7q-yXK">
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSl-7q-yXK" customClass="CompletedGameView">
                                 <color key="backgroundColor" red="0.86094945789999999" green="0.86094945789999999" blue="0.86094945789999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" type="user" id="7FF-n6-Kas"/>
                                     <constraint firstAttribute="width" constant="30" type="user" id="k4Z-Nd-Fs1"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBV-K4-qYK">
+                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBV-K4-qYK" customClass="CompletedGameView">
                                 <color key="backgroundColor" red="0.86094945789999999" green="0.86094945789999999" blue="0.86094945789999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" type="user" id="NiQ-qb-JM2"/>
                                     <constraint firstAttribute="width" constant="30" type="user" id="bnC-S7-5VJ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tnd-OD-gEm">
+                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tnd-OD-gEm" customClass="CompletedGameView">
                                 <color key="backgroundColor" red="0.86094945789999999" green="0.86094945789999999" blue="0.86094945789999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" type="user" id="2Ed-yD-2gf"/>
                                     <constraint firstAttribute="height" constant="30" type="user" id="kF4-5K-N0O"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuh-wP-oeV">
+                            <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuh-wP-oeV" customClass="CompletedGameView">
                                 <color key="backgroundColor" red="0.86094945789999999" green="0.86094945789999999" blue="0.86094945789999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" type="user" id="1Er-pM-M4x"/>
@@ -189,7 +189,7 @@
             <objects>
                 <viewController id="jqJ-eW-Z75" customClass="ContainerViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rZr-LO-okO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="321" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -335,6 +335,9 @@
         </scene>
     </scenes>
     <classes>
+        <class className="CompletedGameView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompletedGameView.h"/>
+        </class>
         <class className="ContainerViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerViewController.h"/>
         </class>
