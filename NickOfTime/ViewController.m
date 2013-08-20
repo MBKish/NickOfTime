@@ -14,7 +14,7 @@
 #import "UISlider+FlatUI.h"
 @interface ViewController (){
     
-    __weak IBOutlet UIProgressView *progressView;
+   // __weak IBOutlet UIProgressView *progressView;
     __weak IBOutlet UISlider *slider;
     float seconds;
     NSTimer *myTimer;
@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [progressView configureFlatProgressViewWithTrackColor:[UIColor alizarinColor] progressColor:[UIColor cloudsColor]];
+   // [progressView configureFlatProgressViewWithTrackColor:[UIColor alizarinColor] progressColor:[UIColor cloudsColor]];
     [slider configureFlatSliderWithTrackColor:[UIColor cloudsColor] progressColor:[UIColor alizarinColor] thumbColor:[UIColor alizarinColor]];
     seconds = 12;
     slider.maximumValue = seconds;
