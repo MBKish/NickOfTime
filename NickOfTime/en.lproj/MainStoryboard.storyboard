@@ -86,43 +86,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRR-Ea-pXU" customClass="ShapeView">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" type="user" id="JYC-xC-6Vh"/>
-                                    <constraint firstAttribute="height" constant="50" type="user" id="JYN-ah-sXu"/>
-                                </constraints>
-                            </view>
-                            <view opaque="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kH-TG-rMc" customClass="ShapeView">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" type="user" id="EnO-Zq-zXq"/>
-                                    <constraint firstAttribute="height" constant="50" type="user" id="rGb-tY-2aj"/>
-                                </constraints>
-                            </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRo-Q2-a1S" customClass="ShapeView">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" type="user" id="CQE-MU-nlY"/>
-                                    <constraint firstAttribute="height" constant="50" type="user" id="R5u-mc-DtD"/>
-                                </constraints>
-                            </view>
-                            <view opaque="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0F4-xN-iC3" customClass="ShapeView">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" type="user" id="m0B-YH-pIp"/>
-                                    <constraint firstAttribute="height" constant="50" type="user" id="uja-xU-ttU"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VRo-Q2-a1S" firstAttribute="top" secondItem="TEu-BW-Mzn" secondAttribute="top" constant="77" id="1BZ-46-Tds"/>
                             <constraint firstItem="34h-3P-noU" firstAttribute="centerX" secondItem="TEu-BW-Mzn" secondAttribute="centerX" type="default" id="2OZ-fe-Nbk"/>
-                            <constraint firstItem="bRR-Ea-pXU" firstAttribute="leading" secondItem="VRo-Q2-a1S" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="6m6-hR-Cdw"/>
-                            <constraint firstItem="5kH-TG-rMc" firstAttribute="top" secondItem="0F4-xN-iC3" secondAttribute="top" type="default" id="Ea8-K8-ezU"/>
                             <constraint firstItem="34h-3P-noU" firstAttribute="top" secondItem="TEu-BW-Mzn" secondAttribute="top" constant="14" id="QUM-Vs-neb"/>
-                            <constraint firstItem="5kH-TG-rMc" firstAttribute="leading" secondItem="VRo-Q2-a1S" secondAttribute="leading" type="default" id="SKO-ZQ-N1h"/>
-                            <constraint firstItem="bRR-Ea-pXU" firstAttribute="top" secondItem="VRo-Q2-a1S" secondAttribute="top" type="default" id="gvE-au-ugQ"/>
-                            <constraint firstItem="VRo-Q2-a1S" firstAttribute="leading" secondItem="TEu-BW-Mzn" secondAttribute="leading" constant="106" id="hNO-PI-uDs"/>
-                            <constraint firstItem="0F4-xN-iC3" firstAttribute="leading" secondItem="5kH-TG-rMc" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="lYQ-Cw-Zk0"/>
-                            <constraint firstItem="5kH-TG-rMc" firstAttribute="top" secondItem="TEu-BW-Mzn" secondAttribute="top" constant="131" id="nMT-dh-ga0"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -205,6 +173,9 @@
         </class>
         <class className="FindTheObjectViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FindTheObjectViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -212,13 +183,12 @@
         <class className="PressButtonViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PressButtonViewController.h"/>
         </class>
-        <class className="ShapeView" superclassName="UIImageView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShapeView.h"/>
-        </class>
         <class className="SwipeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SwipeViewController.h"/>
             <relationships>
                 <relationship kind="action" name="swapLevel:"/>
+                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="levelButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">

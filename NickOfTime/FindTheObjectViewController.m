@@ -41,7 +41,7 @@
     unpickedCommandsArray = [[NSMutableArray alloc] initWithArray:commandArray];
     
     compareArray = [[NSMutableArray alloc] initWithCapacity:4];
-    
+    [self drawFour];
     [self randomCommand];
     [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
 }
@@ -56,12 +56,38 @@
 }
 
 
+- (void)drawFour {
+    
+    ShapeView *fourZero = [[ShapeView alloc] initWithFrame: CGRectMake (106, 77, 50, 50)];
+    ShapeView *fourOne = [[ShapeView alloc] initWithFrame: CGRectMake(164, 77, 50, 50)];
+    ShapeView *fourTwo = [[ShapeView alloc] initWithFrame: CGRectMake(106, 131, 50, 50)];
+    ShapeView *fourThree = [[ShapeView alloc] initWithFrame: CGRectMake(164, 131, 50, 50)];
+    [self.view addSubview:fourZero];
+    [self.view addSubview:fourOne];
+    [self.view addSubview:fourTwo];
+    [self.view addSubview:fourThree];
+    fourZero.tag = 0;
+    fourOne.tag = 1;
+    fourTwo.tag = 2;
+    fourThree.tag = 3;
+    fourZero.userInteractionEnabled = YES;
+    fourOne.userInteractionEnabled = YES;
+    fourTwo.userInteractionEnabled = YES;
+    fourThree.userInteractionEnabled = YES;
+    
+}
+
 
 - (void)shapeColorAllViewsWithinArray:(NSArray *)tagArray atIndex:(NSUInteger)tagIndex {
     
     ShapeView *selectedView = nil;
     
     NSString *tagString = [tagArray objectAtIndex:tagIndex];
+    
+    //ShapeView *polygonView = [[ShapeView alloc] initWithFrame: CGRectMake (106, 77, 51, 51)];
+    
+    //polygonView.backgroundColor = [UIColor redColor];
+    //[self.view addSubview:polygonView];
     
     for (ShapeView *subview in self.view.subviews) {
         if ([subview isKindOfClass:[ShapeView class]]) {
