@@ -27,6 +27,7 @@
     __weak IBOutlet UILabel *textInstruction;
     __weak IBOutlet UILabel *successLabel;
     __weak IBOutlet UILabel *lossLabel;
+
 }
 - (IBAction)startDemo:(id)sender;
 
@@ -105,6 +106,11 @@
             if ([subview isKindOfClass:[ColorButtons class]]){
                 if (subview.tag == counter){
                     subview.backgroundColor = playColorArray[counter];
+                    /* [UIView animateWithDuration:0.0 animations:^{
+                     
+                     subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
+                     
+                     } completion:^(BOOL finished) { */
                     
                     [UIView animateWithDuration:1.0 animations:^{
                         
@@ -127,8 +133,9 @@
     }else if ((correct = YES) && (thisView.backgroundColor == playArray[gameCounter])){
         [successLabel setHidden:NO];
         [UIView animateWithDuration:0.7 animations:^{
+             successLabel.transform = CGAffineTransformScale(successLabel.transform, 100, 100);
+            
             //successLabel.transform = CGAffineTransformMakeRotation(M_PI);
-            successLabel.transform = CGAffineTransformScale(successLabel.transform, 100, 100);
             //along w/rotate above will go forward then back(may need *2 below)(scale transform above excluded)
             /* }completion:^(BOOL finished) {
              [UIView animateWithDuration:0.5 animations:^{
