@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SwipeViewController.h"
+#import "FindTheObjectViewController.h"
+#import "PressButtonViewController.h"
 
 @interface ContainerViewController : UIViewController
 
 - (void)swapViewControllers;
 - (void)swapViewControllers2;
+@property (strong, nonatomic) SwipeViewController *swipeViewController;
+@property (strong, nonatomic) FindTheObjectViewController *findTheObjectViewController;
+@property (strong, nonatomic) PressButtonViewController *pressButtonViewController;
+
 
 
 @end

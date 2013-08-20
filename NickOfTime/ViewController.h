@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WinDelegate.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<WinDelegate>
 
 @end

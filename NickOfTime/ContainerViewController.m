@@ -7,9 +7,7 @@
 //
 
 #import "ContainerViewController.h"
-#import "SwipeViewController.h"
-#import "FindTheObjectViewController.h"
-#import "PressButtonViewController.h"
+
 
 #define SegueIdentifierFirst @"toSwipeGame"
 #define SegueIdentifierSecond @"toFindGame"
@@ -22,9 +20,7 @@
 }
 
 @property (strong, nonatomic) NSString *currentSegueIdentifier;
-@property (strong, nonatomic) SwipeViewController *swipeViewController;
-@property (strong, nonatomic) FindTheObjectViewController *findTheObjectViewController;
-@property (strong, nonatomic) PressButtonViewController *pressButtonViewController;
+
 @property (assign, nonatomic) BOOL transitionInProgress;
 
 @end

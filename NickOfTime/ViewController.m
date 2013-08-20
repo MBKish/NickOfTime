@@ -13,6 +13,7 @@
 #import "UIColor+FlatUI.h"
 #import "UISlider+FlatUI.h"
 #import "CompletedGameView.h"
+#import "SwipeViewController.h"
 
 @interface ViewController (){
     
@@ -33,12 +34,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.containerViewController.swipeViewController.delegate = self;
     completedGames = 0;
-    
     [slider configureFlatSliderWithTrackColor:[UIColor cloudsColor] progressColor:[UIColor alizarinColor] thumbColor:[UIColor alizarinColor]];
     seconds = 12;
     slider.maximumValue = seconds;
-
+    
     
     myTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(methodToUpdateProgress) userInfo:nil repeats:YES];
     
@@ -86,11 +87,23 @@
     UIColor *unlitColor;
     
     for (UIView *game in self.view.subviews)
-        if (game.tag == completedGames) {
-            unlitColor = game.backgroundColor;
-            game.backgroundColor = [UIColor alizarinColor];
+        
+        if ([game isKindOfClass:[CompletedGameView class]]) {
+            if (game.tag == completedGames) {
+                unlitColor = game.backgroundColor;
+                game.backgroundColor = [UIColor alizarinColor];
+            }
         }
+        
+
     
 }
 
+#pragma mark WinDelegate
+
+-(void)didWinGame{
+    completedGames = completedGames + 1;
+    [self gameCompleted];
+    NSLog (@"%i",completedGames);
+}
 @end

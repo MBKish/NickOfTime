@@ -25,6 +25,8 @@
 
 @implementation SwipeViewController
 
+@synthesize delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -80,6 +82,7 @@
     if (index < 20) {
         if ([checkArray isEqualToArray:commandArray]) {
             NSLog(@"youwin!");
+            [delegate didWinGame];
             [self pickAndDisplayCommand];
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
@@ -92,6 +95,7 @@
     else {
         if (![checkArray isEqualToArray:commandArray]) {
             NSLog(@"youwin!");
+            [delegate didWinGame];
             [self pickAndDisplayCommand];
         }
         else{
@@ -108,6 +112,7 @@
     if (index < 20) {
         if ([checkArray isEqualToArray:commandArray]) {
             NSLog(@"youwin!");
+            [delegate didWinGame];
             [self pickAndDisplayCommand];
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
@@ -121,6 +126,7 @@
         if (![checkArray isEqualToArray:commandArray]) {
             NSLog(@"youwin!");
             [self pickAndDisplayCommand];
+            [delegate didWinGame];
         }
         else{
             NSLog(@"youlose!");
@@ -137,6 +143,7 @@
         if ([checkArray isEqualToArray:commandArray]) {
             NSLog(@"youwin!");
             [self pickAndDisplayCommand];
+            [delegate didWinGame];
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
             NSLog(@"youlose!");
@@ -149,6 +156,7 @@
         if (![checkArray isEqualToArray:commandArray]) {
             NSLog(@"youwin!");
             [self pickAndDisplayCommand];
+            [delegate didWinGame];
         }
         else{
             NSLog(@"youlose!");
@@ -165,6 +173,7 @@
         if ([checkArray isEqualToArray:commandArray]) {
             NSLog(@"youwin!");
             [self pickAndDisplayCommand];
+            [delegate didWinGame];
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
             NSLog(@"youlose!");
@@ -177,6 +186,7 @@
         if (![checkArray isEqualToArray:commandArray]) {
             NSLog(@"youwin!");
             [self pickAndDisplayCommand];
+            [delegate didWinGame];
         }
         else{
             NSLog(@"youlose!");
@@ -187,8 +197,8 @@
     
 }
 
+
 -(void)pickAndDisplayCommand{
-    
     if (level == 1) {
         [commandArray removeAllObjects];
         [checkArray removeAllObjects];
@@ -404,4 +414,6 @@
     }
     NSLog(@"%i",level);
 }
+
+
 @end
