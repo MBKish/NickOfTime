@@ -35,13 +35,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    arrayOfTags = @[@"0",@"1",@"2",@"3"];
+    arrayOfTags = @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8"];
     
     commandArray = @[@"Red Square", @"Blue Square", @"Green Square", @"Red Circle", @"Blue Circle", @"Green Circle", @"Red Triangle", @"Blue Triangle", @"Green Triangle"];
     unpickedCommandsArray = [[NSMutableArray alloc] initWithArray:commandArray];
     
     compareArray = [[NSMutableArray alloc] initWithCapacity:4];
-    [self drawFour];
+    [self drawNine];
     [self randomCommand];
     [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
 }
@@ -60,8 +60,8 @@
     
     ShapeView *fourZero = [[ShapeView alloc] initWithFrame: CGRectMake (106, 77, 50, 50)];
     ShapeView *fourOne = [[ShapeView alloc] initWithFrame: CGRectMake(164, 77, 50, 50)];
-    ShapeView *fourTwo = [[ShapeView alloc] initWithFrame: CGRectMake(106, 131, 50, 50)];
-    ShapeView *fourThree = [[ShapeView alloc] initWithFrame: CGRectMake(164, 131, 50, 50)];
+    ShapeView *fourTwo = [[ShapeView alloc] initWithFrame: CGRectMake(106, 135, 50, 50)];
+    ShapeView *fourThree = [[ShapeView alloc] initWithFrame: CGRectMake(164, 135, 50, 50)];
     [self.view addSubview:fourZero];
     [self.view addSubview:fourOne];
     [self.view addSubview:fourTwo];
@@ -75,6 +75,46 @@
     fourTwo.userInteractionEnabled = YES;
     fourThree.userInteractionEnabled = YES;
     
+}
+
+- (void)drawNine {
+    
+    ShapeView *nineZero = [[ShapeView alloc] initWithFrame: CGRectMake (77, 77, 50, 50)];
+    ShapeView *nineOne = [[ShapeView alloc] initWithFrame: CGRectMake (135, 77, 50, 50)];
+    ShapeView *nineTwo = [[ShapeView alloc] initWithFrame: CGRectMake (193, 77, 50, 50)];
+    ShapeView *nineThree = [[ShapeView alloc] initWithFrame: CGRectMake (77, 135, 50, 50)];
+    ShapeView *nineFour = [[ShapeView alloc] initWithFrame: CGRectMake (135, 135, 50, 50)];
+    ShapeView *nineFive = [[ShapeView alloc] initWithFrame: CGRectMake (193, 135, 50, 50)];
+    ShapeView *nineSix = [[ShapeView alloc] initWithFrame: CGRectMake (77, 193, 50, 50)];
+    ShapeView *nineSeven = [[ShapeView alloc] initWithFrame: CGRectMake (135, 193, 50, 50)];
+    ShapeView *nineEight = [[ShapeView alloc] initWithFrame: CGRectMake (193, 193, 50, 50)];
+    [self.view addSubview:nineZero];
+    [self.view addSubview:nineOne];
+    [self.view addSubview:nineTwo];
+    [self.view addSubview:nineThree];
+    [self.view addSubview:nineFour];
+    [self.view addSubview:nineFive];
+    [self.view addSubview:nineSix];
+    [self.view addSubview:nineSeven];
+    [self.view addSubview:nineEight];
+    nineZero.tag = 0;
+    nineOne.tag = 1;
+    nineTwo.tag = 2;
+    nineThree.tag = 3;
+    nineFour.tag = 4;
+    nineFive.tag = 5;
+    nineSix.tag = 6;
+    nineSeven.tag = 7;
+    nineEight.tag = 8;
+    nineZero.userInteractionEnabled = YES;
+    nineOne.userInteractionEnabled = YES;
+    nineTwo.userInteractionEnabled = YES;
+    nineThree.userInteractionEnabled = YES;
+    nineFour.userInteractionEnabled = YES;
+    nineFive.userInteractionEnabled = YES;
+    nineSix.userInteractionEnabled = YES;
+    nineSeven.userInteractionEnabled = YES;
+    nineEight.userInteractionEnabled = YES;
 }
 
 
