@@ -1,8 +1,8 @@
 //
-//  PressButtonViewController.h
+//  ColorButtons.h
 //  NickOfTime
 //
-//  Created by Brian Dinh on 8/15/13.
+//  Created by Yaniv Kerem on 8/20/13.
 //  Copyright (c) 2013 TimeMonkeys. All rights reserved.
 //
 
@@ -10,6 +10,9 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface PressButtonViewController : UIViewController<PressDelegate>
+@interface ColorButtons : UIView
+
+@property (strong, nonatomic) id <PressDelegate> pressButtonsDelegate;
+
 
 @end
