@@ -79,7 +79,7 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34h-3P-noU">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="Vmq-iC-3KF"/>
+                                    <constraint firstAttribute="height" constant="45" id="f2Y-rF-hR1"/>
                                     <constraint firstAttribute="width" constant="300" id="p6g-hb-JUG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
@@ -205,9 +205,6 @@
         </class>
         <class className="FindTheObjectViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FindTheObjectViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
-            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -222,8 +219,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SwipeViewController.h"/>
             <relationships>
                 <relationship kind="action" name="swapLevel:"/>
-                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="levelButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
