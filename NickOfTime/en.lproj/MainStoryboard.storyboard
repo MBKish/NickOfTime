@@ -86,11 +86,29 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3q7-v8-9Oa">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="43" id="TJm-6I-MLj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="O">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="levelSwap:" destination="18R-RB-umg" eventType="touchUpInside" id="Q9C-eY-Sqa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3q7-v8-9Oa" firstAttribute="trailing" secondItem="TEu-BW-Mzn" secondAttribute="trailing" type="default" id="9D7-1v-Fgo"/>
                             <constraint firstItem="34h-3P-noU" firstAttribute="centerX" secondItem="TEu-BW-Mzn" secondAttribute="centerX" type="default" id="Pp5-uR-470"/>
                             <constraint firstItem="34h-3P-noU" firstAttribute="top" secondItem="TEu-BW-Mzn" secondAttribute="top" constant="14" id="QUM-Vs-neb"/>
+                            <constraint firstItem="3q7-v8-9Oa" firstAttribute="bottom" secondItem="TEu-BW-Mzn" secondAttribute="bottom" type="default" id="lC7-q6-anS"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -174,6 +192,7 @@
         <class className="FindTheObjectViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FindTheObjectViewController.h"/>
             <relationships>
+                <relationship kind="action" name="levelSwap:"/>
                 <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

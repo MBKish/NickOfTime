@@ -15,9 +15,11 @@
     NSArray *commandArray;
     NSMutableArray *unpickedCommandsArray;
     NSMutableArray *compareArray;
+    int level;
     
     __weak IBOutlet UILabel *commandLabel;
 }
+- (IBAction)levelSwap:(id)sender;
 
 @end
 
@@ -38,10 +40,11 @@
     arrayOfTags = @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8"];
     
     commandArray = @[@"Red Square", @"Blue Square", @"Green Square", @"Red Circle", @"Blue Circle", @"Green Circle", @"Red Triangle", @"Blue Triangle", @"Green Triangle"];
+    level = 0;
     unpickedCommandsArray = [[NSMutableArray alloc] initWithArray:commandArray];
     
     compareArray = [[NSMutableArray alloc] initWithCapacity:4];
-    [self drawNine];
+    
     [self randomCommand];
     [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
 }
@@ -50,6 +53,11 @@
 - (void)randomCommand {
     int command = arc4random()%commandArray.count;
     
+    if (level == 0) {
+        [self drawFour];
+    } else if (level == 1){
+        [self drawNine];
+    }
     commandLabel.text = [NSString stringWithFormat:@"Tap the %@",[commandArray objectAtIndex:command]];
     pickedCommand = [commandArray objectAtIndex:command];
     [unpickedCommandsArray removeObjectAtIndex:command];
@@ -246,11 +254,21 @@
 
 - (void) didChooseView: (ShapeView *) shapeView{
     if ([compareArray objectAtIndex:shapeView.tag] == pickedCommand) {
+        for (ShapeView *subview in self.view.subviews) {
+            if ([subview isKindOfClass:[ShapeView class]]) {
+                [subview removeFromSuperview];
+            }
+        }
         NSLog(@"You Win!");
         [compareArray removeAllObjects];
         [self randomCommand];
         [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
     } else {
+        for (ShapeView *subview in self.view.subviews) {
+            if ([subview isKindOfClass:[ShapeView class]]) {
+                [subview removeFromSuperview];
+            }
+        }
         NSLog(@"You Lose!");
         [compareArray removeAllObjects];
         [self randomCommand];
@@ -258,12 +276,37 @@
     }
     
 }
-
+- (IBAction)levelSwap:(id)sender {
+    if (level == 0) {
+        level = 1;
+        for (ShapeView *subview in self.view.subviews) {
+            if ([subview isKindOfClass:[ShapeView class]]) {
+                [subview removeFromSuperview];
+            }
+        }
+        [compareArray removeAllObjects];
+        [self randomCommand];
+        [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
+        NSLog(@"1");
+    }else if (level == 1){
+        level = 0;
+        for (ShapeView *subview in self.view.subviews) {
+            if ([subview isKindOfClass:[ShapeView class]]) {
+                [subview removeFromSuperview];
+            }
+        }
+        [compareArray removeAllObjects];
+        [self randomCommand];
+        [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
+        NSLog(@"0");
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
