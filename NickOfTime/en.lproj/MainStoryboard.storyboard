@@ -15,7 +15,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Nick of Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXa-rX-scV">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="E9N-t9-MVc"/>
-                                    <constraint firstAttribute="width" constant="278" id="gcB-e6-vfA"/>
+                                    <constraint firstAttribute="width" constant="278" id="fyJ-Ro-BIe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="40"/>
                                 <color key="textColor" red="0.26020408163265307" green="0.26020408163265307" blue="0.26020408163265307" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,9 +56,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gXa-rX-scV" firstAttribute="top" secondItem="48N-P8-Fd8" secondAttribute="top" constant="174" id="3zP-Uo-7J7"/>
-                            <constraint firstAttribute="trailing" secondItem="QPG-42-xuD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="LqS-xD-6CT"/>
+                            <constraint firstItem="QPG-42-xuD" firstAttribute="top" secondItem="48N-P8-Fd8" secondAttribute="top" constant="20" symbolic="YES" type="default" id="7nT-Hn-vd1"/>
                             <constraint firstItem="Gds-bN-MJx" firstAttribute="centerX" secondItem="gXa-rX-scV" secondAttribute="centerX" type="default" id="Qah-ec-cne"/>
-                            <constraint firstItem="QPG-42-xuD" firstAttribute="top" secondItem="48N-P8-Fd8" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Yuf-F3-9z2"/>
+                            <constraint firstAttribute="trailing" secondItem="QPG-42-xuD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="XAU-V3-0fi"/>
                             <constraint firstAttribute="bottom" secondItem="Gds-bN-MJx" secondAttribute="bottom" constant="42" id="a0T-vK-XuJ"/>
                             <constraint firstAttribute="centerX" secondItem="gXa-rX-scV" secondAttribute="centerX" type="user" id="kTa-7Z-x25"/>
                         </constraints>
@@ -193,7 +193,7 @@
             <objects>
                 <viewController id="jqJ-eW-Z75" customClass="ContainerViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rZr-LO-okO">
-                        <rect key="frame" x="0.0" y="0.0" width="321" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
