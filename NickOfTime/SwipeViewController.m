@@ -78,6 +78,19 @@
 
 - (void)handleSwipeUpFrom:(UIGestureRecognizer*)recognizer {
     [checkArray addObject:@"0"];
+    if (index <3) {
+        if ([checkArray isEqualToArray:commandArray]) {
+            NSLog(@"youwin!");
+            [delegate didWinGame];
+            [self pickAndDisplayCommand];
+        }
+        else {
+            NSLog(@"youlose!");
+            [delegate didLoseGame];
+            [self pickAndDisplayCommand];
+            
+        }
+    }
     
     if (index < 20) {
         if ([checkArray isEqualToArray:commandArray]) {
@@ -88,6 +101,7 @@
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
             NSLog(@"youlose!");
+            [delegate didLoseGame];
             [self pickAndDisplayCommand];
         }
         
@@ -101,6 +115,7 @@
         }
         else{
             NSLog(@"youlose!");
+            [delegate didLoseGame];
             [self pickAndDisplayCommand];
             
         }
@@ -110,6 +125,19 @@
 
 - (void)handleSwipeDownFrom:(UIGestureRecognizer*)recognizer {
     [checkArray addObject:@"1"];
+    if (index <3) {
+        if ([checkArray isEqualToArray:commandArray]) {
+            NSLog(@"youwin!");
+            [delegate didWinGame];
+            [self pickAndDisplayCommand];
+             }
+             else {
+                 NSLog(@"youlose!");
+                 [delegate didLoseGame];
+                 [self pickAndDisplayCommand];
+
+             }
+    }
     if (index < 20) {
         if ([checkArray isEqualToArray:commandArray]) {
             NSLog(@"youwin!");
@@ -118,6 +146,7 @@
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
             NSLog(@"youlose!");
+            [delegate didLoseGame];
             [self pickAndDisplayCommand];
         }
         
@@ -131,6 +160,7 @@
         }
         else{
             NSLog(@"youlose!");
+            [delegate didLoseGame];
             [self pickAndDisplayCommand];
             
         }
@@ -140,6 +170,19 @@
 
 - (void)handleSwipeLeftFrom:(UIGestureRecognizer*)recognizer {
     [checkArray addObject:@"2"];
+    if (index <3) {
+        if ([checkArray isEqualToArray:commandArray]) {
+            NSLog(@"youwin!");
+            [delegate didWinGame];
+            [self pickAndDisplayCommand];
+        }
+        else {
+            NSLog(@"youlose!");
+            [delegate didLoseGame];
+            [self pickAndDisplayCommand];
+            
+        }
+    }
     if (index < 20) {
         if ([checkArray isEqualToArray:commandArray]) {
             NSLog(@"youwin!");
@@ -148,6 +191,7 @@
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
             NSLog(@"youlose!");
+            [delegate didLoseGame];
             [self pickAndDisplayCommand];
         }
         
@@ -170,6 +214,19 @@
 
 - (void)handleSwipeRightFrom:(UIGestureRecognizer*)recognizer {
     [checkArray addObject:@"3"];
+    if (index <3) {
+        if ([checkArray isEqualToArray:commandArray]) {
+            NSLog(@"youwin!");
+            [delegate didWinGame];
+            [self pickAndDisplayCommand];
+        }
+        else {
+            NSLog(@"youlose!");
+            [delegate didLoseGame];
+            [self pickAndDisplayCommand];
+            
+        }
+    }
     if (index < 20) {
         if ([checkArray isEqualToArray:commandArray]) {
             NSLog(@"youwin!");
@@ -178,6 +235,7 @@
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
             NSLog(@"youlose!");
+            [delegate didLoseGame];
             [self pickAndDisplayCommand];
         }
         
@@ -191,6 +249,7 @@
         }
         else{
             NSLog(@"youlose!");
+            [delegate didLoseGame];
             [self pickAndDisplayCommand];
             
         }

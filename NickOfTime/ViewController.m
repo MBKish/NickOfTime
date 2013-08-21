@@ -27,7 +27,6 @@
     NSTimer *myTimer;
     int completedGames;
     int completedSets;
-    UIColor *unlitColor;
 
 }
 
@@ -46,7 +45,7 @@
     initialTime = 15;
     seconds = initialTime;
     [self gameSetup];
-    [self gameCompleted];
+    [self gameWon];
     completedSets = 0;
     
 }
@@ -95,18 +94,25 @@
         slider.value = seconds;
 }
 
--(void)gameCompleted{
-    
+-(void)gameWon{
     for (UIView *game in self.view.subviews)
         
         if ([game isKindOfClass:[CompletedGameView class]]) {
             if (game.tag == completedGames) {
-                unlitColor = game.backgroundColor;
                 game.backgroundColor = [UIColor alizarinColor];
             }
         }
-        
+    
+}
 
+-(void)gameLost{
+    for (UIView *game in self.view.subviews)
+        
+        if ([game isKindOfClass:[CompletedGameView class]]) {
+            if (game.tag == completedGames+1) {
+                game.backgroundColor = [UIColor silverColor];
+            }
+        }
     
 }
 
@@ -116,7 +122,7 @@
     //[self.containerViewController swapViewControllers2];
 
     completedGames = completedGames + 1;
-    [self gameCompleted];
+    [self gameWon];
     NSLog (@"%i",completedGames);
     
     if (completedGames == 5) {
@@ -146,11 +152,13 @@
 }
 
 -(void)didLoseGame{
-    completedGames = completedGames - 1;
-    
+    if (completedGames > 0) {
+        completedGames = completedGames - 1;
+        
+    }
+    [self gameLost];
     //unlight the completed game box
-    
-}
+   }
 
 -(void)gameSetup{
     for (UIView *game in self.view.subviews)
@@ -188,7 +196,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         initialTime = 15;
         seconds = initialTime;
         [self gameSetup];
-        [self gameCompleted];
+        [self gameWon];
     }
 }
 @end
