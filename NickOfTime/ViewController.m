@@ -22,9 +22,12 @@
     
    // __weak IBOutlet UIProgressView *progressView;
     __weak IBOutlet UISlider *slider;
+    float initialTime;
     float seconds;
     NSTimer *myTimer;
     int completedGames;
+    UIColor *unlitColor;
+
 }
 
 @property (nonatomic, weak) ContainerViewController *containerViewController;
@@ -38,15 +41,10 @@
 {
     [super viewDidLoad];
     self.containerViewController.swipeViewController.delegate = self;
-    completedGames = 0;
     [slider configureFlatSliderWithTrackColor:[UIColor cloudsColor] progressColor:[UIColor alizarinColor] thumbColor:[UIColor alizarinColor]];
-    seconds = 12;
-    slider.maximumValue = seconds;
-    
-    
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(methodToUpdateProgress) userInfo:nil repeats:YES];
-    
-    
+    initialTime = 15;
+    seconds = initialTime;
+    [self gameSetup];
     /*[UIView animateWithDuration:seconds
                           delay:0
                         options:UIViewAnimationOptionCurveLinear
@@ -80,6 +78,22 @@
     if(slider.value == 0){
         [myTimer invalidate];
         NSLog(@"done");
+        
+        FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"You lose" message:@"You ran out of time." delegate:nil cancelButtonTitle:@"Home" otherButtonTitles:@"Restart", nil];
+        //alertView.delegate = self;
+        alertView.titleLabel.textColor = [UIColor cloudsColor];
+        alertView.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+        alertView.messageLabel.textColor = [UIColor cloudsColor];
+        alertView.messageLabel.font = [UIFont flatFontOfSize:14];
+        alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
+        alertView.alertContainer.backgroundColor = [UIColor midnightBlueColor];
+        alertView.defaultButtonColor = [UIColor cloudsColor];
+        alertView.defaultButtonShadowColor = [UIColor asbestosColor];
+        alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
+        alertView.defaultButtonTitleColor = [UIColor asbestosColor];
+        [alertView show];
+
+        
 
     }else{
         seconds = seconds - .01;
@@ -89,7 +103,6 @@
 }
 
 -(void)gameCompleted{
-    UIColor *unlitColor;
     
     for (UIView *game in self.view.subviews)
         
@@ -127,11 +140,30 @@
         alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
         alertView.defaultButtonTitleColor = [UIColor asbestosColor];
         [alertView show];
-        [self performSelector:@selector(dismissAlertView:) withObject:alertView afterDelay:1];
+        [self performSelector:@selector(nextLevel:) withObject:alertView afterDelay:1];
     }
 }
+-(void)gameSetup{
+    for (UIView *game in self.view.subviews)
+        
+        if ([game isKindOfClass:[CompletedGameView class]]) {
+            
+                game.backgroundColor = [UIColor silverColor];
+            
+        }
+    
+    completedGames = 0;
+    slider.maximumValue = seconds;
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(methodToUpdateProgress) userInfo:nil repeats:YES];
+  //  [self calculateSeconds];
+}
 
--(void)dismissAlertView:(UIAlertView *)alertView{
+-(void)calculateSeconds{
+    seconds = initialTime - 1;
+}
+
+-(void)nextLevel:(UIAlertView *)alertView{
     [alertView dismissWithClickedButtonIndex:0 animated:YES];
+    [self gameSetup];
 }
 @end
