@@ -15,6 +15,7 @@
     NSArray *commandArray;
     NSMutableArray *unpickedCommandsArray;
     NSMutableArray *compareArray;
+    int shapesOnScreen;
     int level;
     
     __weak IBOutlet UILabel *commandLabel;
@@ -41,6 +42,7 @@
     
     commandArray = @[@"Red Square", @"Blue Square", @"Green Square", @"Red Circle", @"Blue Circle", @"Green Circle", @"Red Triangle", @"Blue Triangle", @"Green Triangle"];
     level = 0;
+    shapesOnScreen = 0;
     unpickedCommandsArray = [[NSMutableArray alloc] initWithArray:commandArray];
     
     compareArray = [[NSMutableArray alloc] initWithCapacity:4];
@@ -142,11 +144,13 @@
             if (subview.tag == [tagString intValue]) {
                 selectedView = subview;
                 subview.delegate = self;
+                shapesOnScreen++;
                 break;
             }
         }
     }
-    int r = arc4random() %unpickedCommandsArray.count;
+    //int r = arc4random() %unpickedCommandsArray.count;
+    int r = arc4random_uniform(unpickedCommandsArray.count);
     //NSLog(@"%i",r);
     
     //Need to make a custom class with a property for color and shape
@@ -197,8 +201,10 @@
         //Put in another loop that checks what the command object is (shape, color) and assign it to one of the compareArray objects
         //random compareArray.count to and change the image - replace object at index
         
-        int t = arc4random()%4;
-        //NSLog(@"%i", t);
+        //NSLog(@"%i", shapesOnScreen);
+        //int t = arc4random()% shapesOnScreen;
+        int t = arc4random_uniform(shapesOnScreen);
+        NSLog(@"%i", t);
         
         for (ShapeView *subview in self.view.subviews) {
             if ([subview isKindOfClass:[ShapeView class]]) {
@@ -260,6 +266,7 @@
             }
         }
         NSLog(@"You Win!");
+        shapesOnScreen = 0;
         [compareArray removeAllObjects];
         [self randomCommand];
         [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
@@ -270,6 +277,7 @@
             }
         }
         NSLog(@"You Lose!");
+        shapesOnScreen = 0;
         [compareArray removeAllObjects];
         [self randomCommand];
         [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
@@ -285,6 +293,7 @@
             }
         }
         [compareArray removeAllObjects];
+        shapesOnScreen = 0;
         [self randomCommand];
         [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
         NSLog(@"1");
@@ -296,6 +305,7 @@
             }
         }
         [compareArray removeAllObjects];
+        shapesOnScreen = 0;
         [self randomCommand];
         [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
         NSLog(@"0");
