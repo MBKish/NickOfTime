@@ -14,6 +14,9 @@
 #import "UISlider+FlatUI.h"
 #import "CompletedGameView.h"
 #import "SwipeViewController.h"
+#import "FUIAlertView.h"
+#import "UIFont+FlatUI.h"
+
 
 @interface ViewController (){
     
@@ -41,16 +44,16 @@
     slider.maximumValue = seconds;
     
     
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(methodToUpdateProgress) userInfo:nil repeats:YES];
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(methodToUpdateProgress) userInfo:nil repeats:YES];
     
     
-    [UIView animateWithDuration:seconds
+    /*[UIView animateWithDuration:seconds
                           delay:0
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
                          [slider setValue:0];
                      }
-                     completion:NULL];
+                     completion:NULL];*/
     [self gameCompleted];
     
 }
@@ -74,13 +77,15 @@
 
 - (void)methodToUpdateProgress
 {
-    if(seconds == 1){
+    if(slider.value == 0){
         [myTimer invalidate];
         NSLog(@"done");
 
     }else{
-        seconds = seconds - 1;
+        seconds = seconds - .01;
+        NSLog(@"%f",seconds);
     }
+        slider.value = seconds;
 }
 
 -(void)gameCompleted{
@@ -105,5 +110,28 @@
     completedGames = completedGames + 1;
     [self gameCompleted];
     NSLog (@"%i",completedGames);
+    
+    if (completedGames == 5) {
+        [myTimer invalidate];
+        
+        FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Nice" message:@"Speed up." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
+        //alertView.delegate = self;
+        alertView.titleLabel.textColor = [UIColor cloudsColor];
+        alertView.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+        alertView.messageLabel.textColor = [UIColor cloudsColor];
+        alertView.messageLabel.font = [UIFont flatFontOfSize:14];
+        alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
+        alertView.alertContainer.backgroundColor = [UIColor midnightBlueColor];
+        alertView.defaultButtonColor = [UIColor cloudsColor];
+        alertView.defaultButtonShadowColor = [UIColor asbestosColor];
+        alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
+        alertView.defaultButtonTitleColor = [UIColor asbestosColor];
+        [alertView show];
+        [self performSelector:@selector(dismissAlertView:) withObject:alertView afterDelay:1];
+    }
+}
+
+-(void)dismissAlertView:(UIAlertView *)alertView{
+    [alertView dismissWithClickedButtonIndex:0 animated:YES];
 }
 @end

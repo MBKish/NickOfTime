@@ -15,7 +15,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Nick of Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXa-rX-scV">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="E9N-t9-MVc"/>
-                                    <constraint firstAttribute="width" constant="278" id="YCn-56-vYa"/>
+                                    <constraint firstAttribute="width" constant="278" id="gcB-e6-vfA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="40"/>
                                 <color key="textColor" red="0.26020408163265307" green="0.26020408163265307" blue="0.26020408163265307" alpha="1" colorSpace="calibratedRGB"/>
@@ -55,12 +55,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Gds-bN-MJx" firstAttribute="centerX" secondItem="48N-P8-Fd8" secondAttribute="centerX" type="default" id="L3W-uD-3k6"/>
+                            <constraint firstItem="gXa-rX-scV" firstAttribute="top" secondItem="48N-P8-Fd8" secondAttribute="top" constant="174" id="3zP-Uo-7J7"/>
+                            <constraint firstAttribute="trailing" secondItem="QPG-42-xuD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="LqS-xD-6CT"/>
                             <constraint firstItem="Gds-bN-MJx" firstAttribute="centerX" secondItem="gXa-rX-scV" secondAttribute="centerX" type="default" id="Qah-ec-cne"/>
-                            <constraint firstAttribute="bottom" secondItem="QPG-42-xuD" secondAttribute="bottom" constant="14" id="ShM-nJ-5IP"/>
-                            <constraint firstItem="gXa-rX-scV" firstAttribute="top" secondItem="48N-P8-Fd8" secondAttribute="top" constant="149" id="gDy-tN-Ach"/>
-                            <constraint firstItem="QPG-42-xuD" firstAttribute="centerX" secondItem="Gds-bN-MJx" secondAttribute="centerX" type="default" id="mBb-sg-ycE"/>
-                            <constraint firstAttribute="bottom" secondItem="Gds-bN-MJx" secondAttribute="bottom" constant="79" id="u1O-NZ-IIx"/>
+                            <constraint firstItem="QPG-42-xuD" firstAttribute="top" secondItem="48N-P8-Fd8" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Yuf-F3-9z2"/>
+                            <constraint firstAttribute="bottom" secondItem="Gds-bN-MJx" secondAttribute="bottom" constant="42" id="a0T-vK-XuJ"/>
+                            <constraint firstAttribute="centerX" secondItem="gXa-rX-scV" secondAttribute="centerX" type="user" id="kTa-7Z-x25"/>
                         </constraints>
                     </view>
                     <connections>

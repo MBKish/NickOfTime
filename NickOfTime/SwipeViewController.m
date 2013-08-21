@@ -7,7 +7,7 @@
 //
 
 #import "SwipeViewController.h"
-
+#import "ContainerViewController.h"
 
 @interface SwipeViewController (){
     NSArray *allCommands;
@@ -84,6 +84,7 @@
             NSLog(@"youwin!");
             [delegate didWinGame];
             [self pickAndDisplayCommand];
+            
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
             NSLog(@"youlose!");
