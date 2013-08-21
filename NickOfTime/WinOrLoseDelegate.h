@@ -11,5 +11,6 @@
 @protocol WinOrLoseDelegate <NSObject>
 
 -(void)didWinGame;
+-(void)didLoseGame;
 
 @end

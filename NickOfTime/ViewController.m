@@ -72,7 +72,7 @@
 {
     if(slider.value != 0){
         seconds = seconds - .01;
-         NSLog(@"%f",seconds);
+        // NSLog(@"%f",seconds);
     }else{
         [myTimer invalidate];
         NSLog(@"done");
@@ -121,7 +121,8 @@
     
     if (completedGames == 5) {
         [myTimer invalidate];
-        
+        completedSets = completedSets+1;
+        NSLog(@"%i",completedSets);
         FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Nice" message:@"Speed up." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
         alertView.delegate = self;
         alertView.titleLabel.textColor = [UIColor cloudsColor];
@@ -136,6 +137,11 @@
         alertView.defaultButtonTitleColor = [UIColor asbestosColor];
         [alertView show];
         [self performSelector:@selector(nextLevel:) withObject:alertView afterDelay:1];
+    }
+    
+    if (completedSets == 3) {
+        NSLog(@"go to next level");
+        //singleton to go to next level
     }
 }
 -(void)gameSetup{
