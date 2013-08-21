@@ -56,13 +56,13 @@
     int command = arc4random()%commandArray.count;
     
     if (level == 0) {
-        [self drawFour];
+        [self drawSets];
     } else if (level == 1){
         [self drawNine];
     } else if (level == 2){
-        [self drawTwelve];
+        [self drawSets];
     } else if (level == 3){
-        [self drawSixteen];
+        [self drawSets];
     }
     
     commandLabel.text = [NSString stringWithFormat:@"Tap the %@",[commandArray objectAtIndex:command]];
@@ -73,34 +73,86 @@
 
 - (void)drawSets{
     //draw the four
-    
-    
-    if (level == 2) {
-        //draw the 12 minus those in the 4
-    } else if (level == 3){
-        //draw the 16 minus those in the 12 and 4
-    }
-    
-}
+    ShapeView *fourOne = [[ShapeView alloc] initWithFrame: CGRectMake (106, 96, 50, 50)];
+    ShapeView *fourTwo = [[ShapeView alloc] initWithFrame: CGRectMake (164, 96, 50, 50)];
+    ShapeView *fourThree = [[ShapeView alloc] initWithFrame: CGRectMake (106, 154, 50, 50)];
+    ShapeView *fourFour = [[ShapeView alloc] initWithFrame: CGRectMake (164, 154, 50, 50)];
 
-- (void)drawFour {
-    
-    ShapeView *fourZero = [[ShapeView alloc] initWithFrame: CGRectMake (106, 77, 50, 50)];
-    ShapeView *fourOne = [[ShapeView alloc] initWithFrame: CGRectMake(164, 77, 50, 50)];
-    ShapeView *fourTwo = [[ShapeView alloc] initWithFrame: CGRectMake(106, 135, 50, 50)];
-    ShapeView *fourThree = [[ShapeView alloc] initWithFrame: CGRectMake(164, 135, 50, 50)];
-    [self.view addSubview:fourZero];
     [self.view addSubview:fourOne];
     [self.view addSubview:fourTwo];
     [self.view addSubview:fourThree];
-    fourZero.tag = 0;
-    fourOne.tag = 1;
-    fourTwo.tag = 2;
-    fourThree.tag = 3;
-    fourZero.userInteractionEnabled = YES;
+    [self.view addSubview:fourFour];
+    
+    fourOne.tag = 0;
+    fourTwo.tag = 1;
+    fourThree.tag = 2;
+    fourFour.tag = 3;
+    
     fourOne.userInteractionEnabled = YES;
     fourTwo.userInteractionEnabled = YES;
     fourThree.userInteractionEnabled = YES;
+    fourFour.userInteractionEnabled = YES;
+    
+    if (level == 2 || level == 3) {
+
+        ShapeView *twelveOne = [[ShapeView alloc] initWithFrame: CGRectMake (106, 38, 50, 50)];
+        ShapeView *twelveTwo = [[ShapeView alloc] initWithFrame: CGRectMake (164, 38, 50, 50)];
+        ShapeView *twelveThree = [[ShapeView alloc] initWithFrame: CGRectMake (49, 96, 50, 50)];
+        ShapeView *twelveFour = [[ShapeView alloc] initWithFrame: CGRectMake (222, 96, 50, 50)];
+        ShapeView *twelveFive = [[ShapeView alloc] initWithFrame: CGRectMake (49, 154, 50, 50)];
+        ShapeView *twelveSix = [[ShapeView alloc] initWithFrame: CGRectMake (222, 154, 50, 50)];
+        ShapeView *twelveSeven = [[ShapeView alloc] initWithFrame: CGRectMake (106, 212, 50, 50)];
+        ShapeView *twelveEight = [[ShapeView alloc] initWithFrame: CGRectMake (164, 212, 50, 50)];
+        
+        [self.view addSubview:twelveOne];
+        [self.view addSubview:twelveTwo];
+        [self.view addSubview:twelveThree];
+        [self.view addSubview:twelveFour];
+        [self.view addSubview:twelveFive];
+        [self.view addSubview:twelveSix];
+        [self.view addSubview:twelveSeven];
+        [self.view addSubview:twelveEight];
+
+        twelveOne.tag = 4;
+        twelveTwo.tag = 5;
+        twelveThree.tag = 6;
+        twelveFour.tag = 7;
+        twelveFive.tag = 8;
+        twelveSix.tag = 9;
+        twelveSeven.tag = 10;
+        twelveEight.tag = 11;
+        
+        twelveOne.userInteractionEnabled = YES;
+        twelveTwo.userInteractionEnabled = YES;
+        twelveThree.userInteractionEnabled = YES;
+        twelveFour.userInteractionEnabled = YES;
+        twelveFive.userInteractionEnabled = YES;
+        twelveSix.userInteractionEnabled = YES;
+        twelveSeven.userInteractionEnabled = YES;
+        twelveEight.userInteractionEnabled = YES;
+        
+        if (level == 3){
+            ShapeView *sixteenOne = [[ShapeView alloc] initWithFrame: CGRectMake (49, 38, 50, 50)];
+            ShapeView *sixteenTwo = [[ShapeView alloc] initWithFrame: CGRectMake (222, 38, 50, 50)];
+            ShapeView *sixteenThree = [[ShapeView alloc] initWithFrame: CGRectMake (49, 212, 50, 50)];
+            ShapeView *sixteenFour = [[ShapeView alloc] initWithFrame: CGRectMake (222, 212, 50, 50)];
+            
+            [self.view addSubview:sixteenOne];
+            [self.view addSubview:sixteenTwo];
+            [self.view addSubview:sixteenThree];
+            [self.view addSubview:sixteenFour];
+            
+            sixteenOne.tag = 12;
+            sixteenTwo.tag = 13;
+            sixteenThree.tag = 14;
+            sixteenFour.tag = 15;
+            
+            sixteenOne.userInteractionEnabled = YES;
+            sixteenTwo.userInteractionEnabled = YES;
+            sixteenThree.userInteractionEnabled = YES;
+            sixteenFour.userInteractionEnabled = YES;
+        }
+    }
     
 }
 
@@ -142,131 +194,6 @@
     nineSix.userInteractionEnabled = YES;
     nineSeven.userInteractionEnabled = YES;
     nineEight.userInteractionEnabled = YES;
-}
-
-- (void)drawTwelve {
-    ShapeView *twelveZero = [[ShapeView alloc] initWithFrame: CGRectMake (106, 38, 50, 50)];
-    ShapeView *twelveOne = [[ShapeView alloc] initWithFrame: CGRectMake (164, 38, 50, 50)];
-    ShapeView *twelveTwo = [[ShapeView alloc] initWithFrame: CGRectMake (49, 96, 50, 50)];
-    ShapeView *twelveThree = [[ShapeView alloc] initWithFrame: CGRectMake (106, 96, 50, 50)];
-    ShapeView *twelveFour = [[ShapeView alloc] initWithFrame: CGRectMake (164, 96, 50, 50)];
-    ShapeView *twelveFive = [[ShapeView alloc] initWithFrame: CGRectMake (222, 96, 50, 50)];
-    ShapeView *twelveSix = [[ShapeView alloc] initWithFrame: CGRectMake (49, 154, 50, 50)];
-    ShapeView *twelveSeven = [[ShapeView alloc] initWithFrame: CGRectMake (106, 154, 50, 50)];
-    ShapeView *twelveEight = [[ShapeView alloc] initWithFrame: CGRectMake (164, 154, 50, 50)];
-    ShapeView *twelveNine = [[ShapeView alloc] initWithFrame: CGRectMake (222, 154, 50, 50)];
-    ShapeView *twelveTen = [[ShapeView alloc] initWithFrame: CGRectMake (106, 212, 50, 50)];
-    ShapeView *twelveEleven = [[ShapeView alloc] initWithFrame: CGRectMake (164, 212, 50, 50)];
-    [self.view addSubview:twelveZero];
-    [self.view addSubview:twelveOne];
-    [self.view addSubview:twelveTwo];
-    [self.view addSubview:twelveThree];
-    [self.view addSubview:twelveFour];
-    [self.view addSubview:twelveFive];
-    [self.view addSubview:twelveSix];
-    [self.view addSubview:twelveSeven];
-    [self.view addSubview:twelveEight];
-    [self.view addSubview:twelveNine];
-    [self.view addSubview:twelveTen];
-    [self.view addSubview:twelveEleven];
-    twelveZero.tag = 0;
-    twelveOne.tag = 1;
-    twelveTwo.tag = 2;
-    twelveThree.tag = 3;
-    twelveFour.tag = 4;
-    twelveFive.tag = 5;
-    twelveSix.tag = 6;
-    twelveSeven.tag = 7;
-    twelveEight.tag = 8;
-    twelveNine.tag = 9;
-    twelveTen.tag = 10;
-    twelveEleven.tag = 11;
-    twelveZero.userInteractionEnabled = YES;
-    twelveOne.userInteractionEnabled = YES;
-    twelveTwo.userInteractionEnabled = YES;
-    twelveThree.userInteractionEnabled = YES;
-    twelveFour.userInteractionEnabled = YES;
-    twelveFive.userInteractionEnabled = YES;
-    twelveSix.userInteractionEnabled = YES;
-    twelveSeven.userInteractionEnabled = YES;
-    twelveEight.userInteractionEnabled = YES;
-    twelveNine.userInteractionEnabled = YES;
-    twelveTen.userInteractionEnabled = YES;
-    twelveEleven.userInteractionEnabled = YES;
-}
-
-- (void)drawSixteen {
-    //
-    ShapeView *sixteenOne = [[ShapeView alloc] initWithFrame: CGRectMake (49, 38, 50, 50)];
-    ShapeView *sixteenTwo = [[ShapeView alloc] initWithFrame: CGRectMake (222, 38, 50, 50)];
-    ShapeView *sixteenThree = [[ShapeView alloc] initWithFrame: CGRectMake (49, 212, 50, 50)];
-    ShapeView *sixteenFour = [[ShapeView alloc] initWithFrame: CGRectMake (222, 212, 50, 50)];
-    
-    ShapeView *twelveZero = [[ShapeView alloc] initWithFrame: CGRectMake (106, 38, 50, 50)];
-    ShapeView *twelveOne = [[ShapeView alloc] initWithFrame: CGRectMake (164, 38, 50, 50)];
-    ShapeView *twelveTwo = [[ShapeView alloc] initWithFrame: CGRectMake (49, 96, 50, 50)];
-    ShapeView *twelveThree = [[ShapeView alloc] initWithFrame: CGRectMake (106, 96, 50, 50)];
-    ShapeView *twelveFour = [[ShapeView alloc] initWithFrame: CGRectMake (164, 96, 50, 50)];
-    ShapeView *twelveFive = [[ShapeView alloc] initWithFrame: CGRectMake (222, 96, 50, 50)];
-    ShapeView *twelveSix = [[ShapeView alloc] initWithFrame: CGRectMake (49, 154, 50, 50)];
-    ShapeView *twelveSeven = [[ShapeView alloc] initWithFrame: CGRectMake (106, 154, 50, 50)];
-    ShapeView *twelveEight = [[ShapeView alloc] initWithFrame: CGRectMake (164, 154, 50, 50)];
-    ShapeView *twelveNine = [[ShapeView alloc] initWithFrame: CGRectMake (222, 154, 50, 50)];
-    ShapeView *twelveTen = [[ShapeView alloc] initWithFrame: CGRectMake (106, 212, 50, 50)];
-    ShapeView *twelveEleven = [[ShapeView alloc] initWithFrame: CGRectMake (164, 212, 50, 50)];
-    
-    [self.view addSubview:sixteenOne];
-    [self.view addSubview:sixteenTwo];
-    [self.view addSubview:sixteenThree];
-    [self.view addSubview:sixteenFour];
-    
-    [self.view addSubview:twelveZero];
-    [self.view addSubview:twelveOne];
-    [self.view addSubview:twelveTwo];
-    [self.view addSubview:twelveThree];
-    [self.view addSubview:twelveFour];
-    [self.view addSubview:twelveFive];
-    [self.view addSubview:twelveSix];
-    [self.view addSubview:twelveSeven];
-    [self.view addSubview:twelveEight];
-    [self.view addSubview:twelveNine];
-    [self.view addSubview:twelveTen];
-    [self.view addSubview:twelveEleven];
-    
-    sixteenOne.tag = 0;
-    twelveZero.tag = 1;
-    twelveOne.tag = 2;
-    sixteenTwo.tag = 3;
-    twelveTwo.tag = 4;
-    twelveThree.tag = 5;
-    twelveFour.tag = 6;
-    twelveFive.tag = 7;
-    twelveSix.tag = 8;
-    twelveSeven.tag = 9;
-    twelveEight.tag = 10;
-    twelveNine.tag = 11;
-    sixteenThree.tag = 12;
-    twelveTen.tag = 13;
-    twelveEleven.tag = 14;
-    sixteenFour.tag = 15;
-    
-    sixteenOne.userInteractionEnabled = YES;
-    sixteenTwo.userInteractionEnabled = YES;
-    sixteenThree.userInteractionEnabled = YES;
-    sixteenFour.userInteractionEnabled = YES;
-    
-    twelveZero.userInteractionEnabled = YES;
-    twelveOne.userInteractionEnabled = YES;
-    twelveTwo.userInteractionEnabled = YES;
-    twelveThree.userInteractionEnabled = YES;
-    twelveFour.userInteractionEnabled = YES;
-    twelveFive.userInteractionEnabled = YES;
-    twelveSix.userInteractionEnabled = YES;
-    twelveSeven.userInteractionEnabled = YES;
-    twelveEight.userInteractionEnabled = YES;
-    twelveNine.userInteractionEnabled = YES;
-    twelveTen.userInteractionEnabled = YES;
-    twelveEleven.userInteractionEnabled = YES;
 }
 
 - (void)shapeColorAllViewsWithinArray:(NSArray *)tagArray atIndex:(NSUInteger)tagIndex {
