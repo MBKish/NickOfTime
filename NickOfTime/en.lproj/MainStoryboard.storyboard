@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4my-5G-Qaj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4my-5G-Qaj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -225,43 +225,29 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRR-Ea-pXU" customClass="ShapeView">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG3-u0-qll">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" type="user" id="JYC-xC-6Vh"/>
-                                    <constraint firstAttribute="height" constant="50" type="user" id="JYN-ah-sXu"/>
+                                    <constraint firstAttribute="width" constant="44" id="JLV-l6-p5F"/>
                                 </constraints>
-                            </view>
-                            <view opaque="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kH-TG-rMc" customClass="ShapeView">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" type="user" id="EnO-Zq-zXq"/>
-                                    <constraint firstAttribute="height" constant="50" type="user" id="rGb-tY-2aj"/>
-                                </constraints>
-                            </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRo-Q2-a1S" customClass="ShapeView">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" type="user" id="CQE-MU-nlY"/>
-                                    <constraint firstAttribute="height" constant="50" type="user" id="R5u-mc-DtD"/>
-                                </constraints>
-                            </view>
-                            <view opaque="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0F4-xN-iC3" customClass="ShapeView">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" type="user" id="m0B-YH-pIp"/>
-                                    <constraint firstAttribute="height" constant="50" type="user" id="uja-xU-ttU"/>
-                                </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="x">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="levelSwap:" destination="18R-RB-umg" eventType="touchUpInside" id="Z5g-Il-Fj2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VRo-Q2-a1S" firstAttribute="top" secondItem="TEu-BW-Mzn" secondAttribute="top" constant="77" id="1BZ-46-Tds"/>
+                            <constraint firstItem="gG3-u0-qll" firstAttribute="trailing" secondItem="TEu-BW-Mzn" secondAttribute="trailing" type="default" id="1My-Xe-fQu"/>
                             <constraint firstItem="34h-3P-noU" firstAttribute="centerX" secondItem="TEu-BW-Mzn" secondAttribute="centerX" type="default" id="2OZ-fe-Nbk"/>
-                            <constraint firstItem="bRR-Ea-pXU" firstAttribute="leading" secondItem="VRo-Q2-a1S" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="6m6-hR-Cdw"/>
-                            <constraint firstItem="5kH-TG-rMc" firstAttribute="top" secondItem="0F4-xN-iC3" secondAttribute="top" type="default" id="Ea8-K8-ezU"/>
-                            <constraint firstItem="34h-3P-noU" firstAttribute="top" secondItem="TEu-BW-Mzn" secondAttribute="top" constant="14" id="QUM-Vs-neb"/>
-                            <constraint firstItem="5kH-TG-rMc" firstAttribute="leading" secondItem="VRo-Q2-a1S" secondAttribute="leading" type="default" id="SKO-ZQ-N1h"/>
-                            <constraint firstItem="bRR-Ea-pXU" firstAttribute="top" secondItem="VRo-Q2-a1S" secondAttribute="top" type="default" id="gvE-au-ugQ"/>
-                            <constraint firstItem="VRo-Q2-a1S" firstAttribute="leading" secondItem="TEu-BW-Mzn" secondAttribute="leading" constant="106" id="hNO-PI-uDs"/>
-                            <constraint firstItem="0F4-xN-iC3" firstAttribute="leading" secondItem="5kH-TG-rMc" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="lYQ-Cw-Zk0"/>
-                            <constraint firstItem="5kH-TG-rMc" firstAttribute="top" secondItem="TEu-BW-Mzn" secondAttribute="top" constant="131" id="nMT-dh-ga0"/>
+                            <constraint firstItem="34h-3P-noU" firstAttribute="top" secondItem="TEu-BW-Mzn" secondAttribute="top" type="default" id="87U-C1-Y2J"/>
+                            <constraint firstItem="gG3-u0-qll" firstAttribute="bottom" secondItem="TEu-BW-Mzn" secondAttribute="bottom" type="default" id="rJ5-0p-xFG"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -351,6 +337,7 @@
         <class className="FindTheObjectViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FindTheObjectViewController.h"/>
             <relationships>
+                <relationship kind="action" name="levelSwap:"/>
                 <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -359,9 +346,6 @@
         </class>
         <class className="PressButtonViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PressButtonViewController.h"/>
-        </class>
-        <class className="ShapeView" superclassName="UIImageView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShapeView.h"/>
         </class>
         <class className="StartViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StartViewController.h"/>
