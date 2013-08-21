@@ -45,13 +45,6 @@
     initialTime = 15;
     seconds = initialTime;
     [self gameSetup];
-    /*[UIView animateWithDuration:seconds
-                          delay:0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         [slider setValue:0];
-                     }
-                     completion:NULL];*/
     [self gameCompleted];
     
 }
@@ -75,12 +68,15 @@
 
 - (void)methodToUpdateProgress
 {
-    if(slider.value == 0){
+    if(slider.value != 0){
+        seconds = seconds - .01;
+         NSLog(@"%f",seconds);
+    }else{
         [myTimer invalidate];
         NSLog(@"done");
         
         FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"You lose" message:@"You ran out of time." delegate:nil cancelButtonTitle:@"Home" otherButtonTitles:@"Restart", nil];
-        //alertView.delegate = self;
+        alertView.delegate = self;
         alertView.titleLabel.textColor = [UIColor cloudsColor];
         alertView.titleLabel.font = [UIFont boldFlatFontOfSize:16];
         alertView.messageLabel.textColor = [UIColor cloudsColor];
@@ -93,11 +89,6 @@
         alertView.defaultButtonTitleColor = [UIColor asbestosColor];
         [alertView show];
 
-        
-
-    }else{
-        seconds = seconds - .01;
-        NSLog(@"%f",seconds);
     }
         slider.value = seconds;
 }
@@ -120,7 +111,7 @@
 #pragma mark WinDelegate
 
 -(void)didWinGame{
-    [self.containerViewController swapViewControllers2];
+    //[self.containerViewController swapViewControllers2];
 
     completedGames = completedGames + 1;
     [self gameCompleted];
@@ -130,7 +121,7 @@
         [myTimer invalidate];
         
         FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Nice" message:@"Speed up." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
-        //alertView.delegate = self;
+        alertView.delegate = self;
         alertView.titleLabel.textColor = [UIColor cloudsColor];
         alertView.titleLabel.font = [UIFont boldFlatFontOfSize:16];
         alertView.messageLabel.textColor = [UIColor cloudsColor];
@@ -155,17 +146,31 @@
         }
     
     completedGames = 0;
+    [self calculateSeconds];
     slider.maximumValue = seconds;
+    slider.value = seconds;
     myTimer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(methodToUpdateProgress) userInfo:nil repeats:YES];
-  //  [self calculateSeconds];
 }
 
 -(void)calculateSeconds{
-    seconds = initialTime - 1;
+    initialTime = initialTime - 1;
+    seconds = initialTime;
 }
 
 -(void)nextLevel:(UIAlertView *)alertView{
     [alertView dismissWithClickedButtonIndex:0 animated:YES];
     [self gameSetup];
+}
+
+- (void)alertView:(UIAlertView *)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0){
+        [self dismissModalViewControllerAnimated:YES];
+    }else if (buttonIndex == 1){
+        initialTime = 15;
+        seconds = initialTime;
+        [self gameSetup];
+        [self gameCompleted];
+    }
 }
 @end

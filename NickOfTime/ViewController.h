@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WinDelegate.h"
-
-@interface ViewController : UIViewController<WinDelegate>
+#import "FUIAlertView.h"
+@interface ViewController : UIViewController<WinDelegate, FUIAlertViewDelegate>
 
 @end

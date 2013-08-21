@@ -71,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GyL-Vp-WVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1248" y="208"/>
+            <point key="canvasLocation" x="-1286" y="208"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5">
@@ -91,8 +91,12 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ds-FS-zC3">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="DQz-AT-6Wh"/>
+                                    <constraint firstAttribute="height" constant="24" id="Xbf-9r-Ils"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="o">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -148,8 +152,8 @@
                         <constraints>
                             <constraint firstItem="tBV-K4-qYK" firstAttribute="leading" secondItem="CSl-7q-yXK" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="9f9-qs-IpN"/>
                             <constraint firstItem="tBV-K4-qYK" firstAttribute="top" secondItem="7nC-DY-Ln0" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="9fo-pO-hNF"/>
-                            <constraint firstItem="FAJ-9J-GdF" firstAttribute="centerX" secondItem="7nC-DY-Ln0" secondAttribute="centerX" type="default" id="APu-if-gLO"/>
-                            <constraint firstItem="9Ds-FS-zC3" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="CEb-5B-1lf"/>
+                            <constraint firstItem="9Ds-FS-zC3" firstAttribute="centerY" secondItem="cuh-wP-oeV" secondAttribute="centerY" type="default" id="CUt-eg-YJC"/>
+                            <constraint firstItem="7nC-DY-Ln0" firstAttribute="centerX" secondItem="tBV-K4-qYK" secondAttribute="centerX" type="default" id="D2I-21-o9h"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="top" secondItem="Tnd-OD-gEm" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="FKc-CO-Txn"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="centerX" secondItem="tBV-K4-qYK" secondAttribute="centerX" type="user" id="Mfe-Y5-MIy"/>
                             <constraint firstItem="CSl-7q-yXK" firstAttribute="leading" secondItem="dP9-r7-yaQ" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="MvN-NZ-bLd"/>
@@ -166,13 +170,13 @@
                             <constraint firstItem="7nC-DY-Ln0" firstAttribute="top" secondItem="3" secondAttribute="top" constant="72" type="user" id="lke-oe-RrX"/>
                             <constraint firstItem="CSl-7q-yXK" firstAttribute="top" secondItem="7nC-DY-Ln0" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="lnc-Ul-aVP"/>
                             <constraint firstItem="cuh-wP-oeV" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="221" type="user" id="mIF-bH-vft"/>
-                            <constraint firstItem="7nC-DY-Ln0" firstAttribute="centerX" secondItem="9Ds-FS-zC3" secondAttribute="centerX" type="default" id="mYY-o6-va3"/>
                             <constraint firstAttribute="trailing" secondItem="cuh-wP-oeV" secondAttribute="trailing" constant="69" type="user" id="mxu-Eh-cAz"/>
                             <constraint firstItem="cuh-wP-oeV" firstAttribute="top" secondItem="7nC-DY-Ln0" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="nQt-Lb-8UV"/>
                             <constraint firstItem="tBV-K4-qYK" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="145" type="user" id="o3v-Bp-OUa"/>
                             <constraint firstItem="cuh-wP-oeV" firstAttribute="leading" secondItem="Tnd-OD-gEm" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="o7k-LN-93o"/>
                             <constraint firstItem="CSl-7q-yXK" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="107" type="user" id="p0r-05-QRi"/>
                             <constraint firstItem="dP9-r7-yaQ" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="69" type="user" id="uml-xt-nhe"/>
+                            <constraint firstAttribute="trailing" secondItem="9Ds-FS-zC3" secondAttribute="trailing" constant="12" id="vO3-u2-QKi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QKE-5Y-mox"/>
