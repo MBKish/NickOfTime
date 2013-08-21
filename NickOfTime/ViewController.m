@@ -165,7 +165,9 @@
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0){
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:^{
+            //nothing
+        }];
     }else if (buttonIndex == 1){
         initialTime = 15;
         seconds = initialTime;
