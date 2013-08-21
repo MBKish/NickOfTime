@@ -144,6 +144,14 @@
         //singleton to go to next level
     }
 }
+
+-(void)didLoseGame{
+    completedGames = completedGames - 1;
+    
+    //unlight the completed game box
+    
+}
+
 -(void)gameSetup{
     for (UIView *game in self.view.subviews)
         
