@@ -120,6 +120,8 @@
 #pragma mark WinDelegate
 
 -(void)didWinGame{
+    [self.containerViewController swapViewControllers2];
+
     completedGames = completedGames + 1;
     [self gameCompleted];
     NSLog (@"%i",completedGames);
