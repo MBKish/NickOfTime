@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WinDelegate.h"
+#import "WinOrLoseDelegate.h"
 
 @interface SwipeViewController : UIViewController
 
-@property (strong, nonatomic) id<WinDelegate>delegate;
+@property (strong, nonatomic) id<WinOrLoseDelegate>delegate;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  WinDelegate.h
+//  WinOrLoseDelegate.h
 //  NickOfTime
 //
 //  Created by Brian Dinh on 8/20/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol WinDelegate <NSObject>
+@protocol WinOrLoseDelegate <NSObject>
 
 -(void)didWinGame;
 

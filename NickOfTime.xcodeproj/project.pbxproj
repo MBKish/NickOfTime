@@ -157,7 +157,7 @@
 		B8C5CF3E17C3B90B00D9A66E /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		B8C5CF4917C3FB8100D9A66E /* CompletedGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedGameView.h; sourceTree = "<group>"; };
 		B8C5CF4A17C3FB8100D9A66E /* CompletedGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedGameView.m; sourceTree = "<group>"; };
-		B8C5CF4C17C3FE8800D9A66E /* WinDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WinDelegate.h; sourceTree = "<group>"; };
+		B8C5CF4C17C3FE8800D9A66E /* WinOrLoseDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WinOrLoseDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,7 +266,7 @@
 				B8747CE517BDCE01007DE7BF /* PressButtonViewController.m */,
 				04E5727E17BAC60800AD4441 /* ViewController.h */,
 				04E5727F17BAC60800AD4441 /* ViewController.m */,
-				B8C5CF4C17C3FE8800D9A66E /* WinDelegate.h */,
+				B8C5CF4C17C3FE8800D9A66E /* WinOrLoseDelegate.h */,
 				B8747CE817BDCEF1007DE7BF /* ContainerViewController.h */,
 				B8747CE917BDCEF1007DE7BF /* ContainerViewController.m */,
 				B8C5CF3117C3B4AF00D9A66E /* StartViewController.h */,

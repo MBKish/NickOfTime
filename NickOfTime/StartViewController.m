@@ -66,7 +66,7 @@
     FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Hello" message:@"Complete five challenges to move on." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Begin", nil];
     alertView.delegate = self;
     alertView.titleLabel.textColor = [UIColor cloudsColor];
-    alertView.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    alertView.titleLabel.font = [UIFont boldFlatFontOfSize:25];
     alertView.messageLabel.textColor = [UIColor cloudsColor];
     alertView.messageLabel.font = [UIFont flatFontOfSize:14];
     alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];

@@ -26,6 +26,7 @@
     float seconds;
     NSTimer *myTimer;
     int completedGames;
+    int completedSets;
     UIColor *unlitColor;
 
 }
@@ -46,6 +47,7 @@
     seconds = initialTime;
     [self gameSetup];
     [self gameCompleted];
+    completedSets = 0;
     
 }
 
@@ -78,7 +80,7 @@
         FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"You lose" message:@"You ran out of time." delegate:nil cancelButtonTitle:@"Home" otherButtonTitles:@"Restart", nil];
         alertView.delegate = self;
         alertView.titleLabel.textColor = [UIColor cloudsColor];
-        alertView.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+        alertView.titleLabel.font = [UIFont boldFlatFontOfSize:25];
         alertView.messageLabel.textColor = [UIColor cloudsColor];
         alertView.messageLabel.font = [UIFont flatFontOfSize:14];
         alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
@@ -108,7 +110,7 @@
     
 }
 
-#pragma mark WinDelegate
+#pragma mark WinOrLoseDelegate
 
 -(void)didWinGame{
     //[self.containerViewController swapViewControllers2];
@@ -123,7 +125,7 @@
         FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Nice" message:@"Speed up." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
         alertView.delegate = self;
         alertView.titleLabel.textColor = [UIColor cloudsColor];
-        alertView.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+        alertView.titleLabel.font = [UIFont boldFlatFontOfSize:25];
         alertView.messageLabel.textColor = [UIColor cloudsColor];
         alertView.messageLabel.font = [UIFont flatFontOfSize:14];
         alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
