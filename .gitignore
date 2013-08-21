@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Xcode
 .DS_Store
 */build/*
@@ -16,3 +17,13 @@ DerivedData
 .idea/
 *.hmap
 *.xcuserstate
+=======
+
+*.xcuserstate
+
+*.xcuserstate
+
+NickOfTime.xcodeproj/project.xcworkspace/xcuserdata/MBK.xcuserdatad/UserInterfaceState.xcuserstate
+
+*.xcuserstate
+>>>>>>> NickOfTime-FindTheObject
