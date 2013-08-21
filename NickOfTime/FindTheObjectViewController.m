@@ -38,7 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    arrayOfTags = @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8"];
+    arrayOfTags = @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15"];
     
     commandArray = @[@"Red Square", @"Blue Square", @"Green Square", @"Red Circle", @"Blue Circle", @"Green Circle", @"Red Triangle", @"Blue Triangle", @"Green Triangle"];
     level = 0;
@@ -59,12 +59,29 @@
         [self drawFour];
     } else if (level == 1){
         [self drawNine];
+    } else if (level == 2){
+        [self drawTwelve];
+    } else if (level == 3){
+        [self drawSixteen];
     }
+    
     commandLabel.text = [NSString stringWithFormat:@"Tap the %@",[commandArray objectAtIndex:command]];
     pickedCommand = [commandArray objectAtIndex:command];
     [unpickedCommandsArray removeObjectAtIndex:command];
 }
 
+
+- (void)drawSets{
+    //draw the four
+    
+    
+    if (level == 2) {
+        //draw the 12 minus those in the 4
+    } else if (level == 3){
+        //draw the 16 minus those in the 12 and 4
+    }
+    
+}
 
 - (void)drawFour {
     
@@ -127,6 +144,130 @@
     nineEight.userInteractionEnabled = YES;
 }
 
+- (void)drawTwelve {
+    ShapeView *twelveZero = [[ShapeView alloc] initWithFrame: CGRectMake (106, 38, 50, 50)];
+    ShapeView *twelveOne = [[ShapeView alloc] initWithFrame: CGRectMake (164, 38, 50, 50)];
+    ShapeView *twelveTwo = [[ShapeView alloc] initWithFrame: CGRectMake (49, 96, 50, 50)];
+    ShapeView *twelveThree = [[ShapeView alloc] initWithFrame: CGRectMake (106, 96, 50, 50)];
+    ShapeView *twelveFour = [[ShapeView alloc] initWithFrame: CGRectMake (164, 96, 50, 50)];
+    ShapeView *twelveFive = [[ShapeView alloc] initWithFrame: CGRectMake (222, 96, 50, 50)];
+    ShapeView *twelveSix = [[ShapeView alloc] initWithFrame: CGRectMake (49, 154, 50, 50)];
+    ShapeView *twelveSeven = [[ShapeView alloc] initWithFrame: CGRectMake (106, 154, 50, 50)];
+    ShapeView *twelveEight = [[ShapeView alloc] initWithFrame: CGRectMake (164, 154, 50, 50)];
+    ShapeView *twelveNine = [[ShapeView alloc] initWithFrame: CGRectMake (222, 154, 50, 50)];
+    ShapeView *twelveTen = [[ShapeView alloc] initWithFrame: CGRectMake (106, 212, 50, 50)];
+    ShapeView *twelveEleven = [[ShapeView alloc] initWithFrame: CGRectMake (164, 212, 50, 50)];
+    [self.view addSubview:twelveZero];
+    [self.view addSubview:twelveOne];
+    [self.view addSubview:twelveTwo];
+    [self.view addSubview:twelveThree];
+    [self.view addSubview:twelveFour];
+    [self.view addSubview:twelveFive];
+    [self.view addSubview:twelveSix];
+    [self.view addSubview:twelveSeven];
+    [self.view addSubview:twelveEight];
+    [self.view addSubview:twelveNine];
+    [self.view addSubview:twelveTen];
+    [self.view addSubview:twelveEleven];
+    twelveZero.tag = 0;
+    twelveOne.tag = 1;
+    twelveTwo.tag = 2;
+    twelveThree.tag = 3;
+    twelveFour.tag = 4;
+    twelveFive.tag = 5;
+    twelveSix.tag = 6;
+    twelveSeven.tag = 7;
+    twelveEight.tag = 8;
+    twelveNine.tag = 9;
+    twelveTen.tag = 10;
+    twelveEleven.tag = 11;
+    twelveZero.userInteractionEnabled = YES;
+    twelveOne.userInteractionEnabled = YES;
+    twelveTwo.userInteractionEnabled = YES;
+    twelveThree.userInteractionEnabled = YES;
+    twelveFour.userInteractionEnabled = YES;
+    twelveFive.userInteractionEnabled = YES;
+    twelveSix.userInteractionEnabled = YES;
+    twelveSeven.userInteractionEnabled = YES;
+    twelveEight.userInteractionEnabled = YES;
+    twelveNine.userInteractionEnabled = YES;
+    twelveTen.userInteractionEnabled = YES;
+    twelveEleven.userInteractionEnabled = YES;
+}
+
+- (void)drawSixteen {
+    //
+    ShapeView *sixteenOne = [[ShapeView alloc] initWithFrame: CGRectMake (49, 38, 50, 50)];
+    ShapeView *sixteenTwo = [[ShapeView alloc] initWithFrame: CGRectMake (222, 38, 50, 50)];
+    ShapeView *sixteenThree = [[ShapeView alloc] initWithFrame: CGRectMake (49, 212, 50, 50)];
+    ShapeView *sixteenFour = [[ShapeView alloc] initWithFrame: CGRectMake (222, 212, 50, 50)];
+    
+    ShapeView *twelveZero = [[ShapeView alloc] initWithFrame: CGRectMake (106, 38, 50, 50)];
+    ShapeView *twelveOne = [[ShapeView alloc] initWithFrame: CGRectMake (164, 38, 50, 50)];
+    ShapeView *twelveTwo = [[ShapeView alloc] initWithFrame: CGRectMake (49, 96, 50, 50)];
+    ShapeView *twelveThree = [[ShapeView alloc] initWithFrame: CGRectMake (106, 96, 50, 50)];
+    ShapeView *twelveFour = [[ShapeView alloc] initWithFrame: CGRectMake (164, 96, 50, 50)];
+    ShapeView *twelveFive = [[ShapeView alloc] initWithFrame: CGRectMake (222, 96, 50, 50)];
+    ShapeView *twelveSix = [[ShapeView alloc] initWithFrame: CGRectMake (49, 154, 50, 50)];
+    ShapeView *twelveSeven = [[ShapeView alloc] initWithFrame: CGRectMake (106, 154, 50, 50)];
+    ShapeView *twelveEight = [[ShapeView alloc] initWithFrame: CGRectMake (164, 154, 50, 50)];
+    ShapeView *twelveNine = [[ShapeView alloc] initWithFrame: CGRectMake (222, 154, 50, 50)];
+    ShapeView *twelveTen = [[ShapeView alloc] initWithFrame: CGRectMake (106, 212, 50, 50)];
+    ShapeView *twelveEleven = [[ShapeView alloc] initWithFrame: CGRectMake (164, 212, 50, 50)];
+    
+    [self.view addSubview:sixteenOne];
+    [self.view addSubview:sixteenTwo];
+    [self.view addSubview:sixteenThree];
+    [self.view addSubview:sixteenFour];
+    
+    [self.view addSubview:twelveZero];
+    [self.view addSubview:twelveOne];
+    [self.view addSubview:twelveTwo];
+    [self.view addSubview:twelveThree];
+    [self.view addSubview:twelveFour];
+    [self.view addSubview:twelveFive];
+    [self.view addSubview:twelveSix];
+    [self.view addSubview:twelveSeven];
+    [self.view addSubview:twelveEight];
+    [self.view addSubview:twelveNine];
+    [self.view addSubview:twelveTen];
+    [self.view addSubview:twelveEleven];
+    
+    sixteenOne.tag = 0;
+    twelveZero.tag = 1;
+    twelveOne.tag = 2;
+    sixteenTwo.tag = 3;
+    twelveTwo.tag = 4;
+    twelveThree.tag = 5;
+    twelveFour.tag = 6;
+    twelveFive.tag = 7;
+    twelveSix.tag = 8;
+    twelveSeven.tag = 9;
+    twelveEight.tag = 10;
+    twelveNine.tag = 11;
+    sixteenThree.tag = 12;
+    twelveTen.tag = 13;
+    twelveEleven.tag = 14;
+    sixteenFour.tag = 15;
+    
+    sixteenOne.userInteractionEnabled = YES;
+    sixteenTwo.userInteractionEnabled = YES;
+    sixteenThree.userInteractionEnabled = YES;
+    sixteenFour.userInteractionEnabled = YES;
+    
+    twelveZero.userInteractionEnabled = YES;
+    twelveOne.userInteractionEnabled = YES;
+    twelveTwo.userInteractionEnabled = YES;
+    twelveThree.userInteractionEnabled = YES;
+    twelveFour.userInteractionEnabled = YES;
+    twelveFive.userInteractionEnabled = YES;
+    twelveSix.userInteractionEnabled = YES;
+    twelveSeven.userInteractionEnabled = YES;
+    twelveEight.userInteractionEnabled = YES;
+    twelveNine.userInteractionEnabled = YES;
+    twelveTen.userInteractionEnabled = YES;
+    twelveEleven.userInteractionEnabled = YES;
+}
 
 - (void)shapeColorAllViewsWithinArray:(NSArray *)tagArray atIndex:(NSUInteger)tagIndex {
     
@@ -298,7 +439,7 @@
         [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
         NSLog(@"1");
     }else if (level == 1){
-        level = 0;
+        level = 2;
         for (ShapeView *subview in self.view.subviews) {
             if ([subview isKindOfClass:[ShapeView class]]) {
                 [subview removeFromSuperview];
@@ -309,6 +450,29 @@
         [self randomCommand];
         [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
         NSLog(@"0");
+    } else if (level == 2){
+        level = 3;
+        for (ShapeView *subview in self.view.subviews) {
+            if ([subview isKindOfClass:[ShapeView class]]) {
+                [subview removeFromSuperview];
+            }
+        }
+        [compareArray removeAllObjects];
+        shapesOnScreen = 0;
+        [self randomCommand];
+        [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
+    } else if (level == 3){
+        level = 0;
+        for (ShapeView *subview in self.view.subviews) {
+            if ([subview isKindOfClass:[ShapeView class]]) {
+                [subview removeFromSuperview];
+            }
+        }
+        [compareArray removeAllObjects];
+        shapesOnScreen = 0;
+        [self randomCommand];
+        [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
+        
     }
 }
 

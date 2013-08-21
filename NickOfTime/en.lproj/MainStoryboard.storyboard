@@ -107,7 +107,7 @@
                         <constraints>
                             <constraint firstItem="3q7-v8-9Oa" firstAttribute="trailing" secondItem="TEu-BW-Mzn" secondAttribute="trailing" type="default" id="9D7-1v-Fgo"/>
                             <constraint firstItem="34h-3P-noU" firstAttribute="centerX" secondItem="TEu-BW-Mzn" secondAttribute="centerX" type="default" id="Pp5-uR-470"/>
-                            <constraint firstItem="34h-3P-noU" firstAttribute="top" secondItem="TEu-BW-Mzn" secondAttribute="top" constant="14" id="QUM-Vs-neb"/>
+                            <constraint firstItem="34h-3P-noU" firstAttribute="top" secondItem="TEu-BW-Mzn" secondAttribute="top" type="default" id="S9g-40-bOT"/>
                             <constraint firstItem="3q7-v8-9Oa" firstAttribute="bottom" secondItem="TEu-BW-Mzn" secondAttribute="bottom" type="default" id="lC7-q6-anS"/>
                         </constraints>
                     </view>
