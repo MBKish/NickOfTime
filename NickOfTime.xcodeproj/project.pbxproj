@@ -28,6 +28,7 @@
 		04E5727A17BAC60800AD4441 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5727917BAC60800AD4441 /* Default-568h@2x.png */; };
 		04E5727D17BAC60800AD4441 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E5727B17BAC60800AD4441 /* MainStoryboard.storyboard */; };
 		04E5728017BAC60800AD4441 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5727F17BAC60800AD4441 /* ViewController.m */; };
+		612BAC9017C69E8100F702E0 /* ColorButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 612BAC8F17C69E8100F702E0 /* ColorButtons.m */; };
 		B8747CE017BDCDE9007DE7BF /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8747CDF17BDCDE9007DE7BF /* SwipeViewController.m */; };
 		B8747CE317BDCDF6007DE7BF /* FindTheObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8747CE217BDCDF6007DE7BF /* FindTheObjectViewController.m */; };
 		B8747CE617BDCE01007DE7BF /* PressButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8747CE517BDCE01007DE7BF /* PressButtonViewController.m */; };
@@ -95,6 +96,9 @@
 		04E5727C17BAC60800AD4441 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		04E5727E17BAC60800AD4441 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		04E5727F17BAC60800AD4441 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		612BAC8E17C69E8100F702E0 /* ColorButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorButtons.h; sourceTree = "<group>"; };
+		612BAC8F17C69E8100F702E0 /* ColorButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButtons.m; sourceTree = "<group>"; };
+		612BAC9117C69EAD00F702E0 /* PressDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PressDelegate.h; path = ../PressDelegate.h; sourceTree = "<group>"; };
 		B8747CDE17BDCDE9007DE7BF /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
 		B8747CDF17BDCDE9007DE7BF /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
 		B8747CE117BDCDF6007DE7BF /* FindTheObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindTheObjectViewController.h; sourceTree = "<group>"; };
@@ -229,6 +233,9 @@
 				B8747CEB17BDD5AF007DE7BF /* EmptySegue.h */,
 				B8747CEC17BDD5AF007DE7BF /* EmptySegue.m */,
 				04E5727B17BAC60800AD4441 /* MainStoryboard.storyboard */,
+				612BAC8E17C69E8100F702E0 /* ColorButtons.h */,
+				612BAC8F17C69E8100F702E0 /* ColorButtons.m */,
+				612BAC9117C69EAD00F702E0 /* PressDelegate.h */,
 				0494BCCA17BE9A2E000947C0 /* ShapeView.h */,
 				0494BCCB17BE9A2E000947C0 /* ShapeView.m */,
 				0494BCCD17BE9A9A000947C0 /* PickedDelegate.h */,
@@ -466,6 +473,7 @@
 				B8C5CF2E17C2A0EE00D9A66E /* UIToolbar+FlatUI.m in Sources */,
 				B8C5CF3317C3B4AF00D9A66E /* StartViewController.m in Sources */,
 				B8C5CF4B17C3FB8100D9A66E /* CompletedGameView.m in Sources */,
+				612BAC9017C69E8100F702E0 /* ColorButtons.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

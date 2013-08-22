@@ -266,9 +266,27 @@
                     <view key="view" contentMode="scaleToFill" id="baM-7Y-tWd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="247" translatesAutoresizingMaskIntoConstraints="NO" id="4pI-NY-n3V">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="Jzs-Xh-39F"/>
+                                    <constraint firstAttribute="width" constant="247" id="MN6-4H-9Ts"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4pI-NY-n3V" firstAttribute="top" secondItem="baM-7Y-tWd" secondAttribute="top" constant="20" symbolic="YES" type="default" id="I7U-3o-mG3"/>
+                            <constraint firstItem="4pI-NY-n3V" firstAttribute="centerX" secondItem="baM-7Y-tWd" secondAttribute="centerX" type="default" id="tWG-TK-7eI"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="textInstruction" destination="4pI-NY-n3V" id="MU7-ON-c2L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJ1-XV-Hc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -324,53 +342,6 @@
             <point key="canvasLocation" x="126" y="-134"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CompletedGameView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompletedGameView.h"/>
-        </class>
-        <class className="ContainerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerViewController.h"/>
-        </class>
-        <class className="FUIButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FUIButton.h"/>
-        </class>
-        <class className="FindTheObjectViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindTheObjectViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="levelSwap:"/>
-                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PressButtonViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PressButtonViewController.h"/>
-        </class>
-        <class className="StartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StartViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startGame:"/>
-                <relationship kind="outlet" name="scoreButton" candidateClass="FUIButton"/>
-                <relationship kind="outlet" name="startButton" candidateClass="FUIButton"/>
-            </relationships>
-        </class>
-        <class className="SwipeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SwipeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="swapLevel:"/>
-                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="levelButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="swap:"/>
-                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
