@@ -19,3 +19,7 @@ DerivedData
 NickOfTime.xcodeproj/project.xcworkspace/xcuserdata/MBK.xcuserdatad/UserInterfaceState.xcuserstate
 
 *.xcuserstate
+
+.DS_Store
+
+.DS_Store
