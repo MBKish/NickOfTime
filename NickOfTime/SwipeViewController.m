@@ -95,7 +95,7 @@
             
         }
     }
-    
+     
     if (index < 20) {
         if ([checkArray isEqualToArray:commandArray]) {
             NSLog(@"youwin!");
@@ -479,7 +479,7 @@
 }*/
 
 -(void)swapLevel:(id)sender{
-    if (level <3) {
+    if (level <2) {
         level = level +1;
     }
     NSLog(@"%i",level);
