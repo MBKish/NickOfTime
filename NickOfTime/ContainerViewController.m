@@ -65,6 +65,8 @@
     
     if (([segue.identifier isEqualToString:SegueIdentifierThird]) && !self.pressButtonViewController) {
         self.pressButtonViewController = segue.destinationViewController;
+        self.pressButtonViewController.delegate = delegate;
+
     }
     if (([segue.identifier isEqualToString:SegueIdentifierSecond]) && !self.findTheObjectViewController) {
         self.findTheObjectViewController = segue.destinationViewController;

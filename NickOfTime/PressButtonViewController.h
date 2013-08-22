@@ -9,7 +9,9 @@
 #import "PressDelegate.h"
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "WinOrLoseDelegate.h"
 
 @interface PressButtonViewController : UIViewController<PressDelegate>
+@property (strong, nonatomic) id<WinOrLoseDelegate>delegate;
 
 @end

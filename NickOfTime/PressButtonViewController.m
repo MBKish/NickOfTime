@@ -30,6 +30,8 @@
 
 @implementation PressButtonViewController
 
+@synthesize delegate;
+
 - (void)viewDidLoad
 {
     red = [UIColor redColor];
@@ -131,10 +133,12 @@
         [thisView setAlpha:0.5];
     }else if ((correct = YES) && (thisView.backgroundColor == playArray[gameCounter])){
         NSLog(@"Success!");
+        [delegate didWinGame];
         [self startDemo:self];
         
     }else{
         NSLog(@"Fail!");
+        [delegate didLoseGame];
         [self startDemo:self];
     }
 }
