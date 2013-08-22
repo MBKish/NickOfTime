@@ -9,6 +9,10 @@
 #import "PressButtonViewController.h"
 
 @interface PressButtonViewController ()
+{
+    __weak IBOutlet UILabel *textInstruction;
+    
+}
 
 @end
 
