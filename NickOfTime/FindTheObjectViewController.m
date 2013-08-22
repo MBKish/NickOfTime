@@ -26,9 +26,20 @@
 
 @implementation FindTheObjectViewController
 
+@synthesize testDelegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
     if (self) {
         // Custom initialization
     }
@@ -334,6 +345,7 @@
             }
         }
         NSLog(@"You Win!");
+        [testDelegate didWinGame];
         shapesOnScreen = 0;
         [compareArray removeAllObjects];
         [self randomCommand];
@@ -345,6 +357,7 @@
             }
         }
         NSLog(@"You Lose!");
+        [testDelegate didLoseGame];
         shapesOnScreen = 0;
         [compareArray removeAllObjects];
         [self randomCommand];

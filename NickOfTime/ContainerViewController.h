@@ -10,15 +10,16 @@
 #import "SwipeViewController.h"
 #import "FindTheObjectViewController.h"
 #import "PressButtonViewController.h"
+#import "WinOrLoseDelegate.h"
 
 @interface ContainerViewController : UIViewController
 
-- (void)swapViewControllers;
 - (void)swapViewControllers2;
+
 @property (strong, nonatomic) SwipeViewController *swipeViewController;
 @property (strong, nonatomic) FindTheObjectViewController *findTheObjectViewController;
 @property (strong, nonatomic) PressButtonViewController *pressButtonViewController;
-
+@property (strong, nonatomic) id<WinOrLoseDelegate> delegate;
 
 
 @end

@@ -40,7 +40,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.containerViewController.swipeViewController.delegate = self;
+    //self.containerViewController.findTheObjectViewController.testDelegate = self;
+    self.containerViewController.delegate = self;
     [slider configureFlatSliderWithTrackColor:[UIColor cloudsColor] progressColor:[UIColor alizarinColor] thumbColor:[UIColor alizarinColor]];
     initialTime = 15;
     seconds = initialTime;
@@ -119,7 +122,7 @@
 #pragma mark WinOrLoseDelegate
 
 -(void)didWinGame{
-    //[self.containerViewController swapViewControllers2];
+    [self.containerViewController swapViewControllers2];
 
     completedGames = completedGames + 1;
     [self gameWon];

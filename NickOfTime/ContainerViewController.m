@@ -27,6 +27,8 @@
 
 @implementation ContainerViewController
 
+@synthesize delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -61,11 +63,12 @@
         self.swipeViewController = segue.destinationViewController;
     }
     
-    if (([segue.identifier isEqualToString:SegueIdentifierSecond]) && !self.pressButtonViewController) {
+    if (([segue.identifier isEqualToString:SegueIdentifierThird]) && !self.pressButtonViewController) {
         self.pressButtonViewController = segue.destinationViewController;
     }
-    if (([segue.identifier isEqualToString:SegueIdentifierThird]) && !self.findTheObjectViewController) {
+    if (([segue.identifier isEqualToString:SegueIdentifierSecond]) && !self.findTheObjectViewController) {
         self.findTheObjectViewController = segue.destinationViewController;
+        self.findTheObjectViewController.testDelegate = delegate;
     }
     
     // If we're going to the first view controller.
@@ -86,10 +89,10 @@
     // By definition the second view controller will always be swapped with the
     // first one.
     else if ([segue.identifier isEqualToString:SegueIdentifierSecond]) {
-        [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:self.pressButtonViewController];
+        [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:self.findTheObjectViewController];
     }
     else if ([segue.identifier isEqualToString:SegueIdentifierThird]) {
-        [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:self.findTheObjectViewController];
+        [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:self.pressButtonViewController];
     }
 
 }
@@ -106,17 +109,6 @@
         [toViewController didMoveToParentViewController:self];
         self.transitionInProgress = NO;
     }];
-}
-
-- (void)swapViewControllers
-{
-    if (self.transitionInProgress) {
-        return;
-    }
-    
-    self.transitionInProgress = YES;
-    self.currentSegueIdentifier = ([self.currentSegueIdentifier isEqualToString:SegueIdentifierFirst]) ? SegueIdentifierSecond : SegueIdentifierFirst;
-    [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
 }
 
 - (void)swapViewControllers2

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "PickedDelegate.h"
+#import "WinOrLoseDelegate.h"
 
 @interface FindTheObjectViewController : UIViewController <PickedDelegate>
 
 - (void) didChooseView: (ShapeView *) shapeView;
+@property (strong, nonatomic) id<WinOrLoseDelegate>testDelegate;
 
 @end
