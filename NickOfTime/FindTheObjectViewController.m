@@ -49,6 +49,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(swapLevel) name:@"nextLevel" object:nil];
+
+    
     arrayOfTags = @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15"];
     
     commandArray = @[@"Red Square", @"Blue Square", @"Green Square", @"Red Circle", @"Blue Circle", @"Green Circle", @"Red Triangle", @"Blue Triangle", @"Green Triangle"];
@@ -366,6 +370,10 @@
     
 }
 - (IBAction)levelSwap:(id)sender {
+    [self swapLevel];
+}
+
+-(void)swapLevel{
     if (level == 0) {
         level = 1;
         for (ShapeView *subview in self.view.subviews) {
@@ -402,7 +410,6 @@
         [self randomCommand];
         [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
     } else if (level == 3){
-        level = 0;
         for (ShapeView *subview in self.view.subviews) {
             if ([subview isKindOfClass:[ShapeView class]]) {
                 [subview removeFromSuperview];
