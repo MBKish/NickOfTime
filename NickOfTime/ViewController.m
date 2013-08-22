@@ -45,7 +45,7 @@
     //self.containerViewController.findTheObjectViewController.testDelegate = self;
     self.containerViewController.delegate = self;
     [slider configureFlatSliderWithTrackColor:[UIColor cloudsColor] progressColor:[UIColor alizarinColor] thumbColor:[UIColor alizarinColor]];
-    initialTime = 15;
+    initialTime = 40;
     seconds = initialTime;
     [self gameSetup];
     [self gameWon];
@@ -130,7 +130,7 @@
     
     if (completedGames == 5) {
         [myTimer invalidate];
-        completedSets = completedSets+1;
+        completedSets = completedSets + 1;
         NSLog(@"%i",completedSets);
         FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Nice" message:@"Speed up." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
         alertView.delegate = self;
@@ -148,10 +148,7 @@
         [self performSelector:@selector(nextLevel:) withObject:alertView afterDelay:1];
     }
     
-    if (completedSets == 3) {
-        NSLog(@"go to next level");
-        //singleton to go to next level
-    }
+   
 }
 
 -(void)didLoseGame{
@@ -187,6 +184,12 @@
 -(void)nextLevel:(UIAlertView *)alertView{
     [alertView dismissWithClickedButtonIndex:0 animated:YES];
     [self gameSetup];
+    
+    if (((completedSets % 2) == 0) && (completedSets != 0)) {
+        NSLog(@"go to next level");
+        NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+        [notificationCenter postNotificationName:@"nextLevel" object:nil];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView
@@ -202,4 +205,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         [self gameWon];
     }
 }
+
+
 @end

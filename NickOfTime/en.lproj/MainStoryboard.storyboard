@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4my-5G-Qaj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4my-5G-Qaj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -92,8 +92,7 @@
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ds-FS-zC3">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="DQz-AT-6Wh"/>
-                                    <constraint firstAttribute="height" constant="24" id="Xbf-9r-Ils"/>
+                                    <constraint firstAttribute="width" constant="49" id="lOX-QZ-67p"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="o">
@@ -150,11 +149,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="9Ds-FS-zC3" firstAttribute="leading" secondItem="cuh-wP-oeV" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8aw-tE-LV0"/>
                             <constraint firstItem="tBV-K4-qYK" firstAttribute="leading" secondItem="CSl-7q-yXK" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="9f9-qs-IpN"/>
                             <constraint firstItem="tBV-K4-qYK" firstAttribute="top" secondItem="7nC-DY-Ln0" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="9fo-pO-hNF"/>
-                            <constraint firstItem="9Ds-FS-zC3" firstAttribute="centerY" secondItem="cuh-wP-oeV" secondAttribute="centerY" type="default" id="CUt-eg-YJC"/>
-                            <constraint firstItem="7nC-DY-Ln0" firstAttribute="centerX" secondItem="tBV-K4-qYK" secondAttribute="centerX" type="default" id="D2I-21-o9h"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="top" secondItem="Tnd-OD-gEm" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="FKc-CO-Txn"/>
+                            <constraint firstItem="7nC-DY-Ln0" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Lrv-9H-bP8"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="centerX" secondItem="tBV-K4-qYK" secondAttribute="centerX" type="user" id="Mfe-Y5-MIy"/>
                             <constraint firstItem="CSl-7q-yXK" firstAttribute="leading" secondItem="dP9-r7-yaQ" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="MvN-NZ-bLd"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="top" secondItem="tBV-K4-qYK" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="SLn-pz-hSl"/>
@@ -176,7 +175,8 @@
                             <constraint firstItem="cuh-wP-oeV" firstAttribute="leading" secondItem="Tnd-OD-gEm" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="o7k-LN-93o"/>
                             <constraint firstItem="CSl-7q-yXK" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="107" type="user" id="p0r-05-QRi"/>
                             <constraint firstItem="dP9-r7-yaQ" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="69" type="user" id="uml-xt-nhe"/>
-                            <constraint firstAttribute="trailing" secondItem="9Ds-FS-zC3" secondAttribute="trailing" constant="12" id="vO3-u2-QKi"/>
+                            <constraint firstItem="FAJ-9J-GdF" firstAttribute="top" secondItem="9Ds-FS-zC3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xrc-nL-29k"/>
+                            <constraint firstItem="9Ds-FS-zC3" firstAttribute="top" secondItem="7nC-DY-Ln0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zPn-Xj-lby"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QKE-5Y-mox"/>

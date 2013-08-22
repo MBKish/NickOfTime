@@ -39,10 +39,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+
     level = 0;
     [self addSwipeGestures];
     checkArray = [[NSMutableArray alloc] init];;
     commandArray = [[NSMutableArray alloc] init];
+    
+    [notificationCenter addObserver:self selector:@selector(swapLevel:) name:@"nextLevel" object:nil];
   
     allCommands = [NSArray arrayWithObjects:@"Swipe up",@"Swipe down",@"Swipe left",@"Swipe right",@"Swipe left then up", @"Swipe left then down",@"Swipe left then left",@"Swipe left then right",@"Swipe up then up", @"Swipe up then down",@"Swipe up then left",@"Swipe up then right",@"Swipe down then up", @"Swipe down then down",@"Swipe down then left",@"Swipe down then right",@"Swipe right then up", @"Swipe right then down",@"Swipe right then left",@"Swipe right then right", @"Swipe anywhere but up", @"Swipe anywhere but down",@"Swipe anywhere but left",@"Swipe anywhere but right", nil];
     
@@ -467,10 +471,16 @@
 }
 
 
-- (IBAction)swapLevel:(id)sender {
-    level = level +1;
-    if (level == 3) {
-        level = 1;
+/*- (IBAction)swapLevel:(id)sender {
+    if (level <3) {
+        level = level +1;
+    }
+    NSLog(@"%i",level);
+}*/
+
+-(void)swapLevel:(id)sender{
+    if (level <3) {
+        level = level +1;
     }
     NSLog(@"%i",level);
 }
