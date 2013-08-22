@@ -6,8 +6,10 @@
 //  Copyright (c) 2013 TimeMonkeys. All rights reserved.
 //
 
+#import "PressDelegate.h"
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface PressButtonViewController : UIViewController
+@interface PressButtonViewController : UIViewController<PressDelegate>
 
 @end

@@ -10,6 +10,8 @@
 
 @implementation ColorButtons
 
+@synthesize pressButtonsDelegate;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -17,6 +19,10 @@
         // Initialization code
     }
     return self;
+}
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [pressButtonsDelegate didClickGame1View:self];
 }
 
 /*
