@@ -156,12 +156,12 @@
     }else if ((correct = YES) && (thisView.backgroundColor == playArray[gameCounter])){
         NSLog(@"Success!");
         [delegate didWinGame];
-        [self startDemo:self];
+        //[self startDemo:self];
         
     }else{
         NSLog(@"Fail!");
         [delegate didLoseGame];
-        [self startDemo:self];
+        //[self startDemo:self];
     }
 }
 
