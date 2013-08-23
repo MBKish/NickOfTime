@@ -122,13 +122,17 @@
 #pragma mark WinOrLoseDelegate
 
 -(void)didWinGame{
-    [self.containerViewController swapViewControllers2];
-
     completedGames = completedGames + 1;
-    [self gameWon];
-    NSLog (@"%i",completedGames);
+
+    if (completedGames < 5) {
+        [self.containerViewController swapViewControllers2];
+        [self gameWon];
+        NSLog (@"%i",completedGames);
+    }
     
-    if (completedGames == 5) {
+    else {
+        [self gameWon];
+        NSLog (@"%i",completedGames);
         [myTimer invalidate];
         completedSets = completedSets + 1;
         NSLog(@"%i",completedSets);
@@ -184,7 +188,8 @@
 -(void)nextLevel:(UIAlertView *)alertView{
     [alertView dismissWithClickedButtonIndex:0 animated:YES];
     [self gameSetup];
-    
+    [self.containerViewController swapViewControllers2];
+
     if (((completedSets % 2) == 0) && (completedSets != 0)) {
         NSLog(@"go to next level");
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
