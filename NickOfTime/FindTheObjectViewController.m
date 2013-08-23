@@ -343,34 +343,34 @@
 
 - (void) didChooseView: (ShapeView *) shapeView{
     if ([compareArray objectAtIndex:shapeView.tag] == pickedCommand) {
-        for (ShapeView *subview in self.view.subviews) {
-            if ([subview isKindOfClass:[ShapeView class]]) {
-                [subview removeFromSuperview];
-            }
-        }
-        NSLog(@"You Win!");
         [testDelegate didWinGame];
-        shapesOnScreen = 0;
-        [compareArray removeAllObjects];
-        [self randomCommand];
-        [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
     } else {
+        [testDelegate didLoseGame];
         for (ShapeView *subview in self.view.subviews) {
             if ([subview isKindOfClass:[ShapeView class]]) {
                 [subview removeFromSuperview];
             }
         }
-        NSLog(@"You Lose!");
-        [testDelegate didLoseGame];
         shapesOnScreen = 0;
         [compareArray removeAllObjects];
         [self randomCommand];
         [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
     }
-    
 }
 - (IBAction)levelSwap:(id)sender {
     [self swapLevel];
+}
+
+- (void) viewWillAppear:(BOOL)animated{
+    for (ShapeView *subview in self.view.subviews) {
+        if ([subview isKindOfClass:[ShapeView class]]) {
+            [subview removeFromSuperview];
+        }
+    }
+    shapesOnScreen = 0;
+    [compareArray removeAllObjects];
+    [self randomCommand];
+    [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
 }
 
 -(void)swapLevel{

@@ -161,7 +161,7 @@
     }else{
         NSLog(@"Fail!");
         [delegate didLoseGame];
-        //[self startDemo:self];
+        [self startDemo:self];
     }
 }
 
