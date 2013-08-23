@@ -558,10 +558,14 @@
 		04E5728417BAC60800AD4441 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Matthew Kish (39QD5RC342)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Matthew Kish (39QD5RC342)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NickOfTime/NickOfTime-Prefix.pch";
 				INFOPLIST_FILE = "NickOfTime/NickOfTime-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "DD1E7F5B-A477-4587-B056-B9F5680DB867";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DD1E7F5B-A477-4587-B056-B9F5680DB867";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -569,10 +573,14 @@
 		04E5728517BAC60800AD4441 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Matthew Kish (B438AC98B8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Matthew Kish (B438AC98B8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NickOfTime/NickOfTime-Prefix.pch";
 				INFOPLIST_FILE = "NickOfTime/NickOfTime-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "DF2C375B-3C2B-4416-AE6E-8274C8D0E854";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DF2C375B-3C2B-4416-AE6E-8274C8D0E854";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

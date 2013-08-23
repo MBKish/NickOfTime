@@ -66,6 +66,28 @@
             ColorButtons * colorButton = (ColorButtons *) subview;
             colorButton.pressButtonsDelegate = self;
         }}
+    //[self startDemo:self];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    for (UIView *subview in self.view.subviews) {
+        if ([subview isKindOfClass:[ColorButtons class]]) {
+            subview.hidden = YES;
+        }
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    for (UIView *subview in self.view.subviews) {
+        if ([subview isKindOfClass:[ColorButtons class]]) {
+            subview.hidden = NO;
+        }
+    }
     [self startDemo:self];
 }
 
@@ -115,7 +137,7 @@
                 if (subview.tag == counter){
                     subview.backgroundColor = playColorArray[counter];
                     
-                    [UIView animateWithDuration:1.0 animations:^{
+                    [UIView animateWithDuration:0.3 animations:^{
                         
                         subview.transform = CGAffineTransformScale(subview.transform, 100, 100);
                     }];
