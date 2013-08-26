@@ -10,6 +10,10 @@
 #import "SwipeViewController.h"
 #import "FindTheObjectViewController.h"
 #import "PressButtonViewController.h"
+#import "PressButton2ViewController.h"
+#import "PressButton3ViewController.h"
+
+
 #import "WinOrLoseDelegate.h"
 
 @interface ContainerViewController : UIViewController
@@ -19,6 +23,10 @@
 @property (strong, nonatomic) SwipeViewController *swipeViewController;
 @property (strong, nonatomic) FindTheObjectViewController *findTheObjectViewController;
 @property (strong, nonatomic) PressButtonViewController *pressButtonViewController;
+@property (strong, nonatomic) PressButton2ViewController *pressButton2ViewController;
+@property (strong, nonatomic) PressButton3ViewController *pressButton3ViewController;
+
+
 @property (strong, nonatomic) id<WinOrLoseDelegate> delegate;
 
 

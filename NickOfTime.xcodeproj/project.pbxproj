@@ -29,6 +29,8 @@
 		04E5727D17BAC60800AD4441 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E5727B17BAC60800AD4441 /* MainStoryboard.storyboard */; };
 		04E5728017BAC60800AD4441 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E5727F17BAC60800AD4441 /* ViewController.m */; };
 		612BAC9017C69E8100F702E0 /* ColorButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 612BAC8F17C69E8100F702E0 /* ColorButtons.m */; };
+		B866E17F17CBA9DD00E5C876 /* PressButton2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B866E17E17CBA9DD00E5C876 /* PressButton2ViewController.m */; };
+		B866E18217CBAA3300E5C876 /* PressButton3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B866E18117CBAA3300E5C876 /* PressButton3ViewController.m */; };
 		B8747CE017BDCDE9007DE7BF /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8747CDF17BDCDE9007DE7BF /* SwipeViewController.m */; };
 		B8747CE317BDCDF6007DE7BF /* FindTheObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8747CE217BDCDF6007DE7BF /* FindTheObjectViewController.m */; };
 		B8747CE617BDCE01007DE7BF /* PressButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8747CE517BDCE01007DE7BF /* PressButtonViewController.m */; };
@@ -99,6 +101,10 @@
 		612BAC8E17C69E8100F702E0 /* ColorButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorButtons.h; sourceTree = "<group>"; };
 		612BAC8F17C69E8100F702E0 /* ColorButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButtons.m; sourceTree = "<group>"; };
 		612BAC9117C69EAD00F702E0 /* PressDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PressDelegate.h; path = ../PressDelegate.h; sourceTree = "<group>"; };
+		B866E17D17CBA9DD00E5C876 /* PressButton2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PressButton2ViewController.h; sourceTree = "<group>"; };
+		B866E17E17CBA9DD00E5C876 /* PressButton2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PressButton2ViewController.m; sourceTree = "<group>"; };
+		B866E18017CBAA3300E5C876 /* PressButton3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PressButton3ViewController.h; path = ../PressButton3ViewController.h; sourceTree = "<group>"; };
+		B866E18117CBAA3300E5C876 /* PressButton3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PressButton3ViewController.m; path = ../PressButton3ViewController.m; sourceTree = "<group>"; };
 		B8747CDE17BDCDE9007DE7BF /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
 		B8747CDF17BDCDE9007DE7BF /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
 		B8747CE117BDCDF6007DE7BF /* FindTheObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindTheObjectViewController.h; sourceTree = "<group>"; };
@@ -271,6 +277,10 @@
 				B8747CE217BDCDF6007DE7BF /* FindTheObjectViewController.m */,
 				B8747CE417BDCE01007DE7BF /* PressButtonViewController.h */,
 				B8747CE517BDCE01007DE7BF /* PressButtonViewController.m */,
+				B866E17D17CBA9DD00E5C876 /* PressButton2ViewController.h */,
+				B866E17E17CBA9DD00E5C876 /* PressButton2ViewController.m */,
+				B866E18017CBAA3300E5C876 /* PressButton3ViewController.h */,
+				B866E18117CBAA3300E5C876 /* PressButton3ViewController.m */,
 				04E5727E17BAC60800AD4441 /* ViewController.h */,
 				04E5727F17BAC60800AD4441 /* ViewController.m */,
 				B8C5CF4C17C3FE8800D9A66E /* WinOrLoseDelegate.h */,
@@ -479,6 +489,8 @@
 				B8C5CF3317C3B4AF00D9A66E /* StartViewController.m in Sources */,
 				B8C5CF4B17C3FB8100D9A66E /* CompletedGameView.m in Sources */,
 				612BAC9017C69E8100F702E0 /* ColorButtons.m in Sources */,
+				B866E17F17CBA9DD00E5C876 /* PressButton2ViewController.m in Sources */,
+				B866E18217CBAA3300E5C876 /* PressButton3ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
