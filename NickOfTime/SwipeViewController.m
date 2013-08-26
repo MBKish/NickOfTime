@@ -103,6 +103,15 @@
             [self pickAndDisplayCommand];
             
         }
+        if ((checkArray.count == 1) && (commandArray.count == 2)) {
+            if (checkArray[0] != commandArray [0]) {
+                NSLog(@"youlose!");
+                [delegate didLoseGame];
+                [self pickAndDisplayCommand];
+
+            }
+        }
+        
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
             NSLog(@"youlose!");
             [delegate didLoseGame];
@@ -147,6 +156,14 @@
             NSLog(@"youwin!");
             [delegate didWinGame];
             [self pickAndDisplayCommand];
+        }
+        if ((checkArray.count == 1) && (commandArray.count == 2)) {
+            if (checkArray[0] != commandArray [0]) {
+                NSLog(@"youlose!");
+                [delegate didLoseGame];
+                [self pickAndDisplayCommand];
+                
+            }
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
             NSLog(@"youlose!");
@@ -193,6 +210,14 @@
             [self pickAndDisplayCommand];
             [delegate didWinGame];
         }
+        if ((checkArray.count == 1) && (commandArray.count == 2)) {
+            if (checkArray[0] != commandArray [0]) {
+                NSLog(@"youlose!");
+                [delegate didLoseGame];
+                [self pickAndDisplayCommand];
+                
+            }
+        }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
             NSLog(@"youlose!");
             [delegate didLoseGame];
@@ -236,6 +261,14 @@
             NSLog(@"youwin!");
             [self pickAndDisplayCommand];
             [delegate didWinGame];
+        }
+        if ((checkArray.count == 1) && (commandArray.count == 2)) {
+            if (checkArray[0] != commandArray [0]) {
+                NSLog(@"youlose!");
+                [delegate didLoseGame];
+                [self pickAndDisplayCommand];
+                
+            }
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
             NSLog(@"youlose!");
