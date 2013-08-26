@@ -19,6 +19,10 @@
 @interface ContainerViewController : UIViewController
 
 - (void)swapViewControllers2;
+- (void)swapViewControllers3;
+- (void)swapViewControllers4;
+
+
 
 @property (strong, nonatomic) SwipeViewController *swipeViewController;
 @property (strong, nonatomic) FindTheObjectViewController *findTheObjectViewController;

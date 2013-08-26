@@ -146,12 +146,21 @@
                                     <constraint firstAttribute="width" constant="30" type="user" id="l0f-qB-uP2"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hj3-yi-9mj">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="lGb-dH-k6Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" red="0.24160953443877553" green="0.24160953443877553" blue="0.24160953443877553" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9Ds-FS-zC3" firstAttribute="leading" secondItem="cuh-wP-oeV" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8aw-tE-LV0"/>
                             <constraint firstItem="tBV-K4-qYK" firstAttribute="leading" secondItem="CSl-7q-yXK" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="9f9-qs-IpN"/>
                             <constraint firstItem="tBV-K4-qYK" firstAttribute="top" secondItem="7nC-DY-Ln0" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="9fo-pO-hNF"/>
+                            <constraint firstAttribute="trailing" secondItem="Hj3-yi-9mj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="A8G-AU-zeu"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="top" secondItem="Tnd-OD-gEm" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="FKc-CO-Txn"/>
                             <constraint firstItem="7nC-DY-Ln0" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Lrv-9H-bP8"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="centerX" secondItem="tBV-K4-qYK" secondAttribute="centerX" type="user" id="Mfe-Y5-MIy"/>
@@ -161,6 +170,7 @@
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="top" secondItem="cuh-wP-oeV" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="VBd-tz-VAg"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="top" secondItem="dP9-r7-yaQ" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="Z5U-Zx-EPi"/>
                             <constraint firstItem="dP9-r7-yaQ" firstAttribute="top" secondItem="7nC-DY-Ln0" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="cyc-fu-Fb7"/>
+                            <constraint firstItem="Hj3-yi-9mj" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="dta-s9-e6R"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="user" id="eDF-or-Aep"/>
                             <constraint firstItem="Tnd-OD-gEm" firstAttribute="top" secondItem="7nC-DY-Ln0" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="eZm-rR-fhh"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="top" secondItem="CSl-7q-yXK" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="fhT-BK-wHV"/>
@@ -181,6 +191,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QKE-5Y-mox"/>
                     <connections>
+                        <outlet property="scoreLabel" destination="Hj3-yi-9mj" id="DQB-nO-qx2"/>
                         <outlet property="slider" destination="FAJ-9J-GdF" id="8wT-at-x4o"/>
                     </connections>
                 </viewController>
@@ -403,13 +414,14 @@
             <relationships>
                 <relationship kind="action" name="swapLevel:"/>
                 <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="levelButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="swap:"/>
+                <relationship kind="outlet" name="score" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
             </relationships>
         </class>

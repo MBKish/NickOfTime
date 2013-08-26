@@ -28,6 +28,10 @@
     NSTimer *myTimer;
     int completedGames;
     int completedSets;
+    int score;
+    __weak IBOutlet UILabel *scoreLabel;
+    int bonusTimeInt;
+    int level;
 
 }
 
@@ -46,10 +50,15 @@
     //self.containerViewController.findTheObjectViewController.testDelegate = self;
     self.containerViewController.delegate = self;
     [slider configureFlatSliderWithTrackColor:[UIColor cloudsColor] progressColor:[UIColor alizarinColor] thumbColor:[UIColor alizarinColor]];
-    [self restartTime];
+    scoreLabel.text = @"000";
+    level = 0;
+    [self restartTimeAndScore];
     [self gameSetup];
     [self gameWon];
     completedSets = 0;
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(swapLevel:) name:@"nextLevel" object:nil];
+    [notificationCenter addObserver:self selector:@selector(restartLevel:) name:@"restartGame" object:nil];
     
 }
 
@@ -72,12 +81,15 @@
 
 - (void)methodToUpdateProgress
 {
-    if(slider.value != 0){
+    if(!(slider.value <= 0)){
         seconds = seconds - .01;
         // NSLog(@"%f",seconds);
+        bonusTime = seconds;
+
     }else{
         [myTimer invalidate];
-        bonusTime = seconds;
+  
+        
         NSLog(@"done");
         
         FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"You lose" message:@"You ran out of time." delegate:nil cancelButtonTitle:@"Home" otherButtonTitles:@"Restart", nil];
@@ -95,6 +107,8 @@
         [alertView show];
         
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+        
+        //notification to restart game
         [notificationCenter postNotificationName:@"restartGame" object:nil];
         seconds = initialTime;
 
@@ -128,6 +142,8 @@
 
 -(void)didWinGame{
     completedGames = completedGames + 1;
+    score = score + 100;
+    [self updateScore];
 
     if (completedGames < 5) {
         [self.containerViewController swapViewControllers2];
@@ -154,6 +170,8 @@
         alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
         alertView.defaultButtonTitleColor = [UIColor asbestosColor];
         [alertView show];
+        score = score + (bonusTimeInt * 50);
+        [self updateScore];
         [self performSelector:@selector(nextLevel:) withObject:alertView afterDelay:1];
     }
     
@@ -161,6 +179,8 @@
 }
 
 -(void)didLoseGame{
+    score = score - 50;
+    [self updateScore];
     if (completedGames > 0) {
         completedGames = completedGames - 1;
         
@@ -186,19 +206,38 @@
 }
 
 -(void)calculateSeconds{
-    initialTime = (initialTime - 2) + bonusTime;
+    //calculates bonus time from remaining time
+    bonusTimeInt = (int)seconds;
+   
+    //calculates speed up time and adds time bonus
+    initialTime = (initialTime - (2 * completedSets)) + bonusTime;
     seconds = initialTime;
 }
 
 -(void)nextLevel:(UIAlertView *)alertView{
     [alertView dismissWithClickedButtonIndex:0 animated:YES];
-    [self gameSetup];
-    [self.containerViewController swapViewControllers2];
-
+    
     if (((completedSets % 2) == 0) && (completedSets != 0)) {
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
         [notificationCenter postNotificationName:@"nextLevel" object:nil];
     }
+    
+    [self gameSetup];
+
+    
+    if (level == 0) {
+        [self.containerViewController swapViewControllers2];
+    }
+    
+    if (level == 1) {
+        [self.containerViewController swapViewControllers3];
+    }
+    
+    if (level == 2) {
+        [self.containerViewController swapViewControllers4];
+    }
+    
+   
 }
 
 - (void)alertView:(UIAlertView *)alertView
@@ -208,14 +247,31 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
             //nothing
         }];
     }else if (buttonIndex == 1){
-        [self restartTime];
+        [self restartTimeAndScore];
         [self gameSetup];
         [self gameWon];
     }
 }
 
--(void)restartTime{
+-(void)restartTimeAndScore{
+    //resets time and score after you lose
     initialTime = 15;
     seconds = initialTime;
+    score = 0;
 }
+
+-(void)updateScore{
+    scoreLabel.text = [NSString stringWithFormat:@"%i",score];
+}
+
+-(void)swapLevel:(id)sender{
+    if (level <2) {
+        level = level +1;
+    }
+}
+
+-(void)restartLevel:(id)sender{
+    level = 0;    
+}
+
 @end
