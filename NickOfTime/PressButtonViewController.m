@@ -146,7 +146,7 @@
         }
     }
 }
--(void) didClickGame1View:(ColorButtons *)thisView
+-(void) didClickGameView:(ColorButtons *)thisView
 {
     if ((gameCounter == 0) && (thisView.backgroundColor == playArray[gameCounter])) {
         gameCounter++;

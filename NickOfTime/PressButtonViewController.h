@@ -12,6 +12,7 @@
 #import "WinOrLoseDelegate.h"
 
 @interface PressButtonViewController : UIViewController<PressDelegate>
+
 @property (strong, nonatomic) id<WinOrLoseDelegate>delegate;
 
 @end

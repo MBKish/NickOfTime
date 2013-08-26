@@ -22,7 +22,7 @@
 }
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [pressButtonsDelegate didClickGame1View:self];
+    [pressButtonsDelegate didClickGameView:self];
 }
 
 /*
