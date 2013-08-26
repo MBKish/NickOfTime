@@ -250,6 +250,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         [self restartTimeAndScore];
         [self gameSetup];
         [self gameWon];
+        [self updateScore];
     }
 }
 

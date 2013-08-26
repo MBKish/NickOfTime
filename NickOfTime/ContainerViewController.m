@@ -49,8 +49,11 @@
     
     self.transitionInProgress = NO;
     self.currentSegueIdentifier = SegueIdentifierFirst;
-    [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];}
+    [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(restart:) name:@"restartGame" object:nil];
 
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -199,5 +202,13 @@
     
 }
 
+-(void)restart:(id)sender{
+    index = 0;
+    self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];
+    // self.currentSegueIdentifier = ([self.currentSegueIdentifier isEqualToString:SegueIdentifierSecond]) ? SegueIdentifierThird : SegueIdentifierSecond;
+    
+    [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
+    index++;
+}
 
 @end
