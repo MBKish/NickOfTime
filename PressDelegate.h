@@ -12,6 +12,6 @@
 
 @protocol PressDelegate <NSObject>
 
--(void) didClickGame1View: (ColorButtons *) thisView;
+-(void) didClickGameView: (ColorButtons *) thisView;
 
 @end
