@@ -21,7 +21,7 @@
     UIColor *color8;
     UIColor *color9;
     UIColor *black;
-    NSArray *colorArray;
+    NSMutableArray *colorArray;
     NSMutableArray *randomColorArray;
     NSMutableArray *playColorArray;
     __weak IBOutlet UILabel *notificationLabel;
@@ -31,7 +31,7 @@
 
 @implementation PressButton2ViewController
 
-@synthesize delegate;
+@synthesize testDelegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -54,7 +54,10 @@
     color8 =[UIColor colorWithRed:135/255.0f green:252/255.0f blue:192/255.0f alpha:1.0f];
     color9 =[UIColor colorWithRed:151/255.0f green:168/255.0f blue:49/255.0f alpha:1.0f];
     black = [UIColor blackColor];
-    colorArray = @[color1,color2,color3,color4,color5,color6,color7,color8,color9];
+    
+    //Create colorArray = number of ColorButtons; select from 9 colors
+
+    //colorArray = @[color1,color2,color3,color4,color5,color6,color7,color8,color9];
     
     CGPoint center = self.view.center;
     //NSLog(@"x = %f y=%f", center.x, center.y);
@@ -63,16 +66,17 @@
     
     
     ColorButtons *button5Origin = [[ColorButtons alloc] initWithFrame:CGRectMake(center.x-40, 155-40, 80, 80)];
-    ColorButtons *button1 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, -100)];
+    //ColorButtons *button1 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, -100)];
     ColorButtons *button2 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 0, -100)];
-    ColorButtons *button3 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, -100)];
+    //ColorButtons *button3 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, -100)];
     ColorButtons *button4 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, 0)];
     ColorButtons *button6 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, 0)];
-    ColorButtons *button7 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, 100)];
+    //ColorButtons *button7 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, 100)];
     ColorButtons *button8 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 0, 100)];
-    ColorButtons *button9 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, 100)];
+    //ColorButtons *button9 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, 100)];
     
-    NSArray* buttonArray = @[button1, button2, button3, button4, button5Origin, button6, button7, button8, button9];
+    //NSArray* buttonArray = @[button1, button2, button3, button4, button5Origin, button6, button7, button8, button9];
+    NSArray* buttonArray = @[button2, button4, button5Origin, button6, button8];
     
     [super viewDidLoad];
     
@@ -91,12 +95,7 @@
         colorButton.pressButtonsDelegate = self;
         
     }
-	
-    for (UIView * subview in self.view.subviews){
-        if ([subview isKindOfClass:[ColorButtons class]]) {
-            ColorButtons * colorButton = (ColorButtons *) subview;
-            colorButton.pressButtonsDelegate = self;
-        }}
+
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -139,6 +138,15 @@
                 
             }];
         }}
+    
+     NSMutableArray* selectColorArray = [[NSMutableArray alloc] initWithObjects:color1,color2,color3,color4,color5,color6,color7,color8,color9, nil];
+    NSMutableArray* setupColorArray = [[NSMutableArray alloc] initWithArray:selectColorArray];
+    colorArray = [[NSMutableArray alloc] initWithCapacity:10];
+    for (int num = 0; num < 5; num++) {
+        int colorCounter = arc4random()%([selectColorArray count]-num);
+        [colorArray addObject:setupColorArray[colorCounter]];
+        [setupColorArray removeObjectAtIndex:colorCounter];
+    }
     notificationLabel.text = @"Extinguish all the lights";
     NSMutableArray* gameColorArray = [[NSMutableArray alloc] initWithArray:colorArray];
     randomColorArray = [[NSMutableArray alloc] initWithCapacity:10];
@@ -175,7 +183,7 @@
         
         if (gameCounter == colorArray.count) {
             notificationLabel.text = @"Winner, winner!";
-            [delegate didWinGame];
+            [testDelegate didWinGame];
         }
  
         
