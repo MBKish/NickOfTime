@@ -46,8 +46,7 @@
     //self.containerViewController.findTheObjectViewController.testDelegate = self;
     self.containerViewController.delegate = self;
     [slider configureFlatSliderWithTrackColor:[UIColor cloudsColor] progressColor:[UIColor alizarinColor] thumbColor:[UIColor alizarinColor]];
-    initialTime = 15;
-    seconds = initialTime;
+    [self restartTime];
     [self gameSetup];
     [self gameWon];
     completedSets = 0;
@@ -209,11 +208,14 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
             //nothing
         }];
     }else if (buttonIndex == 1){
-        seconds = initialTime;
+        [self restartTime];
         [self gameSetup];
         [self gameWon];
     }
 }
 
-
+-(void)restartTime{
+    initialTime = 15;
+    seconds = initialTime;
+}
 @end
