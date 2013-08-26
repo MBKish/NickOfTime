@@ -24,6 +24,7 @@
     __weak IBOutlet UISlider *slider;
     float initialTime;
     float seconds;
+    float bonusTime;
     NSTimer *myTimer;
     int completedGames;
     int completedSets;
@@ -45,7 +46,7 @@
     //self.containerViewController.findTheObjectViewController.testDelegate = self;
     self.containerViewController.delegate = self;
     [slider configureFlatSliderWithTrackColor:[UIColor cloudsColor] progressColor:[UIColor alizarinColor] thumbColor:[UIColor alizarinColor]];
-    initialTime = 40;
+    initialTime = 15;
     seconds = initialTime;
     [self gameSetup];
     [self gameWon];
@@ -77,6 +78,7 @@
         // NSLog(@"%f",seconds);
     }else{
         [myTimer invalidate];
+        bonusTime = seconds;
         NSLog(@"done");
         
         FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"You lose" message:@"You ran out of time." delegate:nil cancelButtonTitle:@"Home" otherButtonTitles:@"Restart", nil];
@@ -92,6 +94,10 @@
         alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
         alertView.defaultButtonTitleColor = [UIColor asbestosColor];
         [alertView show];
+        
+        NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+        [notificationCenter postNotificationName:@"restartGame" object:nil];
+        seconds = initialTime;
 
     }
         slider.value = seconds;
@@ -181,7 +187,7 @@
 }
 
 -(void)calculateSeconds{
-    initialTime = initialTime - 1;
+    initialTime = (initialTime - 2) + bonusTime;
     seconds = initialTime;
 }
 
@@ -191,7 +197,6 @@
     [self.containerViewController swapViewControllers2];
 
     if (((completedSets % 2) == 0) && (completedSets != 0)) {
-        NSLog(@"go to next level");
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
         [notificationCenter postNotificationName:@"nextLevel" object:nil];
     }
@@ -204,7 +209,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
             //nothing
         }];
     }else if (buttonIndex == 1){
-        initialTime = 15;
         seconds = initialTime;
         [self gameSetup];
         [self gameWon];

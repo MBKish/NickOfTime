@@ -140,7 +140,7 @@
     self.transitionInProgress = YES;
    
     
-    if (index==5) {
+    if (index==3) {
         index = 0;
     }
     self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];

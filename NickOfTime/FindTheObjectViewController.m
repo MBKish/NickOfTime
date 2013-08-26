@@ -51,6 +51,7 @@
     [super viewDidLoad];
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(swapLevel) name:@"nextLevel" object:nil];
+    [notificationCenter addObserver:self selector:@selector(restartLevel:) name:@"restartGame" object:nil];
 
     
     arrayOfTags = @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15"];
@@ -429,5 +430,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)restartLevel:(id)sender{
+    level = 0;
+    [self randomCommand];
+    [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
+}
 
 @end
