@@ -136,32 +136,29 @@
 
 - (void)swapViewControllers2
 {
-    if (self.transitionInProgress) {
-        return;
-    }
-   
-    self.transitionInProgress = YES;
-   
-    
+  
+    self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];
+      [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
+    index++;
+
     if (index==3) {
         index = 0;
     }
-    self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];
-   // self.currentSegueIdentifier = ([self.currentSegueIdentifier isEqualToString:SegueIdentifierSecond]) ? SegueIdentifierThird : SegueIdentifierSecond;
-    
-    [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
-    index++;
-
 }
 
 - (void)swapViewControllers3
 {
-    if (self.transitionInProgress) {
+/*    if (self.transitionInProgress) {
         return;
     }
     
-    self.transitionInProgress = YES;
+    self.transitionInProgress = YES; */
     
+  
+    self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];
+       [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
+    
+    index++;
     
     if (index==2) {
         index = 3;
@@ -169,21 +166,16 @@
     if (index==4) {
         index = 0;
     }
-    self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];
-    // self.currentSegueIdentifier = ([self.currentSegueIdentifier isEqualToString:SegueIdentifierSecond]) ? SegueIdentifierThird : SegueIdentifierSecond;
-    
-    [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
-    index++;
     
 }
 
 - (void)swapViewControllers4
 {
-    if (self.transitionInProgress) {
-        return;
-    }
+ 
     
-    self.transitionInProgress = YES;
+    self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];
+       [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
+    index++;
     
     
     if (index==2) {
@@ -193,21 +185,12 @@
     if (index == 5) {
         index = 0;
     }
-    
-    self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];
-    // self.currentSegueIdentifier = ([self.currentSegueIdentifier isEqualToString:SegueIdentifierSecond]) ? SegueIdentifierThird : SegueIdentifierSecond;
-    
-    [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
-    index++;
-    
 }
 
 -(void)restart:(id)sender{
     index = 0;
     self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];
-    // self.currentSegueIdentifier = ([self.currentSegueIdentifier isEqualToString:SegueIdentifierSecond]) ? SegueIdentifierThird : SegueIdentifierSecond;
-    
-    [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
+       [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
     index++;
 }
 

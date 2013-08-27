@@ -85,12 +85,10 @@
     [checkArray addObject:@"0"];
     if (index <3) {
         if ([checkArray isEqualToArray:commandArray]) {
-            NSLog(@"youwin!");
             [delegate didWinGame];
             [self pickAndDisplayCommand];
         }
         else {
-            NSLog(@"youlose!");
             [delegate didLoseGame];
             [self pickAndDisplayCommand];
             
@@ -99,14 +97,12 @@
      
     if (index < 20) {
         if ([checkArray isEqualToArray:commandArray]) {
-            NSLog(@"youwin!");
             [delegate didWinGame];
             [self pickAndDisplayCommand];
             
         }
         if ((checkArray.count == 1) && (commandArray.count == 2)) {
             if (checkArray[0] != commandArray [0]) {
-                NSLog(@"youlose!");
                 [delegate didLoseGame];
                 [self pickAndDisplayCommand];
 
@@ -114,7 +110,6 @@
         }
         
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
-            NSLog(@"youlose!");
             [delegate didLoseGame];
             [self pickAndDisplayCommand];
         }
@@ -123,12 +118,10 @@
     
     else {
         if (![checkArray isEqualToArray:commandArray]) {
-            NSLog(@"youwin!");
             [delegate didWinGame];
             [self pickAndDisplayCommand];
         }
         else{
-            NSLog(@"youlose!");
             [delegate didLoseGame];
             [self pickAndDisplayCommand];
             
@@ -141,12 +134,10 @@
     [checkArray addObject:@"1"];
     if (index <3) {
         if ([checkArray isEqualToArray:commandArray]) {
-            NSLog(@"youwin!");
             [delegate didWinGame];
             [self pickAndDisplayCommand];
              }
              else {
-                 NSLog(@"youlose!");
                  [delegate didLoseGame];
                  [self pickAndDisplayCommand];
 
@@ -154,20 +145,17 @@
     }
     if (index < 20) {
         if ([checkArray isEqualToArray:commandArray]) {
-            NSLog(@"youwin!");
             [delegate didWinGame];
             [self pickAndDisplayCommand];
         }
         if ((checkArray.count == 1) && (commandArray.count == 2)) {
             if (checkArray[0] != commandArray [0]) {
-                NSLog(@"youlose!");
                 [delegate didLoseGame];
                 [self pickAndDisplayCommand];
                 
             }
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
-            NSLog(@"youlose!");
             [delegate didLoseGame];
             [self pickAndDisplayCommand];
         }
@@ -176,12 +164,10 @@
     
     else {
         if (![checkArray isEqualToArray:commandArray]) {
-            NSLog(@"youwin!");
             [self pickAndDisplayCommand];
             [delegate didWinGame];
         }
         else{
-            NSLog(@"youlose!");
             [delegate didLoseGame];
             [self pickAndDisplayCommand];
             
@@ -194,12 +180,10 @@
     [checkArray addObject:@"2"];
     if (index <3) {
         if ([checkArray isEqualToArray:commandArray]) {
-            NSLog(@"youwin!");
             [delegate didWinGame];
             [self pickAndDisplayCommand];
         }
         else {
-            NSLog(@"youlose!");
             [delegate didLoseGame];
             [self pickAndDisplayCommand];
             
@@ -207,20 +191,17 @@
     }
     if (index < 20) {
         if ([checkArray isEqualToArray:commandArray]) {
-            NSLog(@"youwin!");
             [self pickAndDisplayCommand];
             [delegate didWinGame];
         }
         if ((checkArray.count == 1) && (commandArray.count == 2)) {
             if (checkArray[0] != commandArray [0]) {
-                NSLog(@"youlose!");
                 [delegate didLoseGame];
                 [self pickAndDisplayCommand];
                 
             }
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
-            NSLog(@"youlose!");
             [delegate didLoseGame];
             [self pickAndDisplayCommand];
         }
@@ -229,14 +210,13 @@
     
     else {
         if (![checkArray isEqualToArray:commandArray]) {
-            NSLog(@"youwin!");
             [self pickAndDisplayCommand];
             [delegate didWinGame];
         }
         else{
-            NSLog(@"youlose!");
             [self pickAndDisplayCommand];
-            
+            [delegate didLoseGame];
+
         }
     }
     
@@ -246,12 +226,10 @@
     [checkArray addObject:@"3"];
     if (index <3) {
         if ([checkArray isEqualToArray:commandArray]) {
-            NSLog(@"youwin!");
             [delegate didWinGame];
             [self pickAndDisplayCommand];
         }
         else {
-            NSLog(@"youlose!");
             [delegate didLoseGame];
             [self pickAndDisplayCommand];
             
@@ -259,20 +237,17 @@
     }
     if (index < 20) {
         if ([checkArray isEqualToArray:commandArray]) {
-            NSLog(@"youwin!");
             [self pickAndDisplayCommand];
             [delegate didWinGame];
         }
         if ((checkArray.count == 1) && (commandArray.count == 2)) {
             if (checkArray[0] != commandArray [0]) {
-                NSLog(@"youlose!");
                 [delegate didLoseGame];
                 [self pickAndDisplayCommand];
                 
             }
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
-            NSLog(@"youlose!");
             [delegate didLoseGame];
             [self pickAndDisplayCommand];
         }
@@ -281,12 +256,10 @@
     
     else {
         if (![checkArray isEqualToArray:commandArray]) {
-            NSLog(@"youwin!");
             [self pickAndDisplayCommand];
             [delegate didWinGame];
         }
         else{
-            NSLog(@"youlose!");
             [delegate didLoseGame];
             [self pickAndDisplayCommand];
             
@@ -508,7 +481,6 @@
     if (level <2) {
         level = level +1;
     }
-    NSLog(@"%i",level);
 }
 
 -(void)restartLevel:(id)sender{

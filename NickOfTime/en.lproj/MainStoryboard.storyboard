@@ -221,9 +221,24 @@
                     <view key="view" contentMode="scaleToFill" id="lK5-1E-LYM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZD-oj-QmY">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nZD-oj-QmY" firstAttribute="leading" secondItem="lK5-1E-LYM" secondAttribute="leading" type="default" id="BUP-9O-3Kg"/>
+                            <constraint firstItem="nZD-oj-QmY" firstAttribute="trailing" secondItem="lK5-1E-LYM" secondAttribute="trailing" type="default" id="hyH-yX-zfc"/>
+                            <constraint firstItem="nZD-oj-QmY" firstAttribute="top" secondItem="lK5-1E-LYM" secondAttribute="top" type="default" id="lND-sL-aw4"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="notificationLabel" destination="nZD-oj-QmY" id="n2a-Rf-1JL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vP1-Bn-UvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -391,6 +406,9 @@
         </class>
         <class className="PressButton2ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PressButton2ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="notificationLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="PressButton3ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PressButton3ViewController.h"/>
@@ -420,7 +438,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="swap:"/>
-                <relationship kind="outlet" name="score" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
             </relationships>
