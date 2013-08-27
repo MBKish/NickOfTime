@@ -13,7 +13,7 @@
 
 @interface PressButton2ViewController : UIViewController<PressDelegate>
 
-@property (strong, nonatomic) id<WinOrLoseDelegate>testDelegate;
+@property (strong, nonatomic) id<WinOrLoseDelegate>delegate;
 
 
 @end
