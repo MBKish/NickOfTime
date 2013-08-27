@@ -203,7 +203,72 @@
 }
 -(void) didClickGameView: (ColorButtons *) thisView
 {
-    
+    [playButtonArray removeObject:thisView];
+    [thisView setUserInteractionEnabled:NO];
+    gameCounter++;
+    NSLog(@"buttonArray %lu", (unsigned long)buttonArray.count);
+    NSLog(@"gamecounter %i", gameCounter);
+    NSLog(@"playframearray %lu", (unsigned long)playFrameArray.count);
+    if (gameCounter == colorArray.count) {
+        
+        
+        [UIView animateWithDuration:1.0 animations:^{
+            thisView.backgroundColor = black;
+            [thisView setCenter: button0.center];
+        }completion:^(BOOL finished) {
+            [UIView animateWithDuration:1.0 animations:^{
+                for (ColorButtons *obj in buttonArray){
+                    //offset = 300;
+                    obj.transform = CGAffineTransformScale(obj.transform, 0.01, 0.01);
+                }
+            }completion:^(BOOL finished) {
+                for (ColorButtons *obj in buttonArray){
+                    [obj setHidden:YES];
+                    obj.transform = CGAffineTransformScale(obj.transform, 100, 100);
+                    notificationLabel.text = @"Winner, winner!";
+                    [testDelegate didWinGame];
+                }
+            }];
+        }];
+    }else{
+        //        spin = (M_2_PI * arc4random_uniform(360))/360;
+        
+        frame1 = CGRectOffset(button0.frame, offset* cosf((1*(2*M_PI)/playButtonArray.count) + spin), offset* sinf((1*(2*M_PI)/playButtonArray.count) + spin));
+        frame2 = CGRectOffset(button0.frame, offset* cosf((2*(2*M_PI)/playButtonArray.count) + spin), offset* sinf((2*(2*M_PI)/playButtonArray.count) + spin));
+        frame3 = CGRectOffset(button0.frame, offset* cosf((3*(2*M_PI)/playButtonArray.count) + spin), offset* sinf((3*(2*M_PI)/playButtonArray.count) + spin));
+        frame4 = CGRectOffset(button0.frame, offset* cosf((4*(2*M_PI)/playButtonArray.count) + spin), offset* sinf((4*(2*M_PI)/playButtonArray.count) + spin));
+        frame5 = CGRectOffset(button0.frame, offset* cosf((5*(2*M_PI)/playButtonArray.count) + spin), offset* sinf((5*(2*M_PI)/playButtonArray.count) + spin));
+        frame6 = CGRectOffset(button0.frame, offset* cosf((6*(2*M_PI)/playButtonArray.count) + spin), offset* sinf((6*(2*M_PI)/playButtonArray.count) + spin));
+        frame7 = CGRectOffset(button0.frame, offset* cosf((7*(2*M_PI)/playButtonArray.count) + spin), offset* sinf((7*(2*M_PI)/playButtonArray.count) + spin));
+        frame8 = CGRectOffset(button0.frame, offset* cosf((8*(2*M_PI)/playButtonArray.count) + spin), offset* sinf((8*(2*M_PI)/playButtonArray.count) + spin));
+        frame9 = CGRectOffset(button0.frame, offset* cosf((9*(2*M_PI)/playButtonArray.count) + spin), offset* sinf((9*(2*M_PI)/playButtonArray.count) + spin));
+        
+        playFrameArray = [[NSMutableArray alloc] initWithObjects:[NSValue valueWithCGRect:frame1], [NSValue valueWithCGRect:frame2], [NSValue valueWithCGRect:frame3], [NSValue valueWithCGRect:frame4], [NSValue valueWithCGRect:frame5], [NSValue valueWithCGRect:frame6], [NSValue valueWithCGRect:frame7], [NSValue valueWithCGRect:frame8], [NSValue valueWithCGRect:frame9], nil];
+        
+        if (playButtonArray.count > 1) {
+            for (NSInteger i = playButtonArray.count-1; i > 0; i--)
+            {
+                [playButtonArray exchangeObjectAtIndex:i withObjectAtIndex:arc4random_uniform(i+1)];
+            }
+        }
+        [UIView animateWithDuration:1.0 animations:^{
+            thisView.backgroundColor = black;
+            [thisView setCenter: button0.center];
+        }completion:^(BOOL finished) {
+            spin = (2 * M_PI * arc4random_uniform(360))/360;
+            NSLog(@"spin %f", spin);
+            [UIView animateWithDuration:1.0 animations:^{
+                int frameElement = 0;
+                for (ColorButtons *obj in playButtonArray) {
+                    obj.frame = [playFrameArray[frameElement] CGRectValue];
+                    frameElement++;
+                    //NSLog(@"frame1 origin %@", NSStringFromCGPoint(frame1.origin));
+                    //NSLog(@"spin %f", spin/M_2_PI);
+                }
+            }];
+        }];
+        [self.view sendSubviewToBack:thisView];
+    }
 }
 
 @end

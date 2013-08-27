@@ -84,7 +84,7 @@
     }
     if (([segue.identifier isEqualToString:SegueIdentifierFifth]) && !self.pressButton3ViewController) {
         self.pressButton3ViewController = segue.destinationViewController;
-        // self.pressButton2ViewController.testDelegate = delegate;
+        self.pressButton3ViewController.testDelegate = delegate;
     }
 
     
