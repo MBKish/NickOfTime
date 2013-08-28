@@ -167,47 +167,53 @@
         // Do any additional setup after loading the view.
         
         //CGPoint center = CGPointMake(CGRectGetMidX(self.view.frame), CGRectGetMidY(self.view.frame));
-        button0 = [[UIView alloc] initWithFrame: CGRectMake(center.x - frameSize/2, center.y - 20-frameSize/2,frameSize,frameSize)];
-        [button0 setCenter: self.view.center];
-        
-        button1PB3 = [[ColorButtons alloc] init];
-        button2PB3 = [[ColorButtons alloc] init];
-        button3PB3 = [[ColorButtons alloc] init];
-        button4PB3 = [[ColorButtons alloc] init];
-        button5PB3 = [[ColorButtons alloc] init];
-        button6PB3 = [[ColorButtons alloc] init];
-        button7PB3 = [[ColorButtons alloc] init];
-        button8PB3 = [[ColorButtons alloc] init];
-        button9PB3 = [[ColorButtons alloc] init];
-        buttonArray3 = [[NSArray alloc] initWithObjects:button1PB3, button2PB3, button3PB3, button4PB3, button5PB3, button6PB3, button7PB3, button8PB3, button9PB3, nil];
-        playButtonArray3 = [[NSMutableArray alloc] initWithArray:buttonArray3];
-        
-        frame1 = CGRectOffset(button0.frame, offset* cosf((1*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((1*(2*M_PI)/playButtonArray3.count) + spin));
-        frame2 = CGRectOffset(button0.frame, offset* cosf((2*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((2*(2*M_PI)/playButtonArray3.count) + spin));
-        frame3 = CGRectOffset(button0.frame, offset* cosf((3*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((3*(2*M_PI)/playButtonArray3.count) + spin));
-        frame4 = CGRectOffset(button0.frame, offset* cosf((4*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((4*(2*M_PI)/playButtonArray3.count) + spin));
-        frame5 = CGRectOffset(button0.frame, offset* cosf((5*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((5*(2*M_PI)/playButtonArray3.count) + spin));
-        frame6 = CGRectOffset(button0.frame, offset* cosf((6*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((6*(2*M_PI)/playButtonArray3.count) + spin));
-        frame7 = CGRectOffset(button0.frame, offset* cosf((7*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((7*(2*M_PI)/playButtonArray3.count) + spin));
-        frame8 = CGRectOffset(button0.frame, offset* cosf((8*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((8*(2*M_PI)/playButtonArray3.count) + spin));
-        frame9 = CGRectOffset(button0.frame, offset* cosf((9*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((9*(2*M_PI)/playButtonArray3.count) + spin));
-        
-        frameArray = [[NSArray alloc] initWithObjects:[NSValue valueWithCGRect:frame1], [NSValue valueWithCGRect:frame2], [NSValue valueWithCGRect:frame3], [NSValue valueWithCGRect:frame4], [NSValue valueWithCGRect:frame5], [NSValue valueWithCGRect:frame6], [NSValue valueWithCGRect:frame7], [NSValue valueWithCGRect:frame8], [NSValue valueWithCGRect:frame9], nil];
-        
-        //using buttonArray as alternate to isKind ofClass iteration
 
-        //needed to add subviews above before could do below
-        int element = 0;
-        for (ColorButtons* subview in buttonArray3) {
-               [self.view addSubview:subview];
-            //tag not used in current version
-            subview.tag = element;
-            subview.frame = button0.frame;
-            element++;
-            
-        }
+        [self createPB3Buttons];
 
-    } 
+    }
+}
+-(void)createPB3Buttons
+{
+    button0 = [[UIView alloc] initWithFrame: CGRectMake(center.x - frameSize/2, center.y - 20-frameSize/2,frameSize,frameSize)];
+    [button0 setCenter: self.view.center];
+    
+    button1PB3 = [[ColorButtons alloc] init];
+    button2PB3 = [[ColorButtons alloc] init];
+    button3PB3 = [[ColorButtons alloc] init];
+    button4PB3 = [[ColorButtons alloc] init];
+    button5PB3 = [[ColorButtons alloc] init];
+    button6PB3 = [[ColorButtons alloc] init];
+    button7PB3 = [[ColorButtons alloc] init];
+    button8PB3 = [[ColorButtons alloc] init];
+    button9PB3 = [[ColorButtons alloc] init];
+    buttonArray3 = [[NSArray alloc] initWithObjects:button1PB3, button2PB3, button3PB3, button4PB3, button5PB3, button6PB3, button7PB3, button8PB3, button9PB3, nil];
+    playButtonArray3 = [[NSMutableArray alloc] initWithArray:buttonArray3];
+    
+    frame1 = CGRectOffset(button0.frame, offset* cosf((1*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((1*(2*M_PI)/playButtonArray3.count) + spin));
+    frame2 = CGRectOffset(button0.frame, offset* cosf((2*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((2*(2*M_PI)/playButtonArray3.count) + spin));
+    frame3 = CGRectOffset(button0.frame, offset* cosf((3*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((3*(2*M_PI)/playButtonArray3.count) + spin));
+    frame4 = CGRectOffset(button0.frame, offset* cosf((4*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((4*(2*M_PI)/playButtonArray3.count) + spin));
+    frame5 = CGRectOffset(button0.frame, offset* cosf((5*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((5*(2*M_PI)/playButtonArray3.count) + spin));
+    frame6 = CGRectOffset(button0.frame, offset* cosf((6*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((6*(2*M_PI)/playButtonArray3.count) + spin));
+    frame7 = CGRectOffset(button0.frame, offset* cosf((7*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((7*(2*M_PI)/playButtonArray3.count) + spin));
+    frame8 = CGRectOffset(button0.frame, offset* cosf((8*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((8*(2*M_PI)/playButtonArray3.count) + spin));
+    frame9 = CGRectOffset(button0.frame, offset* cosf((9*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((9*(2*M_PI)/playButtonArray3.count) + spin));
+    
+    frameArray = [[NSArray alloc] initWithObjects:[NSValue valueWithCGRect:frame1], [NSValue valueWithCGRect:frame2], [NSValue valueWithCGRect:frame3], [NSValue valueWithCGRect:frame4], [NSValue valueWithCGRect:frame5], [NSValue valueWithCGRect:frame6], [NSValue valueWithCGRect:frame7], [NSValue valueWithCGRect:frame8], [NSValue valueWithCGRect:frame9], nil];
+    
+    //using buttonArray as alternate to isKind ofClass iteration
+    
+    //needed to add subviews above before could do below
+    int element = 0;
+    for (ColorButtons* subview in buttonArray3) {
+        [self.view addSubview:subview];
+        //tag not used in current version
+        subview.tag = element;
+        subview.frame = button0.frame;
+        element++;
+        
+    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -231,6 +237,7 @@
     }
     [self startDemo:self];
     level = 2;
+    //Put the IBAction stuff here OR fix startDemo to do the setup stuff (Rect coords etc) for you
 }
 
 - (void)didReceiveMemoryWarning
@@ -327,20 +334,26 @@
         }
         
     } else if (level == 2){
+        for (UIView *subview in self.view.subviews) {
+                [subview removeFromSuperview];
+            }
         
-        [button0 setCenter: self.view.center];
-        frame1 = CGRectOffset(button0.frame, offset* cosf((1*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((1*(2*M_PI)/playButtonArray3.count) + spin));
-        frame2 = CGRectOffset(button0.frame, offset* cosf((2*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((2*(2*M_PI)/playButtonArray3.count) + spin));
-        frame3 = CGRectOffset(button0.frame, offset* cosf((3*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((3*(2*M_PI)/playButtonArray3.count) + spin));
-        frame4 = CGRectOffset(button0.frame, offset* cosf((4*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((4*(2*M_PI)/playButtonArray3.count) + spin));
-        frame5 = CGRectOffset(button0.frame, offset* cosf((5*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((5*(2*M_PI)/playButtonArray3.count) + spin));
-        frame6 = CGRectOffset(button0.frame, offset* cosf((6*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((6*(2*M_PI)/playButtonArray3.count) + spin));
-        frame7 = CGRectOffset(button0.frame, offset* cosf((7*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((7*(2*M_PI)/playButtonArray3.count) + spin));
-        frame8 = CGRectOffset(button0.frame, offset* cosf((8*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((8*(2*M_PI)/playButtonArray3.count) + spin));
-        frame9 = CGRectOffset(button0.frame, offset* cosf((9*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((9*(2*M_PI)/playButtonArray3.count) + spin));
         
-        frameArray = [[NSArray alloc] initWithObjects:[NSValue valueWithCGRect:frame1], [NSValue valueWithCGRect:frame2], [NSValue valueWithCGRect:frame3], [NSValue valueWithCGRect:frame4], [NSValue valueWithCGRect:frame5], [NSValue valueWithCGRect:frame6], [NSValue valueWithCGRect:frame7], [NSValue valueWithCGRect:frame8], [NSValue valueWithCGRect:frame9], nil];
+        [self createPB3Buttons];
         
+        for (UIView * subview in self.view.subviews){
+            if ([subview isKindOfClass:[ColorButtons class]]){
+                [subview setUserInteractionEnabled:YES];
+                [subview setAlpha:1.0];
+                ColorButtons *view = (ColorButtons*) subview;
+                 view.pressButtonsDelegate = self;
+                view.layer.borderWidth = 2;
+                    view.layer.cornerRadius = 35;
+                subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
+            }
+        }
+        
+                
         playButtonArray3 = [[NSMutableArray alloc] initWithArray:buttonArray3];
         playFrameArray = [[NSMutableArray alloc] initWithArray:frameArray];
         for (NSInteger i = colorArray3.count-1; i > 0; i--)
@@ -360,15 +373,15 @@
 //                subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
 //                [subview setHidden:NO];
 //                [subview setUserInteractionEnabled:YES];
-                [UIView animateWithDuration:1.0 animations:^{
+                [UIView animateWithDuration:0.3 animations:^{
                     subview.transform = CGAffineTransformScale(subview.transform, 100, 100);
                 }completion:^(BOOL finished) {
-                    [UIView animateWithDuration:1.0 animations:^{
+                    [UIView animateWithDuration:0.3 animations:^{
                         subview.frame = [frameArray[frameElement] CGRectValue];
                     }];
                 }];
-                frameElement++;
-            }
+                
+            }frameElement++;
         }textInstruction.text = @"Extinguish all the lights";
 
     }
@@ -403,6 +416,7 @@
             gameCounter++;
             
             if (gameCounter == colorArray2.count) {
+                
                 textInstruction.text = @"Winner, winner!";
                 [delegate didWinGame];
             }
@@ -437,11 +451,11 @@
         if (gameCounter == colorArray3.count) {
             
             
-            [UIView animateWithDuration:1.9 animations:^{
+            [UIView animateWithDuration:0.3 animations:^{
                 thisView.backgroundColor = black;
                 [thisView setCenter: button0.center];
             }completion:^(BOOL finished) {
-                [UIView animateWithDuration:1.0 animations:^{
+                [UIView animateWithDuration:0.3 animations:^{
                     for (ColorButtons *obj in buttonArray3){
                         //offset = 300;
                         obj.transform = CGAffineTransformScale(obj.transform, 0.01, 0.01);
@@ -452,8 +466,11 @@
                         obj.transform = CGAffineTransformScale(obj.transform, 100, 100);
                         
                     }
-                    textInstruction.text = @"Winner, winner!";
+                    textInstruction.text = @"Winner, winner!";     
                     [delegate didWinGame];
+                    for (UIView *subview in self.view.subviews) {
+                        [subview removeFromSuperview];
+                    }
                 }];
             }];
         }else{
@@ -477,13 +494,13 @@
                     [playButtonArray3 exchangeObjectAtIndex:i withObjectAtIndex:arc4random_uniform(i+1)];
                 }
             }
-            [UIView animateWithDuration:1.0 animations:^{
+            [UIView animateWithDuration:0.3 animations:^{
                 thisView.backgroundColor = black;
                 [thisView setCenter: button0.center];
             }completion:^(BOOL finished) {
                 spin = (2 * M_PI * arc4random_uniform(360))/360;
                 NSLog(@"spin %f", spin);
-                [UIView animateWithDuration:1.0 animations:^{
+                [UIView animateWithDuration:0.3 animations:^{
                     int frameElement = 0;
                     for (ColorButtons *obj in playButtonArray3) {
                         obj.frame = [playFrameArray[frameElement] CGRectValue];
