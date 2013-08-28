@@ -146,47 +146,6 @@
     }
 }
 
-- (void)swapViewControllers3
-{
-/*    if (self.transitionInProgress) {
-        return;
-    }
-    
-    self.transitionInProgress = YES; */
-    
-  
-    self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];
-       [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
-    
-    index++;
-    
-    if (index==2) {
-        index = 3;
-    }
-    if (index==4) {
-        index = 0;
-    }
-    
-}
-
-- (void)swapViewControllers4
-{
- 
-    
-    self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];
-       [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
-    index++;
-    
-    
-    if (index==2) {
-        index = 4;
-    }
-    
-    if (index == 5) {
-        index = 0;
-    }
-}
-
 -(void)restart:(id)sender{
     index = 0;
     self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];

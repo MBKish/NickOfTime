@@ -56,10 +56,7 @@
     [self gameSetup];
     [self gameWon];
     completedSets = 0;
-    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter addObserver:self selector:@selector(swapLevel:) name:@"nextLevel" object:nil];
-    [notificationCenter addObserver:self selector:@selector(restartLevel:) name:@"restartGame" object:nil];
-    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,7 +80,7 @@
 {
     if(!(slider.value <= 0)){
         seconds = seconds - .01;
-        // NSLog(@"%f",seconds);
+         NSLog(@"%f",seconds);
         bonusTime = seconds;
 
     }else{
@@ -223,20 +220,8 @@
     }
     
     [self gameSetup];
+    [self.containerViewController swapViewControllers2];
 
-    
-    if (level == 0) {
-        [self.containerViewController swapViewControllers2];
-    }
-    
-    if (level == 1) {
-        [self.containerViewController swapViewControllers3];
-    }
-    
-    if (level == 2) {
-        [self.containerViewController swapViewControllers4];
-    }
-    
    
 }
 
@@ -265,14 +250,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     scoreLabel.text = [NSString stringWithFormat:@"%i",score];
 }
 
--(void)swapLevel:(id)sender{
-    if (level <2) {
-        level = level +1;
-    }
-}
 
--(void)restartLevel:(id)sender{
-    level = 0;    
-}
 
 @end
