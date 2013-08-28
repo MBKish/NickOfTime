@@ -287,16 +287,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYk-0S-jg4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="EID-Vl-K8t"/>
+                                    <constraint firstAttribute="width" constant="309" id="Oah-ow-0d4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4pI-NY-n3V" firstAttribute="centerX" secondItem="eYk-0S-jg4" secondAttribute="centerX" type="default" id="Hod-U6-Fb5"/>
                             <constraint firstItem="4pI-NY-n3V" firstAttribute="top" secondItem="baM-7Y-tWd" secondAttribute="top" constant="20" symbolic="YES" type="default" id="I7U-3o-mG3"/>
-                            <constraint firstItem="4pI-NY-n3V" firstAttribute="centerX" secondItem="baM-7Y-tWd" secondAttribute="centerX" type="default" id="tWG-TK-7eI"/>
+                            <constraint firstItem="eYk-0S-jg4" firstAttribute="top" secondItem="baM-7Y-tWd" secondAttribute="top" constant="7" id="nhS-ty-tew"/>
+                            <constraint firstItem="eYk-0S-jg4" firstAttribute="centerX" secondItem="baM-7Y-tWd" secondAttribute="centerX" type="default" id="uNs-le-OCd"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="textInstruction" destination="4pI-NY-n3V" id="MU7-ON-c2L"/>
+                        <outlet property="textInstruction" destination="4pI-NY-n3V" id="ncv-Mn-EXz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJ1-XV-Hc0" userLabel="First Responder" sceneMemberID="firstResponder"/>

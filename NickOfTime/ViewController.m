@@ -80,7 +80,7 @@
 {
     if(!(slider.value <= 0)){
         seconds = seconds - .01;
-         NSLog(@"%f",seconds);
+         //NSLog(@"%f",seconds);
         bonusTime = seconds;
 
     }else{
@@ -196,7 +196,7 @@
         }
     
     completedGames = 0;
-    completedSets = 0;
+    //completedSets = 0;
     [self calculateSeconds];
     slider.maximumValue = seconds;
     slider.value = seconds;
