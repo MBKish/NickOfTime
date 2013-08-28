@@ -69,7 +69,9 @@
     NSArray *frameArray;
     NSMutableArray *playButtonArray3;
     NSMutableArray *playFrameArray;
+
     __weak IBOutlet UILabel *textInstruction;
+
 
 }
 
@@ -101,15 +103,20 @@
     color9 =[UIColor colorWithRed:151/255.0f green:168/255.0f blue:49/255.0f alpha:1.0f];
     black = [UIColor blackColor];
     
-    level = 2;
-
-
+    //level = 1;
+    
+    
     center = self.view.center;
     
     [self setup];
-
+    
     
     [super viewDidLoad];
+    
+    
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(swapLevel:) name:@"nextLevel" object:nil];
+    [notificationCenter addObserver:self selector:@selector(restartLevel:) name:@"restartGame" object:nil];
 	
     for (UIView * subview in self.view.subviews){
         if ([subview isKindOfClass:[ColorButtons class]]) {
@@ -121,41 +128,13 @@
 }
 -(void) setup
 {
-    if (level == 0) {
-        ColorButtons *button2 = [[ColorButtons alloc] initWithFrame:CGRectMake(center.x-40, 155-40, 80, 80)];
-        ColorButtons *button1 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button2.frame, -100, 0)];
-        ColorButtons *button3 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button2.frame, 100, 0)];
-        [self.view addSubview:button1];
-        [self.view addSubview:button2];
-        [self.view addSubview:button3];
-        button1.tag = 0;
-        button2.tag = 1;
-        button3.tag = 2;
-       
+    /*if (level == 0) {
+        [self createPB1Buttons];
+        
     } else if (level == 1){
-        ColorButtons *button5Origin = [[ColorButtons alloc] initWithFrame:CGRectMake(center.x-40, 155-40, 80, 80)];
-        //ColorButtons *button1 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, -100)];
-        ColorButtons *button2 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 0, -100)];
-        //ColorButtons *button3 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, -100)];
-        ColorButtons *button4 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, 0)];
-        ColorButtons *button6 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, 0)];
-        //ColorButtons *button7 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, 100)];
-        ColorButtons *button8 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 0, 100)];
-        //ColorButtons *button9 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, 100)];
+        [self createPB2Buttons];
         
-        //below for build with 9 buttons
-        //NSArray* buttonArray = @[button1, button2, button3, button4, button5Origin, button6, button7, button8, button9];
-        NSArray* buttonArray = @[button2, button4, button5Origin, button6, button8];
-        
-        int element = 0;
-        for (ColorButtons* subview in buttonArray) {
-             [self.view addSubview:subview];
-            subview.tag = element;
-            element++;
-
-        }
-       
-    } else if (level == 2){
+    } *///else if (level == 2){
         //colorArray3 = [[NSMutableArray alloc] initWithObjects:color1,color2,color3,color4,color5,color6,color7,color8,color9, nil];
         offset = 105;
         frameSize = 70;
@@ -176,9 +155,45 @@
         // Do any additional setup after loading the view.
         
         //CGPoint center = CGPointMake(CGRectGetMidX(self.view.frame), CGRectGetMidY(self.view.frame));
-
+        
         [self createPB3Buttons];
-
+        
+    //}
+}
+-(void)createPB1Buttons
+{
+    ColorButtons *button2 = [[ColorButtons alloc] initWithFrame:CGRectMake(center.x-40, 155-40, 80, 80)];
+    ColorButtons *button1 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button2.frame, -100, 0)];
+    ColorButtons *button3 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button2.frame, 100, 0)];
+    [self.view addSubview:button1];
+    [self.view addSubview:button2];
+    [self.view addSubview:button3];
+    button1.tag = 0;
+    button2.tag = 1;
+    button3.tag = 2;
+}
+-(void)createPB2Buttons
+{
+    ColorButtons *button5Origin = [[ColorButtons alloc] initWithFrame:CGRectMake(center.x-40, 155-40, 80, 80)];
+    //ColorButtons *button1 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, -100)];
+    ColorButtons *button2 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 0, -100)];
+    //ColorButtons *button3 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, -100)];
+    ColorButtons *button4 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, 0)];
+    ColorButtons *button6 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, 0)];
+    //ColorButtons *button7 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, 100)];
+    ColorButtons *button8 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 0, 100)];
+    //ColorButtons *button9 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, 100)];
+    
+    //below for build with 9 buttons
+    //NSArray* buttonArray = @[button1, button2, button3, button4, button5Origin, button6, button7, button8, button9];
+    NSArray* buttonArray = @[button2, button4, button5Origin, button6, button8];
+    
+    int element = 0;
+    for (ColorButtons* subview in buttonArray) {
+        [self.view addSubview:subview];
+        subview.tag = element;
+        element++;
+        
     }
 }
 -(void)createPB3Buttons
@@ -191,11 +206,11 @@
     button3PB3 = [[ColorButtons alloc] init];
     button4PB3 = [[ColorButtons alloc] init];
     button5PB3 = [[ColorButtons alloc] init];
-//    button6PB3 = [[ColorButtons alloc] init];
-//    button7PB3 = [[ColorButtons alloc] init];
-//    button8PB3 = [[ColorButtons alloc] init];
-//    button9PB3 = [[ColorButtons alloc] init];
-//    buttonArray3 = [[NSArray alloc] initWithObjects:button1PB3, button2PB3, button3PB3, button4PB3, button5PB3, button6PB3, button7PB3, button8PB3, button9PB3, nil];
+    //    button6PB3 = [[ColorButtons alloc] init];
+    //    button7PB3 = [[ColorButtons alloc] init];
+    //    button8PB3 = [[ColorButtons alloc] init];
+    //    button9PB3 = [[ColorButtons alloc] init];
+    //    buttonArray3 = [[NSArray alloc] initWithObjects:button1PB3, button2PB3, button3PB3, button4PB3, button5PB3, button6PB3, button7PB3, button8PB3, button9PB3, nil];
     buttonArray3 = [[NSArray alloc] initWithObjects:button1PB3, button2PB3, button3PB3, button4PB3, button5PB3, nil];
     playButtonArray3 = [[NSMutableArray alloc] initWithArray:buttonArray3];
     
@@ -225,16 +240,26 @@
     }
     
 }
+-(void)swapLevel:(id)sender{
+    if (level <2) {
+        level = level +1;
+    }
+}
+
+-(void)restartLevel:(id)sender{
+    level = 0;
+    //[self startDemo:self];
+    
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     for (UIView *subview in self.view.subviews) {
-        if ([subview isKindOfClass:[ColorButtons class]]) {
-            subview.hidden = YES;
-        }
-    }
+        if ([subview isKindOfClass:[ColorButtons class]]){
+        [subview removeFromSuperview];
+        }}
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -246,7 +271,7 @@
         }
     }
     [self startDemo:self];
-    level = 2;
+    //level = 1;
     //Put the IBAction stuff here OR fix startDemo to do the setup stuff (Rect coords etc) for you
 }
 
@@ -257,23 +282,25 @@
 }
 
 - (void)startDemo:(id)sender {
-    for (UIView * subview in self.view.subviews){
-        if ([subview isKindOfClass:[ColorButtons class]]){
-            [subview setAlpha:1.0];
-            ColorButtons *view = (ColorButtons*) subview;
-            view.layer.borderWidth = 2;
-            if (level == 2) {
-                view.layer.cornerRadius = 35;
-            } else {
-                view.layer.cornerRadius = 40;
-            }
-            
-            subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
-            
-        }}
+
     gameCounter = 0;
     
     if (level == 0) {
+        
+        [self createPB1Buttons];
+        
+        for (UIView * subview in self.view.subviews){
+            if ([subview isKindOfClass:[ColorButtons class]]){
+                [subview setAlpha:1.0];
+                [subview setUserInteractionEnabled:YES];
+                ColorButtons *view = (ColorButtons*) subview;
+                view.pressButtonsDelegate = self;
+                view.layer.borderWidth = 2;
+                view.layer.cornerRadius = 40;
+                subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
+            }
+           
+        }
         correct = NO;
         mutableColorLabelArray = [[NSMutableArray alloc] initWithArray:colorLabelArray];
         gameLabelArray = [[NSMutableArray alloc] initWithCapacity:10];
@@ -288,7 +315,12 @@
             [mutableColorArray removeObjectAtIndex:altRandom];
             //NSLog(@"colorarray %lu", (unsigned long)[playColorArray count]);
             
-        } textInstruction.text = [NSString stringWithFormat:@"Press the %@ button then the %@ button", gameLabelArray[0], gameLabelArray[1]];
+        }
+        
+        textInstruction.text = [NSString stringWithFormat:@"Press the %@ button then the %@ button", gameLabelArray[0], gameLabelArray[1]];
+        
+        NSLog(@" %@ %@", gameLabelArray[0], gameLabelArray[1]);
+        NSLog(@"%@", textInstruction.text);
         playArray = [[NSMutableArray alloc] initWithCapacity:5];
         [playArray addObject:[playDictionary objectForKey:gameLabelArray[0]]];
         [playArray addObject:[playDictionary objectForKey:gameLabelArray[1]]];
@@ -311,6 +343,22 @@
         }
         
     } else if (level == 1){
+        
+        [self createPB2Buttons];
+        
+        for (UIView * subview in self.view.subviews){
+            if ([subview isKindOfClass:[ColorButtons class]]){
+                [subview setAlpha:1.0];
+                [subview setUserInteractionEnabled:YES];
+                ColorButtons *view = (ColorButtons*) subview;
+                view.pressButtonsDelegate = self;
+                view.layer.borderWidth = 2;
+                view.layer.cornerRadius = 40;
+                subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
+            }
+            
+        }
+        
         NSMutableArray* selectColorArray = [[NSMutableArray alloc] initWithObjects:color1,color2,color3,color4,color5,color6,color7,color8,color9, nil];
         NSMutableArray* setupColorArray = [[NSMutableArray alloc] initWithArray:selectColorArray];
         colorArray2 = [[NSMutableArray alloc] initWithCapacity:10];
@@ -334,7 +382,7 @@
                 if ([subview isKindOfClass:[ColorButtons class]]){
                     if (subview.tag == counter){
                         subview.backgroundColor = randomColorArray2[counter];
-                        [UIView animateWithDuration:1.0 animations:^{
+                        [UIView animateWithDuration:0.3 animations:^{
                             subview.transform = CGAffineTransformScale(subview.transform, 100, 100);
                         }];
                         
@@ -345,8 +393,9 @@
         
     } else if (level == 2){
         for (UIView *subview in self.view.subviews) {
-                [subview removeFromSuperview];
-            }
+            if ([subview isKindOfClass:[ColorButtons class]]){
+            [subview removeFromSuperview];
+            }}
         
         
         [self createPB3Buttons];
@@ -356,14 +405,14 @@
                 [subview setUserInteractionEnabled:YES];
                 [subview setAlpha:1.0];
                 ColorButtons *view = (ColorButtons*) subview;
-                 view.pressButtonsDelegate = self;
+                view.pressButtonsDelegate = self;
                 view.layer.borderWidth = 2;
-                    view.layer.cornerRadius = 35;
-                subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
+                view.layer.cornerRadius = 35;
+                view.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
             }
         }
         
-                
+        
         playButtonArray3 = [[NSMutableArray alloc] initWithArray:buttonArray3];
         playFrameArray = [[NSMutableArray alloc] initWithArray:frameArray];
         for (NSInteger i = colorArray3.count-1; i > 0; i--)
@@ -376,13 +425,13 @@
                 [subview setAlpha:1.0];
                 ColorButtons *view = (ColorButtons*) subview;
                 view.backgroundColor = colorArray3[frameElement];
-//                view.layer.borderWidth = 2;
-//                view.layer.cornerRadius = 35;
+                //                view.layer.borderWidth = 2;
+                //                view.layer.cornerRadius = 35;
                 view.center = self.view.center;
-
-//                subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
-//                [subview setHidden:NO];
-//                [subview setUserInteractionEnabled:YES];
+                
+                //                subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
+                //                [subview setHidden:NO];
+                //                [subview setUserInteractionEnabled:YES];
                 [UIView animateWithDuration:0.2 animations:^{
                     subview.transform = CGAffineTransformScale(subview.transform, 100, 100);
                 }completion:^(BOOL finished) {
@@ -390,13 +439,13 @@
                         subview.frame = [frameArray[frameElement] CGRectValue];
                     }];
                 }];
-                
-            }frameElement++;
+                frameElement++;
+            }
         }textInstruction.text = @"Extinguish all the lights";
-
+        
     }
     
- 
+    
 }
 -(void) didClickGameView:(ColorButtons *)thisView
 {
@@ -409,11 +458,19 @@
         }else if ((correct = YES) && (thisView.backgroundColor == playArray[gameCounter])){
             NSLog(@"Success!");
             [delegate didWinGame];
+            for (UIView *subview in self.view.subviews) {
+                if ([subview isKindOfClass:[ColorButtons class]]){
+                    [subview removeFromSuperview];
+                }}
             //[self startDemo:self];
             
         }else{
             NSLog(@"Fail!");
             [delegate didLoseGame];
+            for (UIView *subview in self.view.subviews) {
+                if ([subview isKindOfClass:[ColorButtons class]]){
+                    [subview removeFromSuperview];
+                }}
             [self startDemo:self];
         }
         
@@ -429,6 +486,10 @@
                 
                 textInstruction.text = @"Winner, winner!";
                 [delegate didWinGame];
+                for (UIView *subview in self.view.subviews) {
+                    if ([subview isKindOfClass:[ColorButtons class]]){
+                        [subview removeFromSuperview];
+                    }}
             }
             
             
@@ -449,7 +510,7 @@
                         }}}}
         }
         randomColorArray2 = playColorArray2;
-
+        
         
     } else if (level == 2){
         [playButtonArray3 removeObject:thisView];
@@ -471,16 +532,17 @@
                         obj.transform = CGAffineTransformScale(obj.transform, 0.01, 0.01);
                     }
                 }completion:^(BOOL finished) {
-                    for (ColorButtons *obj in buttonArray3){
-                        [obj setHidden:YES];
-                        obj.transform = CGAffineTransformScale(obj.transform, 100, 100);
-                        
-                    }
-                    textInstruction.text = @"Winner, winner!";     
+//                    for (ColorButtons *obj in buttonArray3){
+//                        [obj setHidden:YES];
+//                        obj.transform = CGAffineTransformScale(obj.transform, 100, 100);
+//                        
+//                    }
+                    textInstruction.text = @"Winner, winner!";
                     [delegate didWinGame];
                     for (UIView *subview in self.view.subviews) {
-                        [subview removeFromSuperview];
-                    }
+                        if ([subview isKindOfClass:[ColorButtons class]]){
+                            [subview removeFromSuperview];
+                        }}
                 }];
             }];
         }else{
@@ -522,10 +584,10 @@
             }];
             [self.view sendSubviewToBack:thisView];
         }
-
+        
     }
     
-
+    
 }
 
 @end

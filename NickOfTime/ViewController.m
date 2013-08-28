@@ -80,7 +80,7 @@
 {
     if(!(slider.value <= 0)){
         seconds = seconds - .01;
-         NSLog(@"%f",seconds);
+         //NSLog(@"%f",seconds);
         bonusTime = seconds;
 
     }else{
@@ -244,6 +244,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     initialTime = 15;
     seconds = initialTime;
     score = 0;
+    completedSets = 0;
+
 }
 
 -(void)updateScore{
