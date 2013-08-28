@@ -201,7 +201,6 @@
 		04E5725717BAC60800AD4441 = {
 			isa = PBXGroup;
 			children = (
-				6129A1AE17CBC432001F67A7 /* QuartzCore.framework */,
 				04E5726917BAC60800AD4441 /* NickOfTime */,
 				04E5726217BAC60800AD4441 /* Frameworks */,
 				04E5726117BAC60800AD4441 /* Products */,
@@ -220,6 +219,7 @@
 		04E5726217BAC60800AD4441 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6129A1AE17CBC432001F67A7 /* QuartzCore.framework */,
 				B8C5CF2F17C2A1B200D9A66E /* CoreText.framework */,
 				04E5726317BAC60800AD4441 /* UIKit.framework */,
 				04E5726517BAC60800AD4441 /* Foundation.framework */,
@@ -588,13 +588,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Matthew Kish (B438AC98B8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NickOfTime/NickOfTime-Prefix.pch";
 				INFOPLIST_FILE = "NickOfTime/NickOfTime-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DF2C375B-3C2B-4416-AE6E-8274C8D0E854";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2339ED04-D4DB-4400-9504-E520C07F1646";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
