@@ -148,15 +148,15 @@
     if (completedGames < 5) {
         [self.containerViewController swapViewControllers2];
         [self gameWon];
-        NSLog (@"%i",completedGames);
+        NSLog (@"Comp Games %i",completedGames);
     }
     
     else {
         [self gameWon];
-        NSLog (@"%i",completedGames);
+        NSLog (@"Comp Games %i",completedGames);
         [myTimer invalidate];
         completedSets = completedSets + 1;
-        NSLog(@"%i",completedSets);
+        NSLog(@"Comp Sets %i",completedSets);
         FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Nice" message:@"Speed up." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
         alertView.delegate = self;
         alertView.titleLabel.textColor = [UIColor cloudsColor];
