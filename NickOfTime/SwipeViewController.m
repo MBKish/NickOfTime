@@ -80,6 +80,9 @@
     [self.view addGestureRecognizer:swipeLeftGestureRecognizer];
     [self.view addGestureRecognizer:swipeRightGestureRecognizer];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    
+}
 
 - (void)handleSwipeUpFrom:(UIGestureRecognizer*)recognizer {
     [checkArray addObject:@"0"];

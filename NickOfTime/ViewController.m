@@ -80,7 +80,7 @@
 {
     if(!(slider.value <= 0)){
         seconds = seconds - .01;
-         //NSLog(@"%f",seconds);
+         NSLog(@"%f",seconds);
         bonusTime = seconds;
 
     }else{
@@ -207,8 +207,11 @@
     bonusTimeInt = (int)seconds;
    
     //calculates speed up time and adds time bonus
-    initialTime = (initialTime - (2 * completedSets)) + bonusTime;
-    seconds = initialTime;
+    if (completedSets >= 1) {
+        initialTime = (initialTime - (.25 * initialTime)) + (.75 * bonusTime);
+        seconds = initialTime;
+    }
+ 
 }
 
 -(void)nextLevel:(UIAlertView *)alertView{

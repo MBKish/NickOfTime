@@ -136,7 +136,7 @@
         
     } *///else if (level == 2){
         //colorArray3 = [[NSMutableArray alloc] initWithObjects:color1,color2,color3,color4,color5,color6,color7,color8,color9, nil];
-        offset = 105;
+        offset = 95;
         frameSize = 70;
         spin = 0;
         
@@ -162,7 +162,7 @@
 }
 -(void)createPB1Buttons
 {
-    ColorButtons *button2 = [[ColorButtons alloc] initWithFrame:CGRectMake(center.x-40, 155-40, 80, 80)];
+    ColorButtons *button2 = [[ColorButtons alloc] initWithFrame:CGRectMake(center.x-40, 155, 80, 80)];
     ColorButtons *button1 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button2.frame, -100, 0)];
     ColorButtons *button3 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button2.frame, 100, 0)];
     [self.view addSubview:button1];
@@ -174,14 +174,14 @@
 }
 -(void)createPB2Buttons
 {
-    ColorButtons *button5Origin = [[ColorButtons alloc] initWithFrame:CGRectMake(center.x-40, 155-40, 80, 80)];
+    ColorButtons *button5Origin = [[ColorButtons alloc] initWithFrame:CGRectMake(center.x-40, 155-0, 70, 70)];
     //ColorButtons *button1 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, -100)];
-    ColorButtons *button2 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 0, -100)];
+    ColorButtons *button2 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 0, -90)];
     //ColorButtons *button3 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, -100)];
-    ColorButtons *button4 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, 0)];
-    ColorButtons *button6 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, 0)];
+    ColorButtons *button4 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -90, 0)];
+    ColorButtons *button6 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 90, 0)];
     //ColorButtons *button7 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, -100, 100)];
-    ColorButtons *button8 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 0, 100)];
+    ColorButtons *button8 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 0, 90)];
     //ColorButtons *button9 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, 100)];
     
     //below for build with 9 buttons
@@ -198,8 +198,8 @@
 }
 -(void)createPB3Buttons
 {
-    button0 = [[UIView alloc] initWithFrame: CGRectMake(center.x - frameSize/2, center.y - 20-frameSize/2,frameSize,frameSize)];
-    [button0 setCenter: self.view.center];
+    button0 = [[UIView alloc] initWithFrame: CGRectMake(center.x - frameSize/2, 155,frameSize,frameSize)];
+    //[button0 setCenter: self.view.center];
     
     button1PB3 = [[ColorButtons alloc] init];
     button2PB3 = [[ColorButtons alloc] init];
@@ -317,7 +317,7 @@
             
         }
         
-        textInstruction.text = [NSString stringWithFormat:@"Press the %@ button then the %@ button", gameLabelArray[0], gameLabelArray[1]];
+        textInstruction.text = [NSString stringWithFormat:@"Tap %@ then %@", gameLabelArray[0], gameLabelArray[1]];
         
         NSLog(@" %@ %@", gameLabelArray[0], gameLabelArray[1]);
         NSLog(@"%@", textInstruction.text);
@@ -353,7 +353,7 @@
                 ColorButtons *view = (ColorButtons*) subview;
                 view.pressButtonsDelegate = self;
                 view.layer.borderWidth = 2;
-                view.layer.cornerRadius = 40;
+                view.layer.cornerRadius = 35;
                 subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
             }
             
