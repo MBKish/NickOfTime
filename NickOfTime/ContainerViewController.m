@@ -12,7 +12,8 @@
 #define SegueIdentifierFirst @"toSwipeGame"
 #define SegueIdentifierSecond @"toFindGame"
 #define SegueIdentifierThird @"toPressGame"
-
+#define SegueIdentifierFourth @"toPressGame2"
+#define SegueIdentifierFifth @"toPressGame3"
 
 
 
@@ -43,7 +44,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    segueIdentifiers = [NSMutableArray arrayWithObjects:SegueIdentifierFirst, SegueIdentifierSecond, SegueIdentifierThird, nil];
+    segueIdentifiers = [NSMutableArray arrayWithObjects:SegueIdentifierFirst, SegueIdentifierSecond, SegueIdentifierThird, SegueIdentifierFourth, SegueIdentifierFifth, nil];
     index = 1;
     
     self.transitionInProgress = NO;
@@ -77,7 +78,14 @@
         self.findTheObjectViewController = segue.destinationViewController;
         self.findTheObjectViewController.testDelegate = delegate;
     }
-
+    if (([segue.identifier isEqualToString:SegueIdentifierFourth]) && !self.pressButton2ViewController) {
+        self.pressButton2ViewController = segue.destinationViewController;
+       self.pressButton2ViewController.delegate = delegate;
+    }
+    if (([segue.identifier isEqualToString:SegueIdentifierFifth]) && !self.pressButton3ViewController) {
+        self.pressButton3ViewController = segue.destinationViewController;
+        // self.pressButton2ViewController.testDelegate = delegate;
+    }
 
     
     // If we're going to the first view controller.
@@ -103,7 +111,12 @@
     else if ([segue.identifier isEqualToString:SegueIdentifierThird]) {
         [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:self.pressButtonViewController];
     }
-
+    else if ([segue.identifier isEqualToString:SegueIdentifierFourth]) {
+        [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:self.pressButton2ViewController];
+    }
+    else if ([segue.identifier isEqualToString:SegueIdentifierFifth]) {
+        [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:self.pressButton3ViewController];
+    }
 
 }
 
