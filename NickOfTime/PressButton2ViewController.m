@@ -21,9 +21,9 @@
     UIColor *color8;
     UIColor *color9;
     UIColor *black;
-    NSMutableArray *colorArray;
-    NSMutableArray *randomColorArray;
-    NSMutableArray *playColorArray;
+    NSMutableArray *colorArray2;
+    NSMutableArray *randomColorArray2;
+    NSMutableArray *playColorArray2;
     __weak IBOutlet UILabel *notificationLabel;
 }
 
@@ -31,7 +31,7 @@
 
 @implementation PressButton2ViewController
 
-@synthesize testDelegate;
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -75,6 +75,7 @@
     ColorButtons *button8 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 0, 100)];
     //ColorButtons *button9 = [[ColorButtons alloc] initWithFrame:CGRectOffset(button5Origin.frame, 100, 100)];
     
+    //below for build with 9 buttons
     //NSArray* buttonArray = @[button1, button2, button3, button4, button5Origin, button6, button7, button8, button9];
     NSArray* buttonArray = @[button2, button4, button5Origin, button6, button8];
     
@@ -141,27 +142,27 @@
     
      NSMutableArray* selectColorArray = [[NSMutableArray alloc] initWithObjects:color1,color2,color3,color4,color5,color6,color7,color8,color9, nil];
     NSMutableArray* setupColorArray = [[NSMutableArray alloc] initWithArray:selectColorArray];
-    colorArray = [[NSMutableArray alloc] initWithCapacity:10];
+    colorArray2 = [[NSMutableArray alloc] initWithCapacity:10];
     for (int num = 0; num < 5; num++) {
         int colorCounter = arc4random()%([selectColorArray count]-num);
-        [colorArray addObject:setupColorArray[colorCounter]];
+        [colorArray2 addObject:setupColorArray[colorCounter]];
         [setupColorArray removeObjectAtIndex:colorCounter];
     }
     notificationLabel.text = @"Extinguish all the lights";
-    NSMutableArray* gameColorArray = [[NSMutableArray alloc] initWithArray:colorArray];
-    randomColorArray = [[NSMutableArray alloc] initWithCapacity:10];
-    for (int num = 0; num < ([colorArray count]); num++) {
-        int colorCounter = arc4random()%([colorArray count]-num);
+    NSMutableArray* gameColorArray = [[NSMutableArray alloc] initWithArray:colorArray2];
+    randomColorArray2 = [[NSMutableArray alloc] initWithCapacity:10];
+    for (int num = 0; num < ([colorArray2 count]); num++) {
+        int colorCounter = arc4random()%([colorArray2 count]-num);
         //int altCounter = arc4random()%(3-num);
-        [randomColorArray addObject:gameColorArray[colorCounter]];
+        [randomColorArray2 addObject:gameColorArray[colorCounter]];
         [gameColorArray removeObjectAtIndex:colorCounter];
         //NSLog(@" randomcolorarray %lu",(unsigned long)[randomColorArray count]);
     }
     for (UIView * subview in self.view.subviews){
-        for (int counter = 0; counter < [colorArray count]; counter++) {
+        for (int counter = 0; counter < [colorArray2 count]; counter++) {
             if ([subview isKindOfClass:[ColorButtons class]]){
                 if (subview.tag == counter){
-                    subview.backgroundColor = randomColorArray[counter];
+                    subview.backgroundColor = randomColorArray2[counter];
                     [UIView animateWithDuration:1.0 animations:^{
                         subview.transform = CGAffineTransformScale(subview.transform, 100, 100);
                     }];
@@ -176,34 +177,34 @@
 {
     if (thisView.backgroundColor != black) {
         //thisView.backgroundColor = black;
-        playColorArray = [[NSMutableArray alloc] initWithArray:randomColorArray];
-        [randomColorArray replaceObjectAtIndex:thisView.tag withObject:black];
-        [playColorArray removeObjectAtIndex:thisView.tag];
+        playColorArray2 = [[NSMutableArray alloc] initWithArray:randomColorArray2];
+        [randomColorArray2 replaceObjectAtIndex:thisView.tag withObject:black];
+        [playColorArray2 removeObjectAtIndex:thisView.tag];
         gameCounter++;
         
-        if (gameCounter == colorArray.count) {
+        if (gameCounter == colorArray2.count) {
             notificationLabel.text = @"Winner, winner!";
-            [testDelegate didWinGame];
+            [delegate didWinGame];
         }
  
         
-        for (NSInteger i = playColorArray.count-1; i > 0; i--)
+        for (NSInteger i = playColorArray2.count-1; i > 0; i--)
         {
-            [playColorArray exchangeObjectAtIndex:i withObjectAtIndex:arc4random_uniform(i+1)];
-            NSLog(@"%@, %i X", playColorArray[i], i);
+            [playColorArray2 exchangeObjectAtIndex:i withObjectAtIndex:arc4random_uniform(i+1)];
+            NSLog(@"%@, %i X", playColorArray2[i], i);
         }
-        [playColorArray insertObject:black atIndex:thisView.tag];
+        [playColorArray2 insertObject:black atIndex:thisView.tag];
         
         //NSLog(@"%@,%@", playColorArray[0], playColorArray[8]);
         for (UIView * subview in self.view.subviews){
-            for (int counter = 0; counter < [colorArray count]; counter++) {
+            for (int counter = 0; counter < [colorArray2 count]; counter++) {
                 if ([subview isKindOfClass:[ColorButtons class]]){
                     if (subview.tag == counter){
-                        subview.backgroundColor = playColorArray[counter];
-                        NSLog(@"%@, %i F", playColorArray[counter], counter);
+                        subview.backgroundColor = playColorArray2[counter];
+                        NSLog(@"%@, %i F", playColorArray2[counter], counter);
                     }}}}
     }
-    randomColorArray = playColorArray;
+    randomColorArray2 = playColorArray2;
 }
 
 @end
