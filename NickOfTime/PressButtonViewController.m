@@ -156,10 +156,19 @@
         }
        
     } else if (level == 2){
-        colorArray3 = [[NSMutableArray alloc] initWithObjects:color1,color2,color3,color4,color5,color6,color7,color8,color9, nil];
+        //colorArray3 = [[NSMutableArray alloc] initWithObjects:color1,color2,color3,color4,color5,color6,color7,color8,color9, nil];
         offset = 105;
         frameSize = 70;
         spin = 0;
+        
+        NSMutableArray* selectColorArray3 = [[NSMutableArray alloc] initWithObjects:color1,color2,color3,color4,color5,color6,color7,color8,color9, nil];
+        NSMutableArray* setupColorArray3 = [[NSMutableArray alloc] initWithArray:selectColorArray3];
+        colorArray3 = [[NSMutableArray alloc] initWithCapacity:10];
+        for (int num = 0; num < 5; num++) {
+            int colorCounter = arc4random()%([selectColorArray3 count]-num);
+            [colorArray3 addObject:setupColorArray3[colorCounter]];
+            [setupColorArray3 removeObjectAtIndex:colorCounter];
+        }
         //////////\\\\\\\\\\\\\\\
         //To adjust the number of starting lights for game, must delete from colorArray and buttonArray to match that size. This is now set for max size 9; can adjust dowward.
         //views are moved via entire frame, but maybe could be moved by just referencing a new CGPoint center, etc..
@@ -182,11 +191,12 @@
     button3PB3 = [[ColorButtons alloc] init];
     button4PB3 = [[ColorButtons alloc] init];
     button5PB3 = [[ColorButtons alloc] init];
-    button6PB3 = [[ColorButtons alloc] init];
-    button7PB3 = [[ColorButtons alloc] init];
-    button8PB3 = [[ColorButtons alloc] init];
-    button9PB3 = [[ColorButtons alloc] init];
-    buttonArray3 = [[NSArray alloc] initWithObjects:button1PB3, button2PB3, button3PB3, button4PB3, button5PB3, button6PB3, button7PB3, button8PB3, button9PB3, nil];
+//    button6PB3 = [[ColorButtons alloc] init];
+//    button7PB3 = [[ColorButtons alloc] init];
+//    button8PB3 = [[ColorButtons alloc] init];
+//    button9PB3 = [[ColorButtons alloc] init];
+//    buttonArray3 = [[NSArray alloc] initWithObjects:button1PB3, button2PB3, button3PB3, button4PB3, button5PB3, button6PB3, button7PB3, button8PB3, button9PB3, nil];
+    buttonArray3 = [[NSArray alloc] initWithObjects:button1PB3, button2PB3, button3PB3, button4PB3, button5PB3, nil];
     playButtonArray3 = [[NSMutableArray alloc] initWithArray:buttonArray3];
     
     frame1 = CGRectOffset(button0.frame, offset* cosf((1*(2*M_PI)/playButtonArray3.count) + spin), offset* sinf((1*(2*M_PI)/playButtonArray3.count) + spin));
