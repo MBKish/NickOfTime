@@ -135,9 +135,11 @@
 
 -(void)restart:(id)sender{
     index = 0;
-    self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];
-       [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
-    index++;
+    if (![self.currentSegueIdentifier isEqualToString: segueIdentifiers[0]]) {
+        self.currentSegueIdentifier = [NSString stringWithFormat:@"%@",segueIdentifiers[index]];
+        [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
+    }
+       index++;
 }
 
 @end
