@@ -196,6 +196,7 @@
         }
     
     completedGames = 0;
+    completedSets = 0;
     [self calculateSeconds];
     slider.maximumValue = seconds;
     slider.value = seconds;
