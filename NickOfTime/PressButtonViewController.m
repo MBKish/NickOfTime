@@ -101,7 +101,7 @@
     color9 =[UIColor colorWithRed:151/255.0f green:168/255.0f blue:49/255.0f alpha:1.0f];
     black = [UIColor blackColor];
     
-    level = 2;
+    //level = 2;
 
 
     center = self.view.center;
@@ -110,6 +110,10 @@
 
     
     [super viewDidLoad];
+    
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(swapLevel:) name:@"nextLevel" object:nil];
+    [notificationCenter addObserver:self selector:@selector(restartLevel:) name:@"restartGame" object:nil];
 	
     for (UIView * subview in self.view.subviews){
         if ([subview isKindOfClass:[ColorButtons class]]) {
@@ -181,6 +185,17 @@
 
     }
 }
+-(void)swapLevel:(id)sender{
+    if (level <2) {
+        level = level +1;
+    }
+}
+
+-(void)restartLevel:(id)sender{
+    level = 0;
+    [self startDemo:self];
+    
+}
 -(void)createPB3Buttons
 {
     button0 = [[UIView alloc] initWithFrame: CGRectMake(center.x - frameSize/2, center.y - 20-frameSize/2,frameSize,frameSize)];
@@ -246,7 +261,7 @@
         }
     }
     [self startDemo:self];
-    level = 2;
+    //level = 2;
     //Put the IBAction stuff here OR fix startDemo to do the setup stuff (Rect coords etc) for you
 }
 

@@ -199,51 +199,6 @@
             </objects>
             <point key="canvasLocation" x="-805" y="208"/>
         </scene>
-        <!--Press Button3 View Controller-->
-        <scene sceneID="yuW-K4-akx">
-            <objects>
-                <viewController id="tLF-eu-Q6x" customClass="PressButton3ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bH2-ph-4rx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LpU-71-P9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="154" y="1415"/>
-        </scene>
-        <!--Press Button2 View Controller-->
-        <scene sceneID="7d1-PE-Xgo">
-            <objects>
-                <viewController id="d1f-Ad-r86" customClass="PressButton2ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lK5-1E-LYM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZD-oj-QmY">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="nZD-oj-QmY" firstAttribute="leading" secondItem="lK5-1E-LYM" secondAttribute="leading" type="default" id="BUP-9O-3Kg"/>
-                            <constraint firstItem="nZD-oj-QmY" firstAttribute="trailing" secondItem="lK5-1E-LYM" secondAttribute="trailing" type="default" id="hyH-yX-zfc"/>
-                            <constraint firstItem="nZD-oj-QmY" firstAttribute="top" secondItem="lK5-1E-LYM" secondAttribute="top" type="default" id="lND-sL-aw4"/>
-                        </constraints>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <outlet property="notificationLabel" destination="nZD-oj-QmY" id="n2a-Rf-1JL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vP1-Bn-UvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="154" y="1009"/>
-        </scene>
         <!--Container View Controller-->
         <scene sceneID="ocI-bL-pOe">
             <objects>
@@ -258,8 +213,6 @@
                         <segue destination="eEp-ag-QwZ" kind="custom" identifier="toSwipeGame" customClass="EmptySegue" id="HT8-1u-oUg"/>
                         <segue destination="BgQ-e7-rgt" kind="custom" identifier="toPressGame" customClass="EmptySegue" id="OUn-Qb-lec"/>
                         <segue destination="18R-RB-umg" kind="custom" identifier="toFindGame" customClass="EmptySegue" id="X4c-3h-8V0"/>
-                        <segue destination="d1f-Ad-r86" kind="custom" identifier="toPressGame2" customClass="EmptySegue" id="E2P-97-Cqh"/>
-                        <segue destination="tLF-eu-Q6x" kind="custom" identifier="toPressGame3" customClass="EmptySegue" id="QyZ-Xz-18z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c33-hT-Pul" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -384,65 +337,6 @@
             <point key="canvasLocation" x="126" y="-134"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CompletedGameView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompletedGameView.h"/>
-        </class>
-        <class className="ContainerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerViewController.h"/>
-        </class>
-        <class className="FUIButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FUIButton.h"/>
-        </class>
-        <class className="FindTheObjectViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindTheObjectViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="levelSwap:"/>
-                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PressButton2ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PressButton2ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="notificationLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PressButton3ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PressButton3ViewController.h"/>
-        </class>
-        <class className="PressButtonViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PressButtonViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textInstruction" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="StartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StartViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startGame:"/>
-                <relationship kind="outlet" name="scoreButton" candidateClass="FUIButton"/>
-                <relationship kind="outlet" name="startButton" candidateClass="FUIButton"/>
-            </relationships>
-        </class>
-        <class className="SwipeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SwipeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="swapLevel:"/>
-                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="swap:"/>
-                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
