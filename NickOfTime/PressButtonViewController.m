@@ -128,13 +128,13 @@
 }
 -(void) setup
 {
-    if (level == 0) {
+    /*if (level == 0) {
         [self createPB1Buttons];
         
     } else if (level == 1){
         [self createPB2Buttons];
         
-    } else if (level == 2){
+    } *///else if (level == 2){
         //colorArray3 = [[NSMutableArray alloc] initWithObjects:color1,color2,color3,color4,color5,color6,color7,color8,color9, nil];
         offset = 105;
         frameSize = 70;
@@ -158,7 +158,7 @@
         
         [self createPB3Buttons];
         
-    }
+    //}
 }
 -(void)createPB1Buttons
 {
@@ -439,8 +439,8 @@
                         subview.frame = [frameArray[frameElement] CGRectValue];
                     }];
                 }];
-                
-            }frameElement++;
+                frameElement++;
+            }
         }textInstruction.text = @"Extinguish all the lights";
         
     }
@@ -532,11 +532,11 @@
                         obj.transform = CGAffineTransformScale(obj.transform, 0.01, 0.01);
                     }
                 }completion:^(BOOL finished) {
-                    for (ColorButtons *obj in buttonArray3){
-                        [obj setHidden:YES];
-                        obj.transform = CGAffineTransformScale(obj.transform, 100, 100);
-                        
-                    }
+//                    for (ColorButtons *obj in buttonArray3){
+//                        [obj setHidden:YES];
+//                        obj.transform = CGAffineTransformScale(obj.transform, 100, 100);
+//                        
+//                    }
                     textInstruction.text = @"Winner, winner!";
                     [delegate didWinGame];
                     for (UIView *subview in self.view.subviews) {
