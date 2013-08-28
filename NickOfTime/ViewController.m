@@ -196,7 +196,6 @@
         }
     
     completedGames = 0;
-    //completedSets = 0;
     [self calculateSeconds];
     slider.maximumValue = seconds;
     slider.value = seconds;
@@ -245,6 +244,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     initialTime = 15;
     seconds = initialTime;
     score = 0;
+    completedSets = 0;
+
 }
 
 -(void)updateScore{

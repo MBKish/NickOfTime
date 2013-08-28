@@ -382,7 +382,7 @@
                 if ([subview isKindOfClass:[ColorButtons class]]){
                     if (subview.tag == counter){
                         subview.backgroundColor = randomColorArray2[counter];
-                        [UIView animateWithDuration:1.0 animations:^{
+                        [UIView animateWithDuration:0.3 animations:^{
                             subview.transform = CGAffineTransformScale(subview.transform, 100, 100);
                         }];
                         
