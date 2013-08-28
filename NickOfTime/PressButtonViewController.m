@@ -383,10 +383,10 @@
 //                subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
 //                [subview setHidden:NO];
 //                [subview setUserInteractionEnabled:YES];
-                [UIView animateWithDuration:0.3 animations:^{
+                [UIView animateWithDuration:0.2 animations:^{
                     subview.transform = CGAffineTransformScale(subview.transform, 100, 100);
                 }completion:^(BOOL finished) {
-                    [UIView animateWithDuration:0.3 animations:^{
+                    [UIView animateWithDuration:0.2 animations:^{
                         subview.frame = [frameArray[frameElement] CGRectValue];
                     }];
                 }];
@@ -465,7 +465,7 @@
                 thisView.backgroundColor = black;
                 [thisView setCenter: button0.center];
             }completion:^(BOOL finished) {
-                [UIView animateWithDuration:0.3 animations:^{
+                [UIView animateWithDuration:0.1 animations:^{
                     for (ColorButtons *obj in buttonArray3){
                         //offset = 300;
                         obj.transform = CGAffineTransformScale(obj.transform, 0.01, 0.01);
@@ -504,13 +504,13 @@
                     [playButtonArray3 exchangeObjectAtIndex:i withObjectAtIndex:arc4random_uniform(i+1)];
                 }
             }
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:0.1 animations:^{
                 thisView.backgroundColor = black;
                 [thisView setCenter: button0.center];
             }completion:^(BOOL finished) {
                 spin = (2 * M_PI * arc4random_uniform(360))/360;
                 NSLog(@"spin %f", spin);
-                [UIView animateWithDuration:0.3 animations:^{
+                [UIView animateWithDuration:0.1 animations:^{
                     int frameElement = 0;
                     for (ColorButtons *obj in playButtonArray3) {
                         obj.frame = [playFrameArray[frameElement] CGRectValue];
