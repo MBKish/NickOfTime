@@ -17,6 +17,10 @@
 		047B91AC17CF943000767E39 /* pink_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D773DF17CF9156009FFC1C /* pink_circle.png */; };
 		047B91AD17CF943000767E39 /* pink_square.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D773E017CF9156009FFC1C /* pink_square.png */; };
 		047B91AE17CF943000767E39 /* pink_triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D773E117CF9156009FFC1C /* pink_triangle.png */; };
+		047B91B017CF960900767E39 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047B91AF17CF960900767E39 /* AudioToolbox.framework */; };
+		047B91B217CF961000767E39 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047B91B117CF961000767E39 /* AVFoundation.framework */; };
+		047B91B417CF96C300767E39 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 047B91B317CF96C300767E39 /* Sounds */; };
+		047B91B717CF973700767E39 /* SGSoundMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B91B617CF96E700767E39 /* SGSoundMachine.m */; };
 		0494BCCC17BE9A2E000947C0 /* ShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0494BCCB17BE9A2E000947C0 /* ShapeView.m */; };
 		04E5726417BAC60800AD4441 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5726317BAC60800AD4441 /* UIKit.framework */; };
 		04E5726617BAC60800AD4441 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E5726517BAC60800AD4441 /* Foundation.framework */; };
@@ -75,6 +79,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047B91AF17CF960900767E39 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		047B91B117CF961000767E39 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		047B91B317CF96C300767E39 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = ../Sounds; sourceTree = "<group>"; };
+		047B91B517CF96E700767E39 /* SGSoundMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGSoundMachine.h; sourceTree = "<group>"; };
+		047B91B617CF96E700767E39 /* SGSoundMachine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGSoundMachine.m; sourceTree = "<group>"; };
 		0494BCCA17BE9A2E000947C0 /* ShapeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeView.h; sourceTree = "<group>"; };
 		0494BCCB17BE9A2E000947C0 /* ShapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeView.m; sourceTree = "<group>"; };
 		0494BCCD17BE9A9A000947C0 /* PickedDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickedDelegate.h; sourceTree = "<group>"; };
@@ -184,6 +193,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047B91B217CF961000767E39 /* AVFoundation.framework in Frameworks */,
+				047B91B017CF960900767E39 /* AudioToolbox.framework in Frameworks */,
 				6129A1AF17CBC432001F67A7 /* QuartzCore.framework in Frameworks */,
 				B8C5CF3017C2A1B200D9A66E /* CoreText.framework in Frameworks */,
 				04E5726417BAC60800AD4441 /* UIKit.framework in Frameworks */,
@@ -237,6 +248,8 @@
 		04E5726217BAC60800AD4441 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				047B91B117CF961000767E39 /* AVFoundation.framework */,
+				047B91AF17CF960900767E39 /* AudioToolbox.framework */,
 				6129A1AE17CBC432001F67A7 /* QuartzCore.framework */,
 				B8C5CF2F17C2A1B200D9A66E /* CoreText.framework */,
 				04E5726317BAC60800AD4441 /* UIKit.framework */,
@@ -265,6 +278,9 @@
 				B8C5CF4A17C3FB8100D9A66E /* CompletedGameView.m */,
 				B8D773C717CEF8AA009FFC1C /* ArrowView.h */,
 				B8D773C817CEF8AA009FFC1C /* ArrowView.m */,
+				047B91B517CF96E700767E39 /* SGSoundMachine.h */,
+				047B91B617CF96E700767E39 /* SGSoundMachine.m */,
+				047B91B317CF96C300767E39 /* Sounds */,
 				0494BCB717BE9719000947C0 /* Pictures */,
 				04E5726A17BAC60800AD4441 /* Supporting Files */,
 			);
@@ -468,6 +484,7 @@
 				047B91AC17CF943000767E39 /* pink_circle.png in Resources */,
 				047B91AD17CF943000767E39 /* pink_square.png in Resources */,
 				047B91AE17CF943000767E39 /* pink_triangle.png in Resources */,
+				047B91B417CF96C300767E39 /* Sounds in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +526,7 @@
 				B8C5CF4B17C3FB8100D9A66E /* CompletedGameView.m in Sources */,
 				612BAC9017C69E8100F702E0 /* ColorButtons.m in Sources */,
 				B8D773C917CEF8AA009FFC1C /* ArrowView.m in Sources */,
+				047B91B717CF973700767E39 /* SGSoundMachine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
