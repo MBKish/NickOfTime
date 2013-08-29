@@ -66,6 +66,12 @@
 		B8D773B617CEF0FB009FFC1C /* pink_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D773AC17CEF0FB009FFC1C /* pink_circle.png */; };
 		B8D773B717CEF0FB009FFC1C /* blue_triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D773AD17CEF0FB009FFC1C /* blue_triangle.png */; };
 		B8D773B817CEF0FB009FFC1C /* blue_square.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D773AE17CEF0FB009FFC1C /* blue_square.png */; };
+		B8D773BA17CEF44A009FFC1C /* crosshair.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D773B917CEF44A009FFC1C /* crosshair.png */; };
+		B8D773C917CEF8AA009FFC1C /* ArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D773C817CEF8AA009FFC1C /* ArrowView.m */; };
+		B8D773CE17CF0B05009FFC1C /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D773CA17CF0B05009FFC1C /* arrow_left.png */; };
+		B8D773CF17CF0B05009FFC1C /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D773CB17CF0B05009FFC1C /* arrow_right.png */; };
+		B8D773D017CF0B05009FFC1C /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D773CC17CF0B05009FFC1C /* arrow_down.png */; };
+		B8D773D117CF0B05009FFC1C /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D773CD17CF0B05009FFC1C /* arrow_up.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +170,13 @@
 		B8D773AC17CEF0FB009FFC1C /* pink_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pink_circle.png; path = ../../shapes_v2/pink_circle.png; sourceTree = "<group>"; };
 		B8D773AD17CEF0FB009FFC1C /* blue_triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_triangle.png; path = ../../shapes_v2/blue_triangle.png; sourceTree = "<group>"; };
 		B8D773AE17CEF0FB009FFC1C /* blue_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue_square.png; path = ../../shapes_v2/blue_square.png; sourceTree = "<group>"; };
+		B8D773B917CEF44A009FFC1C /* crosshair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crosshair.png; path = ../../shapes_v2/crosshair.png; sourceTree = "<group>"; };
+		B8D773C717CEF8AA009FFC1C /* ArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrowView.h; sourceTree = "<group>"; };
+		B8D773C817CEF8AA009FFC1C /* ArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrowView.m; sourceTree = "<group>"; };
+		B8D773CA17CF0B05009FFC1C /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow_left.png; path = ../../arrows/arrow_left.png; sourceTree = "<group>"; };
+		B8D773CB17CF0B05009FFC1C /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow_right.png; path = ../../arrows/arrow_right.png; sourceTree = "<group>"; };
+		B8D773CC17CF0B05009FFC1C /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow_down.png; path = ../../arrows/arrow_down.png; sourceTree = "<group>"; };
+		B8D773CD17CF0B05009FFC1C /* arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow_up.png; path = ../../arrows/arrow_up.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +198,11 @@
 		0494BCB717BE9719000947C0 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				B8D773CA17CF0B05009FFC1C /* arrow_left.png */,
+				B8D773CB17CF0B05009FFC1C /* arrow_right.png */,
+				B8D773CC17CF0B05009FFC1C /* arrow_down.png */,
+				B8D773CD17CF0B05009FFC1C /* arrow_up.png */,
+				B8D773B917CEF44A009FFC1C /* crosshair.png */,
 				B8D773A517CEF0FB009FFC1C /* blue_circle.png */,
 				B8D773A717CEF0FB009FFC1C /* green_triangle.png */,
 				B8D773A817CEF0FB009FFC1C /* green_square.png */,
@@ -245,6 +263,8 @@
 				0494BCCD17BE9A9A000947C0 /* PickedDelegate.h */,
 				B8C5CF4917C3FB8100D9A66E /* CompletedGameView.h */,
 				B8C5CF4A17C3FB8100D9A66E /* CompletedGameView.m */,
+				B8D773C717CEF8AA009FFC1C /* ArrowView.h */,
+				B8D773C817CEF8AA009FFC1C /* ArrowView.m */,
 				0494BCB717BE9719000947C0 /* Pictures */,
 				04E5726A17BAC60800AD4441 /* Supporting Files */,
 			);
@@ -443,6 +463,11 @@
 				B8D773B617CEF0FB009FFC1C /* pink_circle.png in Resources */,
 				B8D773B717CEF0FB009FFC1C /* blue_triangle.png in Resources */,
 				B8D773B817CEF0FB009FFC1C /* blue_square.png in Resources */,
+				B8D773BA17CEF44A009FFC1C /* crosshair.png in Resources */,
+				B8D773CE17CF0B05009FFC1C /* arrow_left.png in Resources */,
+				B8D773CF17CF0B05009FFC1C /* arrow_right.png in Resources */,
+				B8D773D017CF0B05009FFC1C /* arrow_down.png in Resources */,
+				B8D773D117CF0B05009FFC1C /* arrow_up.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +508,7 @@
 				B8C5CF3317C3B4AF00D9A66E /* StartViewController.m in Sources */,
 				B8C5CF4B17C3FB8100D9A66E /* CompletedGameView.m in Sources */,
 				612BAC9017C69E8100F702E0 /* ColorButtons.m in Sources */,
+				B8D773C917CEF8AA009FFC1C /* ArrowView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
