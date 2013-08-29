@@ -487,7 +487,7 @@
             
             if (gameCounter == colorArray2.count) {
                 
-                textInstruction.text = @"Winner, winner!";
+                //textInstruction.text = @"Winner, winner!";
                 [delegate didWinGame];
                 for (UIView *subview in self.view.subviews) {
                     if ([subview isKindOfClass:[ColorButtons class]]){
@@ -540,7 +540,7 @@
 //                        obj.transform = CGAffineTransformScale(obj.transform, 100, 100);
 //                        
 //                    }
-                    textInstruction.text = @"Winner, winner!";
+                    //textInstruction.text = @"Winner, winner!";
                     [delegate didWinGame];
                     for (UIView *subview in self.view.subviews) {
                         if ([subview isKindOfClass:[ColorButtons class]]){
