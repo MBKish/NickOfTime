@@ -7,6 +7,7 @@
 //
 #import "ColorButtons.h"
 #import "PressButtonViewController.h"
+#import "UIColor+FlatUI.h"
 
 @interface PressButtonViewController ()
 {
@@ -84,23 +85,25 @@
 - (void)viewDidLoad
 {
     //Level 0
-    red = [UIColor redColor];
-    blue = [UIColor blueColor];
-    yellow = [UIColor yellowColor];
+    //selectedColor =[UIColor colorWithRed:14.0/255.0 green:114.0/255.0 blue:199.0/255.0 alpha:1];
+    //blue = rgb(52, 152, 219)
+    red = [UIColor alizarinColor];
+    blue = [UIColor peterRiverColor];
+    yellow = [UIColor sunflowerColor];
     colorArray1 = @[red,blue,yellow];
     colorLabelArray = @[@"red", @"blue", @"yellow"];
     playDictionary = [[NSMutableDictionary alloc] initWithObjects:colorArray1 forKeys:colorLabelArray];
     
     //Level 1
-    color1 =[UIColor colorWithRed:13/255.0f green:168/255.0f blue:185/255.0f alpha:1.0f];
-    color2 =[UIColor colorWithRed:255/255.0f green:60/255.0f blue:75/255.0f alpha:1.0f];
-    color3 =[UIColor colorWithRed:62/255.0f green:243/255.0f blue:73/255.0f alpha:1.0f];
-    color4 =[UIColor colorWithRed:57/255.0f green:247/255.0f blue:252/255.0f alpha:1.0f];
-    color5 =[UIColor colorWithRed:234/255.0f green:33/255.0f blue:209/255.0f alpha:1.0f];
-    color6 =[UIColor colorWithRed:239/255.0f green:188/255.0f blue:78/255.0f alpha:1.0f];
-    color7 =[UIColor colorWithRed:135/255.0f green:32/255.0f blue:192/255.0f alpha:1.0f];
-    color8 =[UIColor colorWithRed:135/255.0f green:252/255.0f blue:192/255.0f alpha:1.0f];
-    color9 =[UIColor colorWithRed:151/255.0f green:168/255.0f blue:49/255.0f alpha:1.0f];
+    color1 =[UIColor turquoiseColor];
+    color2 =[UIColor emerlandColor];
+    color3 =[UIColor peterRiverColor];
+    color4 =[UIColor amethystColor];
+    color5 =[UIColor turquoiseColor];
+    color6 =[UIColor wetAsphaltColor];
+    color7 =[UIColor sunflowerColor];
+    color8 =[UIColor concreteColor];
+    color9 =[UIColor alizarinColor];
     black = [UIColor blackColor];
     
     //level = 1;
@@ -295,7 +298,7 @@
                 [subview setUserInteractionEnabled:YES];
                 ColorButtons *view = (ColorButtons*) subview;
                 view.pressButtonsDelegate = self;
-                view.layer.borderWidth = 2;
+                //view.layer.borderWidth = 2;
                 view.layer.cornerRadius = 40;
                 subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
             }
@@ -352,7 +355,7 @@
                 [subview setUserInteractionEnabled:YES];
                 ColorButtons *view = (ColorButtons*) subview;
                 view.pressButtonsDelegate = self;
-                view.layer.borderWidth = 2;
+                //view.layer.borderWidth = 2;
                 view.layer.cornerRadius = 35;
                 subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
             }
@@ -406,7 +409,7 @@
                 [subview setAlpha:1.0];
                 ColorButtons *view = (ColorButtons*) subview;
                 view.pressButtonsDelegate = self;
-                view.layer.borderWidth = 2;
+                //view.layer.borderWidth = 2;
                 view.layer.cornerRadius = 35;
                 view.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
             }
@@ -450,12 +453,12 @@
 -(void) didClickGameView:(ColorButtons *)thisView
 {
     if (level == 0) {
-        if ((gameCounter == 0) && (thisView.backgroundColor == playArray[gameCounter])) {
+        if ((gameCounter == 0) && ([thisView.backgroundColor isEqual: playArray[gameCounter]])) {
             gameCounter++;
             correct = YES;
-            thisView.layer.borderWidth = 6;
+            //thisView.layer.borderWidth = 6;
             [thisView setAlpha:0.5];
-        }else if ((correct = YES) && (thisView.backgroundColor == playArray[gameCounter])){
+        }else if ((correct = YES) && ([thisView.backgroundColor isEqual: playArray[gameCounter]])){
             NSLog(@"Success!");
             [delegate didWinGame];
             for (UIView *subview in self.view.subviews) {
