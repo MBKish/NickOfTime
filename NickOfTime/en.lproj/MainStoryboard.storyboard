@@ -38,9 +38,9 @@
                                     <action selector="startGame:" destination="4my-5G-Qaj" eventType="touchUpInside" id="1et-Lk-xtO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="highscore:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcZ-9Y-Etv">
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" text="high score : 000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcZ-9Y-Etv">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="4EX-df-dvA"/>
+                                    <constraint firstAttribute="width" constant="197" id="x06-O3-OOS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" red="0.24160953439999999" green="0.24160953439999999" blue="0.24160953439999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,7 +58,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="highScoreLabel" destination="TcZ-9Y-Etv" id="URY-h0-Fgh"/>
+                        <outlet property="highScoreLabel" destination="TcZ-9Y-Etv" id="iFx-d2-iSd"/>
                         <outlet property="startButton" destination="Gds-bN-MJx" id="IRI-NA-ZCv"/>
                         <segue destination="2" kind="modal" identifier="toGame" customClass="EmptySegue" id="a1o-sG-2Hq"/>
                     </connections>
@@ -298,54 +298,6 @@
             <point key="canvasLocation" x="126" y="-134"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CompletedGameView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompletedGameView.h"/>
-        </class>
-        <class className="ContainerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerViewController.h"/>
-        </class>
-        <class className="FUIButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FUIButton.h"/>
-        </class>
-        <class className="FindTheObjectViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindTheObjectViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PressButtonViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PressButtonViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textInstruction" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="StartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StartViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startGame:"/>
-                <relationship kind="outlet" name="highScoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startButton" candidateClass="FUIButton"/>
-            </relationships>
-        </class>
-        <class className="SwipeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SwipeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="swapLevel:"/>
-                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

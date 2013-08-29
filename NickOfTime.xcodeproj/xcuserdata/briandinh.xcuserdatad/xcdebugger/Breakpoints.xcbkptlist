@@ -8,19 +8,6 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "NickOfTime/SwipeViewController.m"
-         timestampString = "399481337.473581"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "106"
-         endingLineNumber = "106"
-         landmarkName = "-handleSwipeUpFrom:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "NickOfTime/SwipeViewController.m"
          timestampString = "399481350.19991"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"

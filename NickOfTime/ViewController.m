@@ -44,10 +44,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"HighScore"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-
-
+    
     highScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScore"];
     NSLog(@"highscore: %i",highScore);
     self.containerViewController.swipeViewController.delegate = self;
