@@ -103,11 +103,7 @@
         alertView.defaultButtonTitleColor = [UIColor asbestosColor];
         [alertView show];
         
-        NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-        
-        //notification to restart game
-        [notificationCenter postNotificationName:@"restartGame" object:nil];
-        seconds = initialTime;
+
 
     }
         slider.value = seconds;
@@ -242,6 +238,10 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
         [self gameSetup];
         [self gameWon];
         [self updateScore];
+        //notification to restart game
+        
+        NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+        [notificationCenter postNotificationName:@"restartGame" object:nil];
     }
 }
 
