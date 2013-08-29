@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044D391717CEED36005C12EA /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 044D391617CEED36005C12EA /* Sounds */; };
+		044D391C17CEEDDA005C12EA /* SGSoundMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 044D391B17CEEDDA005C12EA /* SGSoundMachine.m */; };
+		044D391E17CEEE25005C12EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044D391D17CEEE25005C12EA /* AVFoundation.framework */; };
+		044D392017CEEE36005C12EA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044D391F17CEEE36005C12EA /* AudioToolbox.framework */; };
 		0494BCC117BE978E000947C0 /* blue_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0494BCB817BE978E000947C0 /* blue_circle.png */; };
 		0494BCC217BE978E000947C0 /* blue_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 0494BCB917BE978E000947C0 /* blue_square.png */; };
 		0494BCC317BE978E000947C0 /* blue_triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0494BCBA17BE978E000947C0 /* blue_triangle.png */; };
@@ -69,6 +73,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		044D391617CEED36005C12EA /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = ../Sounds; sourceTree = "<group>"; };
+		044D391A17CEEDDA005C12EA /* SGSoundMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGSoundMachine.h; path = ../SGSoundMachine.h; sourceTree = "<group>"; };
+		044D391B17CEEDDA005C12EA /* SGSoundMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGSoundMachine.m; path = ../SGSoundMachine.m; sourceTree = "<group>"; };
+		044D391D17CEEE25005C12EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		044D391F17CEEE36005C12EA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0494BCB817BE978E000947C0 /* blue_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_circle.png; sourceTree = "<group>"; };
 		0494BCB917BE978E000947C0 /* blue_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_square.png; sourceTree = "<group>"; };
 		0494BCBA17BE978E000947C0 /* blue_triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_triangle.png; sourceTree = "<group>"; };
@@ -171,6 +180,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044D392017CEEE36005C12EA /* AudioToolbox.framework in Frameworks */,
+				044D391E17CEEE25005C12EA /* AVFoundation.framework in Frameworks */,
 				6129A1AF17CBC432001F67A7 /* QuartzCore.framework in Frameworks */,
 				B8C5CF3017C2A1B200D9A66E /* CoreText.framework in Frameworks */,
 				04E5726417BAC60800AD4441 /* UIKit.framework in Frameworks */,
@@ -219,6 +230,8 @@
 		04E5726217BAC60800AD4441 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				044D391D17CEEE25005C12EA /* AVFoundation.framework */,
+				044D391F17CEEE36005C12EA /* AudioToolbox.framework */,
 				6129A1AE17CBC432001F67A7 /* QuartzCore.framework */,
 				B8C5CF2F17C2A1B200D9A66E /* CoreText.framework */,
 				04E5726317BAC60800AD4441 /* UIKit.framework */,
@@ -231,6 +244,7 @@
 		04E5726917BAC60800AD4441 /* NickOfTime */ = {
 			isa = PBXGroup;
 			children = (
+				044D391617CEED36005C12EA /* Sounds */,
 				B8747CE717BDCE07007DE7BF /* ViewControllers */,
 				04E5727217BAC60800AD4441 /* AppDelegate.h */,
 				04E5727317BAC60800AD4441 /* AppDelegate.m */,
@@ -245,6 +259,8 @@
 				0494BCCD17BE9A9A000947C0 /* PickedDelegate.h */,
 				B8C5CF4917C3FB8100D9A66E /* CompletedGameView.h */,
 				B8C5CF4A17C3FB8100D9A66E /* CompletedGameView.m */,
+				044D391A17CEEDDA005C12EA /* SGSoundMachine.h */,
+				044D391B17CEEDDA005C12EA /* SGSoundMachine.m */,
 				0494BCB717BE9719000947C0 /* Pictures */,
 				04E5726A17BAC60800AD4441 /* Supporting Files */,
 			);
@@ -443,6 +459,7 @@
 				B8C5CF4617C3B90B00D9A66E /* Lato-Light.ttf in Resources */,
 				B8C5CF4717C3B90B00D9A66E /* Lato-LightItalic.ttf in Resources */,
 				B8C5CF4817C3B90B00D9A66E /* Lato-Regular.ttf in Resources */,
+				044D391717CEED36005C12EA /* Sounds in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +500,7 @@
 				B8C5CF3317C3B4AF00D9A66E /* StartViewController.m in Sources */,
 				B8C5CF4B17C3FB8100D9A66E /* CompletedGameView.m in Sources */,
 				612BAC9017C69E8100F702E0 /* ColorButtons.m in Sources */,
+				044D391C17CEEDDA005C12EA /* SGSoundMachine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
