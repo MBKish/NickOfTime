@@ -325,6 +325,59 @@
     <resources>
         <image name="soundOn.png" width="240" height="196"/>
     </resources>
+    <classes>
+        <class className="CompletedGameView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompletedGameView.h"/>
+        </class>
+        <class className="ContainerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerViewController.h"/>
+        </class>
+        <class className="FUIButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FUIButton.h"/>
+        </class>
+        <class className="FindTheObjectViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindTheObjectViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PressButtonViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PressButtonViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textInstruction" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StartViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StartViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="mute:"/>
+                <relationship kind="action" name="startGame:"/>
+                <relationship kind="outlet" name="constraint" candidateClass="NSLayoutConstraint"/>
+                <relationship kind="outlet" name="highScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="soundButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="startButton" candidateClass="FUIButton"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SwipeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SwipeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="swapLevel:"/>
+                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="constraint" candidateClass="NSLayoutConstraint"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
