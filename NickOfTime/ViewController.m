@@ -199,7 +199,7 @@
    
     //calculates speed up time and adds time bonus
     if (completedSets >= 1) {
-        initialTime = (initialTime - (.5 * initialTime)) + (.75 * bonusTime);
+        initialTime = (initialTime - (.75 * initialTime)) + (.75 * bonusTime);
         if (initialTime >= 25) {
             initialTime = 25;
         }

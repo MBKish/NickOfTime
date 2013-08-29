@@ -546,5 +546,11 @@
     down.tag = 3;
     
 }
+-(void)viewDidDisappear:(BOOL)animated{
+    up.alpha = .5;
+    right.alpha = .5;
+    down.alpha = .5;
+    left.alpha = .5;
+}
 
 @end
