@@ -17,10 +17,12 @@
     
     __weak IBOutlet FUIButton *startButton;
     __weak IBOutlet UILabel *highScoreLabel;
+    __weak IBOutlet NSLayoutConstraint *constraint;
 
 
 }
 - (IBAction)startGame:(id)sender;
+- (IBAction)mute:(id)sender;
 
 
 @end
@@ -39,6 +41,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenHeight = screenRect.size.height;
+    if (screenHeight == 568){
+        constraint.constant = 218;
+    }
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewTapped:)];
     [highScoreLabel addGestureRecognizer:tap];
     
@@ -74,6 +83,18 @@
     alertView.defaultButtonTitleColor = [UIColor asbestosColor];
     alertView.tag = 0;
     [alertView show];
+}
+
+- (IBAction)mute:(id)sender {
+    if ([SGSoundMachine soundMachine].soundIsOff == NO) {
+        [SGSoundMachine soundMachine].soundIsOff = YES;
+        [[NSUserDefaults standardUserDefaults] setBool:[SGSoundMachine soundMachine].soundIsOff forKey:@"Sound"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    } else {
+        [SGSoundMachine soundMachine].soundIsOff = NO;
+        [[NSUserDefaults standardUserDefaults] setBool:[SGSoundMachine soundMachine].soundIsOff forKey:@"Sound"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 - (void)imageViewTapped:(UITapGestureRecognizer *)gr {
@@ -120,6 +141,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
 }
 -(void)viewDidAppear:(BOOL)animated{
     [self setScore];
+    [SGSoundMachine soundMachine].soundIsOff = [[NSUserDefaults standardUserDefaults] boolForKey:@"Sound"];
 }
 
 -(void)setScore{

@@ -31,6 +31,7 @@
     int score;
     int highScore;
     __weak IBOutlet UILabel *scoreLabel;
+    __weak IBOutlet NSLayoutConstraint *constraint;
     int bonusTimeInt;
     int level;
 }
@@ -44,6 +45,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //Checks for screen size and then sets the constraint
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenHeight = screenRect.size.height;
+    //NSLog(@"screen height: %f", screenHeight);
+    //NSLog(@"constraint constant: %f", constraint.constant);
+    if (screenHeight == 568){
+        constraint.constant = 87;
+    }
     
     highScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScore"];
     NSLog(@"highscore: %i",highScore);
