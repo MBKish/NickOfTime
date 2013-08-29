@@ -87,22 +87,6 @@
                                     <segue destination="jqJ-eW-Z75" kind="embed" identifier="embedContainer" id="4gd-PN-gE9"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ds-FS-zC3">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="49" id="lOX-QZ-67p"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="o">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="swap:" destination="2" eventType="touchUpInside" id="SEa-Va-FRG"/>
-                                </connections>
-                            </button>
                             <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="FAJ-9J-GdF">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="9ew-EV-aIY"/>
@@ -156,7 +140,6 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="7nC-DY-Ln0" secondAttribute="bottom" constant="87" id="0um-MJ-Nh3"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="top" secondItem="cuh-wP-oeV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="89Y-Sg-N4e"/>
-                            <constraint firstItem="9Ds-FS-zC3" firstAttribute="leading" secondItem="cuh-wP-oeV" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8aw-tE-LV0"/>
                             <constraint firstItem="tBV-K4-qYK" firstAttribute="leading" secondItem="CSl-7q-yXK" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="9f9-qs-IpN"/>
                             <constraint firstAttribute="trailing" secondItem="Hj3-yi-9mj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="A8G-AU-zeu"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="top" secondItem="Tnd-OD-gEm" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="FKc-CO-Txn"/>
@@ -169,7 +152,6 @@
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="user" id="eDF-or-Aep"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="top" secondItem="CSl-7q-yXK" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="fhT-BK-wHV"/>
                             <constraint firstItem="Tnd-OD-gEm" firstAttribute="leading" secondItem="tBV-K4-qYK" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="ha3-h6-oLS"/>
-                            <constraint firstItem="9Ds-FS-zC3" firstAttribute="top" secondItem="cuh-wP-oeV" secondAttribute="top" type="default" id="i57-NV-dFr"/>
                             <constraint firstAttribute="bottom" secondItem="FAJ-9J-GdF" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="j43-Ab-nJf"/>
                             <constraint firstItem="cuh-wP-oeV" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="221" type="user" id="mIF-bH-vft"/>
                             <constraint firstAttribute="trailing" secondItem="cuh-wP-oeV" secondAttribute="trailing" constant="69" type="user" id="mxu-Eh-cAz"/>
@@ -179,7 +161,6 @@
                             <constraint firstItem="7nC-DY-Ln0" firstAttribute="top" secondItem="3" secondAttribute="top" constant="43" id="suz-bB-omx"/>
                             <constraint firstItem="FAJ-9J-GdF" firstAttribute="top" secondItem="dP9-r7-yaQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uAl-wi-HjB"/>
                             <constraint firstItem="dP9-r7-yaQ" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="69" type="user" id="uml-xt-nhe"/>
-                            <constraint firstItem="FAJ-9J-GdF" firstAttribute="top" secondItem="9Ds-FS-zC3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xrc-nL-29k"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QKE-5Y-mox"/>
@@ -229,29 +210,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG3-u0-qll">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="JLV-l6-p5F"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="x">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="levelSwap:" destination="18R-RB-umg" eventType="touchUpInside" id="Z5g-Il-Fj2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gG3-u0-qll" firstAttribute="trailing" secondItem="TEu-BW-Mzn" secondAttribute="trailing" type="default" id="1My-Xe-fQu"/>
                             <constraint firstItem="34h-3P-noU" firstAttribute="centerX" secondItem="TEu-BW-Mzn" secondAttribute="centerX" type="default" id="2OZ-fe-Nbk"/>
                             <constraint firstItem="34h-3P-noU" firstAttribute="top" secondItem="TEu-BW-Mzn" secondAttribute="top" type="default" id="7VM-IX-zbA"/>
-                            <constraint firstItem="gG3-u0-qll" firstAttribute="bottom" secondItem="TEu-BW-Mzn" secondAttribute="bottom" type="default" id="rJ5-0p-xFG"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -341,56 +304,6 @@
             <point key="canvasLocation" x="126" y="-134"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CompletedGameView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompletedGameView.h"/>
-        </class>
-        <class className="ContainerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerViewController.h"/>
-        </class>
-        <class className="FUIButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FUIButton.h"/>
-        </class>
-        <class className="FindTheObjectViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindTheObjectViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="levelSwap:"/>
-                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PressButtonViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PressButtonViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textInstruction" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="StartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StartViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startGame:"/>
-                <relationship kind="outlet" name="scoreButton" candidateClass="FUIButton"/>
-                <relationship kind="outlet" name="startButton" candidateClass="FUIButton"/>
-            </relationships>
-        </class>
-        <class className="SwipeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SwipeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="swapLevel:"/>
-                <relationship kind="outlet" name="commandLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="swap:"/>
-                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

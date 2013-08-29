@@ -36,7 +36,6 @@
 }
 
 @property (nonatomic, weak) ContainerViewController *containerViewController;
-- (IBAction)swap:(id)sender;
 
 @end
 
@@ -72,15 +71,11 @@
     }
 }
 
-- (IBAction)swap:(id)sender {
-    [self.containerViewController swapViewControllers2];
-}
-
 - (void)methodToUpdateProgress
 {
     if(!(slider.value <= 0)){
         seconds = seconds - .01;
-         NSLog(@"%f",seconds);
+         //NSLog(@"%f",seconds);
         bonusTime = seconds;
 
     }else{

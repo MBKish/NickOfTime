@@ -20,7 +20,6 @@
     
     __weak IBOutlet UILabel *commandLabel;
 }
-- (IBAction)levelSwap:(id)sender;
 
 @end
 
@@ -89,10 +88,10 @@
 
 - (void)drawSets{
     //draw the four
-    ShapeView *fourOne = [[ShapeView alloc] initWithFrame: CGRectMake (106, 96, 50, 50)];
-    ShapeView *fourTwo = [[ShapeView alloc] initWithFrame: CGRectMake (164, 96, 50, 50)];
-    ShapeView *fourThree = [[ShapeView alloc] initWithFrame: CGRectMake (106, 154, 50, 50)];
-    ShapeView *fourFour = [[ShapeView alloc] initWithFrame: CGRectMake (164, 154, 50, 50)];
+    ShapeView *fourOne = [[ShapeView alloc] initWithFrame: CGRectMake (106, 126, 50, 50)];
+    ShapeView *fourTwo = [[ShapeView alloc] initWithFrame: CGRectMake (164, 126, 50, 50)];
+    ShapeView *fourThree = [[ShapeView alloc] initWithFrame: CGRectMake (106, 184, 50, 50)];
+    ShapeView *fourFour = [[ShapeView alloc] initWithFrame: CGRectMake (164, 184, 50, 50)];
     
     [self.view addSubview:fourOne];
     [self.view addSubview:fourTwo];
@@ -111,14 +110,14 @@
     
     if (level == 2 || level == 3) {
         
-        ShapeView *twelveOne = [[ShapeView alloc] initWithFrame: CGRectMake (106, 38, 50, 50)];
-        ShapeView *twelveTwo = [[ShapeView alloc] initWithFrame: CGRectMake (164, 38, 50, 50)];
-        ShapeView *twelveThree = [[ShapeView alloc] initWithFrame: CGRectMake (49, 96, 50, 50)];
-        ShapeView *twelveFour = [[ShapeView alloc] initWithFrame: CGRectMake (222, 96, 50, 50)];
-        ShapeView *twelveFive = [[ShapeView alloc] initWithFrame: CGRectMake (49, 154, 50, 50)];
-        ShapeView *twelveSix = [[ShapeView alloc] initWithFrame: CGRectMake (222, 154, 50, 50)];
-        ShapeView *twelveSeven = [[ShapeView alloc] initWithFrame: CGRectMake (106, 212, 50, 50)];
-        ShapeView *twelveEight = [[ShapeView alloc] initWithFrame: CGRectMake (164, 212, 50, 50)];
+        ShapeView *twelveOne = [[ShapeView alloc] initWithFrame: CGRectMake (106, 68, 50, 50)];
+        ShapeView *twelveTwo = [[ShapeView alloc] initWithFrame: CGRectMake (164, 68, 50, 50)];
+        ShapeView *twelveThree = [[ShapeView alloc] initWithFrame: CGRectMake (49, 126, 50, 50)];
+        ShapeView *twelveFour = [[ShapeView alloc] initWithFrame: CGRectMake (222, 126, 50, 50)];
+        ShapeView *twelveFive = [[ShapeView alloc] initWithFrame: CGRectMake (49, 184, 50, 50)];
+        ShapeView *twelveSix = [[ShapeView alloc] initWithFrame: CGRectMake (222, 184, 50, 50)];
+        ShapeView *twelveSeven = [[ShapeView alloc] initWithFrame: CGRectMake (106, 242, 50, 50)];
+        ShapeView *twelveEight = [[ShapeView alloc] initWithFrame: CGRectMake (164, 242, 50, 50)];
         
         [self.view addSubview:twelveOne];
         [self.view addSubview:twelveTwo];
@@ -148,10 +147,10 @@
         twelveEight.userInteractionEnabled = YES;
         
         if (level == 3){
-            ShapeView *sixteenOne = [[ShapeView alloc] initWithFrame: CGRectMake (49, 38, 50, 50)];
-            ShapeView *sixteenTwo = [[ShapeView alloc] initWithFrame: CGRectMake (222, 38, 50, 50)];
-            ShapeView *sixteenThree = [[ShapeView alloc] initWithFrame: CGRectMake (49, 212, 50, 50)];
-            ShapeView *sixteenFour = [[ShapeView alloc] initWithFrame: CGRectMake (222, 212, 50, 50)];
+            ShapeView *sixteenOne = [[ShapeView alloc] initWithFrame: CGRectMake (49, 68, 50, 50)];
+            ShapeView *sixteenTwo = [[ShapeView alloc] initWithFrame: CGRectMake (222, 68, 50, 50)];
+            ShapeView *sixteenThree = [[ShapeView alloc] initWithFrame: CGRectMake (49, 242, 50, 50)];
+            ShapeView *sixteenFour = [[ShapeView alloc] initWithFrame: CGRectMake (222, 242, 50, 50)];
             
             [self.view addSubview:sixteenOne];
             [self.view addSubview:sixteenTwo];
@@ -174,15 +173,15 @@
 
 - (void)drawNine {
     
-    ShapeView *nineZero = [[ShapeView alloc] initWithFrame: CGRectMake (77, 77, 50, 50)];
-    ShapeView *nineOne = [[ShapeView alloc] initWithFrame: CGRectMake (135, 77, 50, 50)];
-    ShapeView *nineTwo = [[ShapeView alloc] initWithFrame: CGRectMake (193, 77, 50, 50)];
-    ShapeView *nineThree = [[ShapeView alloc] initWithFrame: CGRectMake (77, 135, 50, 50)];
-    ShapeView *nineFour = [[ShapeView alloc] initWithFrame: CGRectMake (135, 135, 50, 50)];
-    ShapeView *nineFive = [[ShapeView alloc] initWithFrame: CGRectMake (193, 135, 50, 50)];
-    ShapeView *nineSix = [[ShapeView alloc] initWithFrame: CGRectMake (77, 193, 50, 50)];
-    ShapeView *nineSeven = [[ShapeView alloc] initWithFrame: CGRectMake (135, 193, 50, 50)];
-    ShapeView *nineEight = [[ShapeView alloc] initWithFrame: CGRectMake (193, 193, 50, 50)];
+    ShapeView *nineZero = [[ShapeView alloc] initWithFrame: CGRectMake (77, 97, 50, 50)];
+    ShapeView *nineOne = [[ShapeView alloc] initWithFrame: CGRectMake (135, 97, 50, 50)];
+    ShapeView *nineTwo = [[ShapeView alloc] initWithFrame: CGRectMake (193, 97, 50, 50)];
+    ShapeView *nineThree = [[ShapeView alloc] initWithFrame: CGRectMake (77, 155, 50, 50)];
+    ShapeView *nineFour = [[ShapeView alloc] initWithFrame: CGRectMake (135, 155, 50, 50)];
+    ShapeView *nineFive = [[ShapeView alloc] initWithFrame: CGRectMake (193, 155, 50, 50)];
+    ShapeView *nineSix = [[ShapeView alloc] initWithFrame: CGRectMake (77, 213, 50, 50)];
+    ShapeView *nineSeven = [[ShapeView alloc] initWithFrame: CGRectMake (135, 213, 50, 50)];
+    ShapeView *nineEight = [[ShapeView alloc] initWithFrame: CGRectMake (193, 213, 50, 50)];
     [self.view addSubview:nineZero];
     [self.view addSubview:nineOne];
     [self.view addSubview:nineTwo];
@@ -357,9 +356,6 @@
         [self randomCommand];
         [self shapeColorAllViewsWithinArray:arrayOfTags atIndex:0];
     }
-}
-- (IBAction)levelSwap:(id)sender {
-    [self swapLevel];
 }
 
 - (void) viewWillAppear:(BOOL)animated{
