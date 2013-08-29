@@ -96,14 +96,14 @@
 - (void)handleSwipeUpFrom:(UIGestureRecognizer*)recognizer {
     [checkArray addObject:@"0"];
     [up setAlpha: 1];
-    if (index <3) {
+    if (index <=3) {
         if ([checkArray isEqualToArray:commandArray]) {
             [delegate didWinGame];
             //[self pickAndDisplayCommand];
         }
         else {
             [delegate didLoseGame];
-            //[self pickAndDisplayCommand];
+            [self pickAndDisplayCommand];
             
         }
     }
@@ -136,7 +136,7 @@
         }
         else{
             [delegate didLoseGame];
-            //[self pickAndDisplayCommand];
+            [self pickAndDisplayCommand];
             
         }
     }
@@ -146,7 +146,7 @@
 - (void)handleSwipeDownFrom:(UIGestureRecognizer*)recognizer {
     [down setAlpha: 1];
     [checkArray addObject:@"1"];
-    if (index <3) {
+    if (index <=3) {
         if ([checkArray isEqualToArray:commandArray]) {
             [delegate didWinGame];
             //[self pickAndDisplayCommand];
@@ -171,7 +171,7 @@
         }
         if ((checkArray.count == 2) && (![commandArray isEqualToArray:checkArray])) {
             [delegate didLoseGame];
-           // [self pickAndDisplayCommand];
+            [self pickAndDisplayCommand];
         }
         
     }
@@ -193,7 +193,7 @@
 - (void)handleSwipeLeftFrom:(UIGestureRecognizer*)recognizer {
     [left setAlpha: 1];
     [checkArray addObject:@"2"];
-    if (index <3) {
+    if (index <=3) {
         if ([checkArray isEqualToArray:commandArray]) {
             [delegate didWinGame];
             //[self pickAndDisplayCommand];
@@ -229,8 +229,9 @@
             [delegate didWinGame];
         }
         else{
-            [self pickAndDisplayCommand];
             [delegate didLoseGame];
+            [self pickAndDisplayCommand];
+
 
         }
     }
@@ -240,7 +241,7 @@
 - (void)handleSwipeRightFrom:(UIGestureRecognizer*)recognizer {
     [right setAlpha: 1];
     [checkArray addObject:@"3"];
-    if (index <3) {
+    if (index <=3) {
         if ([checkArray isEqualToArray:commandArray]) {
             [delegate didWinGame];
             //[self pickAndDisplayCommand];

@@ -44,6 +44,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"HighScore"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+
     highScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScore"];
     NSLog(@"highscore: %i",highScore);
     self.containerViewController.swipeViewController.delegate = self;
@@ -81,12 +85,12 @@
 
     }else{
         [myTimer invalidate];
-        if (score > highScore) {
+      /*  if (score > highScore) {
             //Use this to reset the score - do we want this somewhere in the app?
             //score = 0;
             [[NSUserDefaults standardUserDefaults] setInteger:score forKey:@"HighScore"];
             [[NSUserDefaults standardUserDefaults] synchronize];
-        }
+        } */
         [[SGSoundMachine soundMachine] playSoundWithName:@"TimeUp"];
         
         NSLog(@"done");
@@ -103,10 +107,29 @@
         alertView.defaultButtonShadowColor = [UIColor asbestosColor];
         alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
         alertView.defaultButtonTitleColor = [UIColor asbestosColor];
-        [alertView show];
         
+        FUIAlertView *alertViewHighScore = [[FUIAlertView alloc] initWithTitle:@"You lose" message:@"New high score!" delegate:nil cancelButtonTitle:@"Home" otherButtonTitles:@"Restart", nil];
+        alertViewHighScore.delegate = self;
+        alertViewHighScore.titleLabel.textColor = [UIColor cloudsColor];
+        alertViewHighScore.titleLabel.font = [UIFont boldFlatFontOfSize:25];
+        alertViewHighScore.messageLabel.textColor = [UIColor cloudsColor];
+        alertViewHighScore.messageLabel.font = [UIFont flatFontOfSize:14];
+        alertViewHighScore.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
+        alertViewHighScore.alertContainer.backgroundColor = [UIColor midnightBlueColor];
+        alertViewHighScore.defaultButtonColor = [UIColor cloudsColor];
+        alertViewHighScore.defaultButtonShadowColor = [UIColor asbestosColor];
+        alertViewHighScore.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
+        alertViewHighScore.defaultButtonTitleColor = [UIColor asbestosColor];
 
+        if (score >highScore) {
+            [alertViewHighScore show];
+            [[NSUserDefaults standardUserDefaults] setInteger:score forKey:@"HighScore"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
 
+        }
+        else {
+            [alertView show];
+        }
     }
         slider.value = seconds;
 }

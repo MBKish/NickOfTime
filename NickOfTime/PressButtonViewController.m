@@ -100,7 +100,7 @@
     color3 =[UIColor peterRiverColor];
     color4 =[UIColor amethystColor];
     color5 =[UIColor turquoiseColor];
-    color6 =[UIColor wetAsphaltColor];
+    color6 =[UIColor colorFromHexCode:@"0066B3"];
     color7 =[UIColor sunflowerColor];
     color8 =[UIColor concreteColor];
     color9 =[UIColor alizarinColor];

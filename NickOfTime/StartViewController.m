@@ -16,7 +16,7 @@
 @interface StartViewController (){
     
     __weak IBOutlet FUIButton *startButton;
-    __weak IBOutlet FUIButton *scoreButton;
+    __weak IBOutlet UILabel *highScoreLabel;
 
 }
 - (IBAction)startGame:(id)sender;
@@ -37,12 +37,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    scoreButton.hidden = YES;
-    
-    //Create a label on the StartViewController
-    //create an outlet called highScoreLabel
-    //highScoreLabel.text = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScore"];
     
     startButton.buttonColor = [UIColor alizarinColor];
     startButton.shadowColor = [UIColor pomegranateColor];
@@ -52,13 +46,6 @@
     [startButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     [startButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
 
-    scoreButton.buttonColor = [UIColor alizarinColor];
-    scoreButton.shadowColor = [UIColor pomegranateColor];
-    scoreButton.shadowHeight = 3.0f;
-    scoreButton.cornerRadius = 6.0f;
-    scoreButton.titleLabel.font = [UIFont boldFlatFontOfSize:16];
-    [scoreButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
-    [scoreButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
    }
 
 - (void)didReceiveMemoryWarning
@@ -91,6 +78,12 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     }else if (buttonIndex == 1){
         [self performSegueWithIdentifier:@"toGame" sender:self];
     }
+}
+-(void)viewDidAppear:(BOOL)animated{
+    
+    //Create a label on the StartViewController
+    //create an outlet called highScoreLabel
+    highScoreLabel.text = [NSString stringWithFormat:@"highscore: %i", [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScore"]];
 }
 
 @end
