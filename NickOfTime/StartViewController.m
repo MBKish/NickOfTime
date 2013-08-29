@@ -21,6 +21,7 @@
     __weak IBOutlet UIButton *soundButton;
     UIImage * soundButtonOff;
     UIImage * soundButtonON;
+    __weak IBOutlet UILabel *titleLabel;
 
 }
 - (IBAction)startGame:(id)sender;
@@ -46,10 +47,12 @@
     soundButtonOff = [UIImage imageNamed:@"soundOff.png"];
     soundButtonON = [UIImage imageNamed:@"soundOn.png"];
     
+     [titleLabel setFont:[UIFont fontWithName:@"Pusab" size:60]];
+    
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenHeight = screenRect.size.height;
     if (screenHeight == 568){
-        constraint.constant = 218;
+        constraint.constant = 188;
     }
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewTapped:)];

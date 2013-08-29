@@ -210,6 +210,7 @@
 		B8D7741017CFC5CC009FFC1C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		B8D7741117CFC5CC009FFC1C /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		B8D7741217CFC5CC009FFC1C /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		B8D7741D17CFC61A009FFC1C /* PUSAB___.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PUSAB___.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -412,6 +413,7 @@
 		B8C5CF3417C3B90B00D9A66E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B8D7741D17CFC61A009FFC1C /* PUSAB___.otf */,
 				B8C5CF3517C3B90B00D9A66E /* Lato-Black.ttf */,
 				B8C5CF3617C3B90B00D9A66E /* Lato-BlackItalic.ttf */,
 				B8C5CF3717C3B90B00D9A66E /* Lato-Bold.ttf */,

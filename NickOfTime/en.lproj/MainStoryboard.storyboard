@@ -12,9 +12,9 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Nick of Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXa-rX-scV">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Nick of Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="278" translatesAutoresizingMaskIntoConstraints="NO" id="gXa-rX-scV">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="E9N-t9-MVc"/>
+                                    <constraint firstAttribute="height" constant="162" id="Fwl-JG-rBl"/>
                                     <constraint firstAttribute="width" constant="278" id="fyJ-Ro-BIe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="40"/>
@@ -66,10 +66,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gXa-rX-scV" firstAttribute="top" secondItem="48N-P8-Fd8" secondAttribute="top" constant="174" type="user" id="3zP-Uo-7J7"/>
                             <constraint firstItem="TcZ-9Y-Etv" firstAttribute="top" secondItem="48N-P8-Fd8" secondAttribute="top" constant="20" symbolic="YES" type="default" id="N1n-W7-X62"/>
                             <constraint firstItem="TcZ-9Y-Etv" firstAttribute="bottom" secondItem="bLl-h0-0ob" secondAttribute="bottom" type="default" id="O2P-ig-hzh"/>
                             <constraint firstItem="Gds-bN-MJx" firstAttribute="centerX" secondItem="gXa-rX-scV" secondAttribute="centerX" type="default" id="Qah-ec-cne"/>
+                            <constraint firstItem="gXa-rX-scV" firstAttribute="top" secondItem="48N-P8-Fd8" secondAttribute="top" constant="137" id="TJz-O5-ym8"/>
                             <constraint firstAttribute="bottom" secondItem="Gds-bN-MJx" secondAttribute="bottom" constant="42" id="a0T-vK-XuJ"/>
                             <constraint firstItem="TcZ-9Y-Etv" firstAttribute="trailing" secondItem="gXa-rX-scV" secondAttribute="trailing" type="default" id="b7n-Ai-TrY"/>
                             <constraint firstItem="bLl-h0-0ob" firstAttribute="leading" secondItem="48N-P8-Fd8" secondAttribute="leading" constant="8" id="jng-kY-uVv"/>
@@ -77,10 +77,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="constraint" destination="3zP-Uo-7J7" id="0mb-T2-Up2"/>
                         <outlet property="highScoreLabel" destination="TcZ-9Y-Etv" id="iFx-d2-iSd"/>
                         <outlet property="soundButton" destination="bLl-h0-0ob" id="Fmx-6F-l2j"/>
                         <outlet property="startButton" destination="Gds-bN-MJx" id="IRI-NA-ZCv"/>
+                        <outlet property="titleLabel" destination="gXa-rX-scV" id="Mfk-Cu-3Lw"/>
                         <segue destination="2" kind="modal" identifier="toGame" customClass="EmptySegue" id="a1o-sG-2Hq"/>
                     </connections>
                 </viewController>
