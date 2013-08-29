@@ -16,7 +16,7 @@
 #import "SwipeViewController.h"
 #import "FUIAlertView.h"
 #import "UIFont+FlatUI.h"
-
+#import "SGSoundMachine.h"
 
 @interface ViewController (){
     
@@ -29,10 +29,10 @@
     int completedGames;
     int completedSets;
     int score;
+    int highScore;
     __weak IBOutlet UILabel *scoreLabel;
     int bonusTimeInt;
     int level;
-
 }
 
 @property (nonatomic, weak) ContainerViewController *containerViewController;
@@ -44,7 +44,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    highScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScore"];
+    NSLog(@"highscore: %i",highScore);
     self.containerViewController.swipeViewController.delegate = self;
     //self.containerViewController.findTheObjectViewController.testDelegate = self;
     self.containerViewController.delegate = self;
@@ -80,7 +81,13 @@
 
     }else{
         [myTimer invalidate];
-  
+        if (score > highScore) {
+            //Use this to reset the score - do we want this somewhere in the app?
+            //score = 0;
+            [[NSUserDefaults standardUserDefaults] setInteger:score forKey:@"HighScore"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+        [[SGSoundMachine soundMachine] playSoundWithName:@"TimeUp"];
         
         NSLog(@"done");
         
@@ -134,12 +141,14 @@
     [self updateScore];
 
     if (completedGames < 5) {
+        [[SGSoundMachine soundMachine] playSoundWithName:@"Win1"];
         [self.containerViewController swapViewControllers2];
         [self gameWon];
         NSLog (@"Comp Games %i",completedGames);
     }
     
     else {
+        [[SGSoundMachine soundMachine] playSoundWithName:@"Win2"];
         [self gameWon];
         NSLog (@"Comp Games %i",completedGames);
         [myTimer invalidate];
@@ -167,6 +176,7 @@
 }
 
 -(void)didLoseGame{
+    [[SGSoundMachine soundMachine] playSoundWithName:@"Loss"];
     score = score - 50;
     [self updateScore];
     if (completedGames > 0) {

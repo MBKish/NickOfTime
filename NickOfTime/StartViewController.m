@@ -10,6 +10,7 @@
 #import "FUIButton.h"
 #import "UIColor+FlatUI.h"
 #import "UIFont+FlatUI.h"
+#import "SGSoundMachine.h"
 //#import "FUIAlertView.h"
 
 @interface StartViewController (){
@@ -39,6 +40,10 @@
 
     scoreButton.hidden = YES;
     
+    //Create a label on the StartViewController
+    //create an outlet called highScoreLabel
+    //highScoreLabel.text = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScore"];
+    
     startButton.buttonColor = [UIColor alizarinColor];
     startButton.shadowColor = [UIColor pomegranateColor];
     startButton.shadowHeight = 3.0f;
@@ -63,6 +68,7 @@
 }
 
 - (IBAction)startGame:(id)sender {
+    [[SGSoundMachine soundMachine] playSoundWithName:@"Begin"];
     FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Hello" message:@"Complete five challenges to move on." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Begin", nil];
     alertView.delegate = self;
     alertView.titleLabel.textColor = [UIColor cloudsColor];
