@@ -18,7 +18,9 @@
     __weak IBOutlet FUIButton *startButton;
     __weak IBOutlet UILabel *highScoreLabel;
     __weak IBOutlet NSLayoutConstraint *constraint;
-
+    __weak IBOutlet UIButton *soundButton;
+    UIImage * soundButtonOff;
+    UIImage * soundButtonON;
 
 }
 - (IBAction)startGame:(id)sender;
@@ -41,6 +43,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    soundButtonOff = [UIImage imageNamed:@"soundOff.png"];
+    soundButtonON = [UIImage imageNamed:@"soundOn.png"];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenHeight = screenRect.size.height;
@@ -86,6 +90,7 @@
 }
 
 - (IBAction)mute:(id)sender {
+
     if ([SGSoundMachine soundMachine].soundIsOff == NO) {
         [SGSoundMachine soundMachine].soundIsOff = YES;
         [[NSUserDefaults standardUserDefaults] setBool:[SGSoundMachine soundMachine].soundIsOff forKey:@"Sound"];
@@ -95,8 +100,11 @@
         [[NSUserDefaults standardUserDefaults] setBool:[SGSoundMachine soundMachine].soundIsOff forKey:@"Sound"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-}
+    
+    
+    [self checkSound];
 
+}
 - (void)imageViewTapped:(UITapGestureRecognizer *)gr {
     
     FUIAlertView *alertViewHighScore = [[FUIAlertView alloc] initWithTitle:@"Clear high score?" message:nil delegate:nil cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
@@ -140,16 +148,24 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
     }
 }
 -(void)viewDidAppear:(BOOL)animated{
+    
     [self setScore];
     [SGSoundMachine soundMachine].soundIsOff = [[NSUserDefaults standardUserDefaults] boolForKey:@"Sound"];
-}
+    [self checkSound];
 
+}
 -(void)setScore{
     highScoreLabel.text = [NSString stringWithFormat:@"high score: %i", [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScore"]];
 
 }
 
+-(void)checkSound{
+    if ([SGSoundMachine soundMachine].soundIsOff == YES) {
+        [soundButton setImage:soundButtonOff forState:UIControlStateNormal];
+    }
+    else if ([SGSoundMachine soundMachine].soundIsOff == NO) {
+        [soundButton setImage:soundButtonON forState:UIControlStateNormal];
+    }
 
-
-
+}
 @end

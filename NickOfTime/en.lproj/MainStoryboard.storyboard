@@ -46,9 +46,13 @@
                                 <color key="textColor" red="0.24160953439999999" green="0.24160953439999999" blue="0.24160953439999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLl-h0-0ob">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLl-h0-0ob">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Foh-9y-Sb2"/>
+                                    <constraint firstAttribute="width" constant="39" id="NvQ-ai-muj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" image="soundOn.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -64,9 +68,9 @@
                         <constraints>
                             <constraint firstItem="gXa-rX-scV" firstAttribute="top" secondItem="48N-P8-Fd8" secondAttribute="top" constant="174" type="user" id="3zP-Uo-7J7"/>
                             <constraint firstItem="TcZ-9Y-Etv" firstAttribute="top" secondItem="48N-P8-Fd8" secondAttribute="top" constant="20" symbolic="YES" type="default" id="N1n-W7-X62"/>
+                            <constraint firstItem="TcZ-9Y-Etv" firstAttribute="bottom" secondItem="bLl-h0-0ob" secondAttribute="bottom" type="default" id="O2P-ig-hzh"/>
                             <constraint firstItem="Gds-bN-MJx" firstAttribute="centerX" secondItem="gXa-rX-scV" secondAttribute="centerX" type="default" id="Qah-ec-cne"/>
                             <constraint firstAttribute="bottom" secondItem="Gds-bN-MJx" secondAttribute="bottom" constant="42" id="a0T-vK-XuJ"/>
-                            <constraint firstItem="bLl-h0-0ob" firstAttribute="centerY" secondItem="TcZ-9Y-Etv" secondAttribute="centerY" type="default" id="a6a-vB-yl5"/>
                             <constraint firstItem="TcZ-9Y-Etv" firstAttribute="trailing" secondItem="gXa-rX-scV" secondAttribute="trailing" type="default" id="b7n-Ai-TrY"/>
                             <constraint firstItem="bLl-h0-0ob" firstAttribute="leading" secondItem="48N-P8-Fd8" secondAttribute="leading" constant="8" id="jng-kY-uVv"/>
                             <constraint firstAttribute="centerX" secondItem="gXa-rX-scV" secondAttribute="centerX" type="user" id="kTa-7Z-x25"/>
@@ -75,6 +79,7 @@
                     <connections>
                         <outlet property="constraint" destination="3zP-Uo-7J7" id="0mb-T2-Up2"/>
                         <outlet property="highScoreLabel" destination="TcZ-9Y-Etv" id="iFx-d2-iSd"/>
+                        <outlet property="soundButton" destination="bLl-h0-0ob" id="Fmx-6F-l2j"/>
                         <outlet property="startButton" destination="Gds-bN-MJx" id="IRI-NA-ZCv"/>
                         <segue destination="2" kind="modal" identifier="toGame" customClass="EmptySegue" id="a1o-sG-2Hq"/>
                     </connections>
@@ -317,6 +322,9 @@
             <point key="canvasLocation" x="126" y="-134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="soundOn.png" width="240" height="196"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
