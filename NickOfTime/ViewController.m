@@ -237,11 +237,11 @@
     //calculates bonus time from remaining time
     bonusTimeInt = (int)seconds;
     
-    float newBonusTime = ((powf(40, ((30 - (0.80 * initialTime))/30)))/30) * seconds;
+    float newBonusTime = ((powf(60, ((30 - (0.90 * initialTime))/30)))/30) * seconds;
     
     //calculates speed up time and adds time bonus
     if (completedSets >= 1) {
-        initialTime = (0.80 * initialTime) + newBonusTime;
+        initialTime = (0.90 * initialTime) + newBonusTime;
         //        initialTime = (initialTime - (.25 * initialTime)) + (.75 * bonusTime);
         //        if (initialTime >= 25) {
         //            initialTime = 25;
